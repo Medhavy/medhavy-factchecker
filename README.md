@@ -31,6 +31,54 @@ medhavi-facts/
 
 ---
 
+## Images and media links
+
+There **are** image links in the textbook, but they are chapter-level MDX links rather
+than glossary-term media records. In the current slice:
+
+- `terms.json` contains **0** media entries; every term has `"media": []`.
+- `content/docs/**/*.mdx` contains **149** image references, all local `/images/...` links.
+- `public/images/` contains **150** image files totaling **88.1 MB**.
+- **141** image references resolve to existing files.
+- **141** unique image files are referenced by chapters.
+- **8** chapter references are broken because the MDX points to a `.jpg` while the
+  corresponding asset exists with another extension.
+- **9** files in `public/images/` are currently unreferenced by the chapter MDX.
+
+**Files by extension**
+
+| Extension | Files in `public/images/` | Resolved chapter references |
+|---:|---:|---:|
+| `.jpg` | 124 | 124 |
+| `.png` | 22 | 14 |
+| `.gif` | 2 | 1 |
+| `.svg` | 2 | 2 |
+
+**Broken chapter image references**
+
+| Source section | Referenced path | Matching asset present |
+|---|---|---|
+| `Chapter11/4_Mitochondrial_Function_in_Cancer.mdx` | `/images/11-3-2-1.jpg` | `11-3-2-1.png` |
+| `Chapter2/3_Hallmarks_of_Cancer.mdx` | `/images/2-3-1-1.jpg` | `2-3-1-1.png` |
+| `Chapter24/4_Monoclonal_Antibodies.mdx` | `/images/24-3-1.jpg` | `24-3-1.gif` |
+| `Chapter4/2_Mutations_Types_and_Consequences.mdx` | `/images/4-2-2-4.jpg` | `4-2-2-4.png` |
+| `Chapter4/4_DNA_Repair_Mechanisms_and_Their_Failure_in_Cancer.mdx` | `/images/4-4-2-1.jpg` | `4-4-2-1.png` |
+| `Chapter4/4_DNA_Repair_Mechanisms_and_Their_Failure_in_Cancer.mdx` | `/images/4-4-2-2.jpg` | `4-4-2-2.png` |
+| `Chapter6/3_Key_Tumor_Suppressor_Genes.mdx` | `/images/6-3-4-1.jpg` | `6-3-4-1.png` |
+| `Chapter6/3_Key_Tumor_Suppressor_Genes.mdx` | `/images/6-3-5-1.jpg` | `6-3-5-1.png` |
+
+**Unreferenced files in `public/images/`**
+
+`11-3-2-1.png`, `2-3-1-1.png`, `24-3-1.gif`, `27-1-1.png`,
+`4-2-2-4.png`, `4-4-2-1.png`, `4-4-2-2.png`, `6-3-4-1.png`,
+`6-3-5-1.png`.
+
+So the answer is: yes, the textbook has image links; they are currently recoverable from
+the chapter MDX, not from the glossary-derived `terms.json` media field. A future extractor
+pass could add a separate `images.json` or attach chapter image references to fact evidence.
+
+---
+
 ## terms.json — 10,055 terms
 
 Every term carries a verbatim `definition`, a `category`, a within-book `url`
