@@ -1,3 +1,6 @@
+<!-- heuristic-triage-banner -->
+> **Heuristic triage, not fact-checking.** These labels came from word-pattern rules in `generate_codex_verdicts.py`. No source was consulted: no URL, no quoted passage. PLAUSIBLE means the sentence matched no suspicious pattern. It does not mean a source supports it. NOT CHECKED means a database lookup is still needed. See `README-HEURISTIC.md`.
+
 ## Assertions Report: Conclusion
 **Date:** 2026-06-30
 **Source section:** Conclusion
@@ -5,12 +8,12 @@
 **Assertions checked:** 3
 **Breakdown:** AI-ONLY: 3
 
-### Critical
+### Flagged by the rules (emphatic wording with no hedge; not an error finding)
 None found.
 
 ### Full Findings
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-communication-excellence-effective-communication-about-goals-prognosis-an`
 **Assertion type:** POSITIVE
 **Sentence:** Communication Excellence: Effective communication about goals, prognosis, and treatment options is fundamental to delivering patient-centered cancer care that respects individual values and preferences.
@@ -20,7 +23,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-multidisciplinary-integration-optimal-cancer-outcomes-require-coordinated`
 **Assertion type:** BASIC
 **Sentence:** Multidisciplinary Integration: Optimal cancer outcomes require coordinated care from multiple specialists working together to address all aspects of the patient's needs throughout the cancer continuum.
@@ -30,7 +33,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-the-successful-implementation-of-these-principles-requires-ongoing-collab`
 **Assertion type:** POSITIVE
 **Sentence:** The successful implementation of these principles requires ongoing collaboration among healthcare professionals, continued investment in research and development, and commitment to addressing access and equity challenges that prevent all patients from benefiting from advances in cancer therapy.

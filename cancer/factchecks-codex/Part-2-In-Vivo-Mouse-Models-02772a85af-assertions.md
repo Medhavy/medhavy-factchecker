@@ -1,3 +1,6 @@
+<!-- heuristic-triage-banner -->
+> **Heuristic triage, not fact-checking.** These labels came from word-pattern rules in `generate_codex_verdicts.py`. No source was consulted: no URL, no quoted passage. PLAUSIBLE means the sentence matched no suspicious pattern. It does not mean a source supports it. NOT CHECKED means a database lookup is still needed. See `README-HEURISTIC.md`.
+
 ## Assertions Report: Part 2: In Vivo Mouse Models
 **Date:** 2026-06-30
 **Source section:** Part 2: In Vivo Mouse Models
@@ -5,12 +8,12 @@
 **Assertions checked:** 5
 **Breakdown:** AI-ONLY: 5
 
-### Critical
+### Flagged by the rules (emphatic wording with no hedge; not an error finding)
 None found.
 
 ### Full Findings
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-a-well-characterized-gemm-is-described-the-efficient-development-of-medul`
 **Assertion type:** POSITIVE
 **Sentence:** A well-characterized GEMM is described: "The efficient development of medulloblastomas in all Ptch1+/-;p53-/- mice provides a valuable model with a genetically engineered endogenous tumor.
@@ -20,7 +23,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-another-controversy-related-to-pdx-models-is-whether-orthotopic-or-subcut`
 **Assertion type:** POSITIVE
 **Sentence:** Another controversy related to PDX models is whether orthotopic or subcutaneous xenografts are better.
@@ -30,7 +33,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-in-xenograft-models-human-tumor-cells-are-transplanted-into-immunocomprom`
 **Assertion type:** POSITIVE
 **Sentence:** In xenograft models, human tumor cells are transplanted into immunocompromised mice.
@@ -40,7 +43,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-mice-are-most-commonly-used-for-glioblastoma-research-due-to-their-access`
 **Assertion type:** POSITIVE
 **Sentence:** Mice are most commonly used for glioblastoma research due to their accessibility and lower cost.
@@ -50,7 +53,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-the-cre-loxp-system-is-fundamental-to-creating-conditional-gemms`
 **Assertion type:** POSITIVE
 **Sentence:** The Cre-loxP system is fundamental to creating conditional GEMMs.

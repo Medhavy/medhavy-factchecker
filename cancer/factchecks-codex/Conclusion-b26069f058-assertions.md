@@ -1,3 +1,6 @@
+<!-- heuristic-triage-banner -->
+> **Heuristic triage, not fact-checking.** These labels came from word-pattern rules in `generate_codex_verdicts.py`. No source was consulted: no URL, no quoted passage. PLAUSIBLE means the sentence matched no suspicious pattern. It does not mean a source supports it. NOT CHECKED means a database lookup is still needed. See `README-HEURISTIC.md`.
+
 ## Assertions Report: Conclusion
 **Date:** 2026-06-30
 **Source section:** Conclusion
@@ -5,12 +8,12 @@
 **Assertions checked:** 3
 **Breakdown:** AI-ONLY: 2 | EVIDENCE: 1
 
-### Critical
+### Flagged by the rules (emphatic wording with no hedge; not an error finding)
 None found.
 
 ### Full Findings
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-patient-derived-models-provide-more-accurate-platforms-for-drug-testing-a`
 **Assertion type:** BASIC
 **Sentence:** Patient-derived models provide more accurate platforms for drug testing, and our growing understanding of the microbiome opens new therapeutic avenues.
@@ -20,7 +23,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-success-in-translating-these-advances-into-clinical-practice-will-require`
 **Assertion type:** BASIC
 **Sentence:** Success in translating these advances into clinical practice will require continued collaboration across disciplines, integration of multiple technological platforms, and a commitment to addressing the complex, adaptive nature of cancer.
@@ -30,7 +33,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### EVIDENCE — UNVERIFIED
+#### EVIDENCE — NOT CHECKED (needs a database)
 **fact_id:** `cancer-the-recognition-that-cancer-metabolism-extends-far-beyond-the-warburg-eff`
 **Assertion type:** POSITIVE
 **Sentence:** The recognition that cancer metabolism extends far beyond the Warburg effect has revealed numerous new targets, while the imperative for combination therapies addresses the fundamental challenge of tumor heterogeneity.

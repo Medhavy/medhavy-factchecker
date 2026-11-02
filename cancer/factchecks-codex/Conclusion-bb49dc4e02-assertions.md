@@ -1,3 +1,6 @@
+<!-- heuristic-triage-banner -->
+> **Heuristic triage, not fact-checking.** These labels came from word-pattern rules in `generate_codex_verdicts.py`. No source was consulted: no URL, no quoted passage. PLAUSIBLE means the sentence matched no suspicious pattern. It does not mean a source supports it. NOT CHECKED means a database lookup is still needed. See `README-HEURISTIC.md`.
+
 ## Assertions Report: Conclusion
 **Date:** 2026-06-30
 **Source section:** Conclusion
@@ -5,19 +8,19 @@
 **Assertions checked:** 6
 **Breakdown:** AI-ONLY: 5 | STAT: 1
 
-### Critical
-- **AI-ONLY / CONFIRMED / COMBINATION**
+### Flagged by the rules (emphatic wording with no hedge; not an error finding)
+- **AI-ONLY / PLAUSIBLE / COMBINATION**
   - fact_id: `cancer-as-future-healthcare-professionals-understanding-these-complex-interactio`
   - Sentence: As future healthcare professionals, understanding these complex interactions is essential for providing optimal patient care while advocating for systemic improvements.
   - Finding: Basic textbook-level assertion appears consistent with standard oncology knowledge.
-- **AI-ONLY / CONFIRMED / COMBINATION**
+- **AI-ONLY / PLAUSIBLE / COMBINATION**
   - fact_id: `cancer-health-economics-and-access-to-cancer-care-represent-critical-challenges-`
   - Sentence: Health economics and access to cancer care represent critical challenges that require multifaceted approaches combining clinical excellence, economic efficiency, and ethical principles.
   - Finding: Basic textbook-level assertion appears consistent with standard oncology knowledge.
 
 ### Full Findings
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-as-future-healthcare-professionals-understanding-these-complex-interactio`
 **Assertion type:** COMBINATION
 **Sentence:** As future healthcare professionals, understanding these complex interactions is essential for providing optimal patient care while advocating for systemic improvements.
@@ -27,7 +30,7 @@
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** Yes
 
-#### STAT — UNVERIFIED
+#### STAT — NOT CHECKED (needs a database)
 **fact_id:** `cancer-at-the-current-rate-of-growth-it-is-anticipated-that-20-of-the-gross-nati`
 **Assertion type:** POSITIVE
 **Sentence:** At the current rate of growth, it is anticipated that 20% of the gross national product will consist of health-related expenditures within the next decade.
@@ -37,7 +40,7 @@
 **Finding:** Requires live authoritative verification in this category; no decisive source is recorded in this independent Codex pass. Confidence 0.25.
 **Expert review needed:** Yes
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-health-care-expenses-in-the-united-states-are-increasing-inexorably`
 **Assertion type:** POSITIVE
 **Sentence:** Health care expenses in the United States are increasing inexorably.
@@ -47,7 +50,7 @@
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-health-economics-and-access-to-cancer-care-represent-critical-challenges-`
 **Assertion type:** COMBINATION
 **Sentence:** Health economics and access to cancer care represent critical challenges that require multifaceted approaches combining clinical excellence, economic efficiency, and ethical principles.
@@ -57,7 +60,7 @@
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** Yes
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-success-will-require-collaboration-among-clinicians-policymakers-patients`
 **Assertion type:** POSITIVE
 **Sentence:** Success will require collaboration among clinicians, policymakers, patients, and communities to develop approaches that are clinically effective, economically viable, and ethically sound.
@@ -67,7 +70,7 @@
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-the-evidence-demonstrates-that-high-quality-cancer-care-can-be-delivered-`
 **Assertion type:** BASIC
 **Sentence:** The evidence demonstrates that high-quality cancer care can be delivered cost-effectively when appropriate systems and incentives are in place.

@@ -1,3 +1,6 @@
+<!-- heuristic-triage-banner -->
+> **Heuristic triage, not fact-checking.** These labels came from word-pattern rules in `generate_codex_verdicts.py`. No source was consulted: no URL, no quoted passage. PLAUSIBLE means the sentence matched no suspicious pattern. It does not mean a source supports it. NOT CHECKED means a database lookup is still needed. See `README-HEURISTIC.md`.
+
 ## Assertions Report: Introduction
 **Date:** 2026-06-30
 **Source section:** Introduction
@@ -5,12 +8,12 @@
 **Assertions checked:** 2
 **Breakdown:** AI-ONLY: 2
 
-### Critical
+### Flagged by the rules (emphatic wording with no hedge; not an error finding)
 None found.
 
 ### Full Findings
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-hormonal-therapies-represent-a-cornerstone-of-cancer-treatment-for-hormon`
 **Assertion type:** BASIC
 **Sentence:** Hormonal therapies represent a cornerstone of cancer treatment for hormone-sensitive malignancies, leveraging the fundamental biological principle that certain cancers depend on hormones for their growth and survival.
@@ -20,7 +23,7 @@ None found.
 **Finding:** Basic textbook-level assertion appears consistent with standard oncology knowledge. Confidence 0.60.
 **Expert review needed:** No
 
-#### AI-ONLY — CONFIRMED
+#### AI-ONLY — PLAUSIBLE (rule-based, no source)
 **fact_id:** `cancer-the-underlying-mechanism-proposed-for-all-of-these-cancers-is-that-neopla`
 **Assertion type:** POSITIVE
 **Sentence:** The underlying mechanism proposed for all of these cancers is that neoplasia is the consequence of prolonged hormonal stimulation of the particular target organ, the normal growth and function of which is controlled by one or more steroid or polypeptide hormones.

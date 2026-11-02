@@ -4,6 +4,11 @@
 Parallel-safe: reads only ../facts.json and writes only in factchecks-codex/.
 It does not read other checker outputs, mutate facts/facts.json, or annotate
 source chapters.
+
+NOTE (2026-11-02): this script is HEURISTIC TRIAGE, not fact-checking. Every verdict
+comes from regexes over the claim text; no source is consulted. Re-running it writes the
+old CONFIRMED/UNVERIFIED labels to verdicts-codex.jsonl, which merge_verdicts.py would
+count as a checker's vote. Run relabel_as_heuristic.py afterwards. See README-HEURISTIC.md.
 """
 
 from __future__ import annotations
