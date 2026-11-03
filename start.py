@@ -4,7 +4,7 @@
     python3 start.py          (Windows: py start.py)
 
 First run: creates a private Python environment in .venv and installs Streamlit (about a minute). After that it just
-starts. The dashboard opens in your browser at http://localhost:8501 and runs only on your own computer.
+starts. The dashboard opens in your browser at http://localhost:8501 and runs only on your own computer (it listens on 127.0.0.1, so nobody else on the network can reach it).
 """
 import subprocess, sys, venv
 from pathlib import Path
@@ -23,4 +23,4 @@ if subprocess.run([str(PY), "-c", "import streamlit"], capture_output=True).retu
     subprocess.check_call([str(PY), "-m", "pip", "install", "-q", "-r", str(REPO / "requirements.txt")])
 print("Starting the review dashboard. Press Ctrl+C here to stop it.")
 sys.exit(subprocess.call([str(PY), "-m", "streamlit", "run", str(REPO / "review_app.py"),
-                          "--browser.gatherUsageStats", "false"], cwd=REPO))
+                          "--server.address", "127.0.0.1", "--browser.gatherUsageStats", "false"], cwd=REPO))

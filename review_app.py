@@ -29,6 +29,14 @@ def run(script):
     return r.returncode == 0, (r.stdout + r.stderr).strip()
 
 
+def readable_url(url):
+    """link to the page a person can read, not the API's data page"""
+    m = re.match(r"https://rest\.uniprot\.org/uniprotkb/([A-Z0-9]+)", url or "")
+    if m:
+        return f"https://www.uniprot.org/uniprotkb/{m.group(1)}/entry"
+    return url
+
+
 def diff_html(a, b):
     """word-level diff: removed words struck in red, added words in green"""
     aw, bw = a.split(), b.split()
@@ -107,7 +115,7 @@ else:
         st.caption("A second reader, who saw only this sentence and its quotes, found nothing in it beyond the quotes.")
     st.markdown("**The database record(s) behind it**")
     for e in r["evidence"]:
-        st.markdown(f"> “{e['quote']}”  \n> [{e['record_id']}]({e['url']})")
+        st.markdown(f"> “{e['quote']}”  \n> [{e['record_id']}]({readable_url(e['url'])})")
     if r["status"] != "proposed":
         st.caption(f"Overall status of this change: **{r['status']}** ({r.get('decision_source') or ''})")
 
