@@ -12,6 +12,9 @@ Dropped on purpose: verdict (a textbook cannot support itself), tier (set per da
 and the vote/consensus fields (status is derived from evidence records, not counted votes).
 fact_id, canonical, domain, stable and category are copied unchanged.
 
+WARNING: the default output is data/cancer/facts.json, which now also holds merged evidence and status. This script
+writes EMPTY evidence; if you overwrite facts.json, run 06_derive_status.py and 07_merge_into_facts.py afterwards.
+
 Usage:  python3 pipeline/legacy_migrate_facts.py OLD_FACTS.json [OUT.json]
         old file: git show 2a61bb2:cancer/facts.json   (the last medhavy-facts commit)
 """

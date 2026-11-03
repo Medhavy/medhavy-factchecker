@@ -14,6 +14,10 @@ Each candidate carries:
   evidence       [] — filled later, by database lookups only (see README.md).
   status         "no_evidence" until evidence records exist.
 
+WARNING: this overwrites data/cancer/facts.json (and terms/graph) from the CURRENT book. The merged evidence and status
+are lost, and if the book has changed the claims differ from the ones the evidence was found for. Re-extract into a
+scratch copy, or re-run steps 2-7 for the new claims.
+
 Usage:  python3 pipeline/01_extract.py [path/to/medhavi-cancer]
         (default: ../medhavi-cancer next to this repo, or $MEDHAVI_CANCER)
 """

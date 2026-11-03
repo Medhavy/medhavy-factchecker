@@ -14,10 +14,10 @@ All six steps have run for one book (medhavi-cancer), on the 1,170 queryable cla
 | 2. Triage | Decide which claims are real assertions and which database could check each | done: `triage/triage.jsonl` (one model-labeler pass, a first filter) |
 | 3. Map and query | Rewrite each assertion as a query for its database | done: `data/cancer/queries.jsonl`, 1,399 queries (model-written, smoke-tested on a sample) |
 | 4. Retrieve | Look it up; keep the record | done for 1,172 claims: a 60-claim pilot, then the other 1,112 (`pipeline/04_retrieve.py`); SEER/GLOBOCAN, guideline bodies and Ensembl have no open API and are skipped |
-| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | done: `data/cancer/pilot/evidence.pilot.jsonl` (77) and `data/cancer/full/evidence.jsonl` (1,386 records); NOT merged into `facts.json` yet |
+| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | done: `data/cancer/pilot/evidence.pilot.jsonl` (77) and `data/cancer/full/evidence.jsonl` (1,386 records); merged into `facts.json` by `pipeline/07_merge_into_facts.py` |
 | 6. Derive status | Status computed from the evidence records | done: `data/cancer/status.jsonl`, all 3,165 claims |
 
-Nothing here is verified. Every claim has `evidence: []` and `status: "no_evidence"`.
+Nothing here is human-reviewed. In `data/cancer/facts.json` each claim carries the database records found for it (`evidence`) and a `status` derived from them; 2,206 claims have no evidence yet because they are not assertions, have no record type, have no stand-alone query, have no open API, or nothing returned bears on them.
 
 ## Step 3 in numbers
 
@@ -110,7 +110,7 @@ Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempt
 
 `supported` means a retrieved record contains a passage a model read as stating the claim. It is not a verification and it is not human-reviewed.
 
-`facts.json` is the claim pool as extracted. Its `evidence: []` and `status: "no_evidence"` are extraction-time defaults and are **not updated**; `status.jsonl` and the evidence files are the authoritative state. (Merging evidence back into `facts.json` is still open.)
+`facts.json` is the single record of a claim: where the book said it, the evidence found, and the status. `pipeline/07_merge_into_facts.py` rebuilds its `evidence`, `status` and `status_detail` from the evidence files and `status.jsonl` on every run (it never changes `fact_id`, `canonical`, `claim_origin` or the other claim fields, and asserts so). `status.jsonl` stays as a flat table of the same statuses, easy to count and filter.
 
 ## The triage in one paragraph
 
@@ -127,10 +127,11 @@ pipeline/
   04_retrieve.py             step 4: run queries against PubMed / ClinicalTrials.gov / openFDA / NCBI Gene / UniProt, cache records
   claim_flags.py             two word-pattern flags: time-bound and plural claims
   06_derive_status.py        step 6: status for every claim, derived from the evidence
+  07_merge_into_facts.py     step 7: write evidence and status into facts.json (idempotent)
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/
-  facts.json                 3,165 candidate claims
+  facts.json                 3,165 claims: claim_origin + evidence + status (step 7 merges the last two in)
   queries.jsonl              step 3: one database query per strict assertion (1,481 rows)
   pilot/                     steps 4-5 on 60 claims: pilot_ids.json, attempts.jsonl, evidence.pilot.jsonl (cache/ is git-ignored)
   full/                      steps 4-5 on the other 1,112: ids.json, attempts.jsonl, evidence.jsonl (cache/ is git-ignored)
@@ -147,6 +148,8 @@ notes/
 
 ## A claim record
 
+A real record from `data/cancer/facts.json` (the `query` URL is shortened here, and a second evidence row is omitted):
+
 ```json
 {
   "fact_id": "cancer-5-fus-active-metabolite-forms-a-stable-covalent-complex-with-thymidine-sy",
@@ -160,13 +163,36 @@ notes/
     "verbatim": "5-FU's active metabolite forms a stable covalent complex with thymidine synthetase.",
     "retrieved": "2026-06-30"
   },
-  "evidence": [],
-  "status": "no_evidence"
+  "evidence": [
+    {
+      "source": "PubMed", "database": "pubmed", "record_id": "PMID:8400344",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/8400344/",
+      "title": "Immunological quantitation of thymidylate synthase-FdUMP-5,10-methylenetetrahydrofolate ternary complex with the monoclonal antibody TS 106.",
+      "field": "abstract",
+      "verbatim": "One of the principal mechanisms of action of 5-fluorouracil (5-FU) is the inhibition of TS by formation of a ternary covalent complex consisting of TS-5-fluorodeoxyuridylate-5,10-methylenetetrahydrofolate.",
+      "retrieved": "2026-11-02",
+      "query": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=...&retmax=5&sort=relevance&retmode=json",
+      "effective_query": "(\"Fluorouracil\"[MeSH Terms] OR 5-FU[tiab]) AND (\"Thymidylate Synthase\"[MeSH Terms] OR \"thymidine synthetase\"[tiab]) AND (FdUMP[tiab] OR metabolite[tiab])",
+      "relaxed": 0,
+      "stance": "supports",
+      "stance_note": "States covalent ternary complex of TS with FdUMP and folate forms during 5-FU action.",
+      "stance_by": "model, unreviewed"
+    }
+  ],
+  "status": "supported",
+  "status_detail": {
+    "database": "pubmed", "n_records": 1, "n_supports": 1, "n_partial": 0, "n_related": 0,
+    "n_refutes": 0, "n_dated": 0, "sources": ["PubMed"],
+    "flags": {"time_sensitive": false, "plural": false},
+    "needs_review": false, "review_reasons": [], "human_reviewed": false
+  }
 }
 ```
 
 - `claim_origin` is where the **book** made the claim. It is provenance of the claim, not evidence for it: a book cannot vouch for itself. (The old schema stored this as `evidence[0]` with `verdict: SUPPORTS` and tier `trusted`; that was circular and is gone.)
-- `evidence` holds database records only. Each will carry the database name as `source`, a `url`, the exact `verbatim` passage, and the rewritten query in a separate field.
+- `evidence` holds database records only. Each row has the database name as `source`, the record's `url`, the exact `verbatim` passage (always a character-for-character copy of the cited record field), the request that found it (`query`, `effective_query`, `relaxed`), and a `stance`.
+- `stance` (supports / partial / related / refutes) is a model's reading of how the passage relates to the claim, stored as `stance_by: "model, unreviewed"`. The record, URL and quote are the evidence; the stance is not.
+- `status` is derived from the evidence rows (step 6). It never says "true".
 - `fact_id` and `canonical` never change. Everything else joins to them.
 - `triage/triage.jsonl` joins to `facts.json` on `fact_id`.
 
