@@ -1,245 +1,92 @@
-# medhavi-facts — knowledge slice for *medhavi-cancer*
+# medhavy-factchecker
 
-A deterministically extracted knowledge slice for the **medhavi-cancer** textbook,
-in the same four-file format as the shared dictionary's other domains (`facts/biology/`,
-`facts/anatomy/`, …): `terms.json`, `graph.json`, `facts.json`, `preview.md`.
+Fact checking by **evidence**, not verdicts. Each claim in a textbook is matched to a public database that could confirm or refute it, and the database record (its name, URL and exact passage) is stored as the evidence. A claim's status comes from that evidence. Nobody votes.
 
-No language model is in the loop. Same inputs in → byte-identical files out. Definitions
-are the book's own glossary entries, verbatim; candidate facts are verbatim chapter
-sentences. Everything here is **unverified candidate material for expert review** — nothing
-is asserted as true.
+This started as a copy of `Medhavy/medhavy-facts` and is being reworked for a paper and a sounder pipeline. It is not connected to that repo.
+
+## Where it stands
+
+Steps 1 and 2 are done for one book (medhavi-cancer). Steps 3 to 6 are not built yet.
+
+| Step | What | State |
+|---|---|---|
+| 1. Extract | Pull candidate claims (verbatim sentences) out of the book | done: 3,165 claims in `data/cancer/facts.json` |
+| 2. Triage | Decide which claims are real assertions and which database could check each | done: `triage/triage.jsonl` (one model-labeler pass, a first filter) |
+| 3. Map and query | Rewrite each assertion as a query for its database | not built |
+| 4. Retrieve | Look it up; keep the record | not built |
+| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | not built |
+| 6. Derive status | Status computed from the evidence records | not built |
+
+Nothing here is verified. Every claim has `evidence: []` and `status: "no_evidence"`.
+
+## The triage in one paragraph
+
+Of the 3,165 candidates, **885 (28%) are not assertions** (framing, evaluation, vagueness no source could support or refute), **799 (25%) are real claims only a general textbook could confirm**, and **1,481 (47%) map to a real database**: PubMed, SEER/GLOBOCAN, FDA, gene and protein databases, guideline bodies, ClinicalTrials.gov. Only the 1,481 go to step 3. PubMed takes 902 of them and is the weakest label, so real query terms are needed before any of it counts as evidence. See `triage/SUMMARY.md`.
+
+## Layout
 
 ```
-medhavi-facts/
-├── README.md                  ← this file
-├── extract-medhavi-facts.py   ← the reproducible extractor (re-run to rebuild)
-└── cancer/
-    ├── terms.json             ← glossary: one entry per term (7.81 MB)
-    ├── graph.json             ← concept graph: nodes + edges (3.10 MB)
-    ├── facts.json             ← candidate facts scoured from chapters (3.85 MB)
-    ├── preview.md             ← human-readable summary
-    └── match-report.md        ← reconciliation against the shared dictionary
+README.md
+pipeline/
+  01_extract.py              step 1: textbook -> terms.json, graph.json, facts.json (deterministic, no AI)
+  legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
+data/cancer/
+  facts.json                 3,165 candidate claims
+  terms.json  graph.json     glossary (10,055 terms) and concept graph (24,347 edges)
+triage/
+  SUMMARY.md  triage.jsonl   which claims are real assertions, and which database fits
+notes/
+  heuristic-codex-pass.md    why the earlier Codex "fact-check" was removed, and where it is in git
+  slice-stats-2026-06.md     counts for the June extraction (terms, graph, claims by chapter, images)
 ```
 
-## Sources
+## A claim record
 
-| Output | Source in the book | Method |
-|---|---|---|
-| `terms.json`, `graph.json` | `data/keywords.json` (curated glossary) | term dictionary + concept co-mention graph |
-| `facts.json` | `content/docs/**/*.mdx` (38 chapters + 4 appendices) | atomic sentence extraction |
-| `match-report.md` | the above vs `facts/facts.json` | deterministic wording-similarity match |
+```json
+{
+  "fact_id": "cancer-5-fus-active-metabolite-forms-a-stable-covalent-complex-with-thymidine-sy",
+  "canonical": "5-FU's active metabolite forms a stable covalent complex with thymidine synthetase.",
+  "domain": ["cancer", "chapter22"],
+  "stable": true,
+  "category": "BASIC",
+  "claim_origin": {
+    "source": "medhavi-cancer", "publisher": "medhavi", "book": "medhavi-cancer",
+    "module": "22.2 Classes of Chemotherapeutic Agents", "url": "/docs/Chapter22/2_Classes_of_Chemotherapeutic_Agents",
+    "verbatim": "5-FU's active metabolite forms a stable covalent complex with thymidine synthetase.",
+    "retrieved": "2026-06-30"
+  },
+  "evidence": [],
+  "status": "no_evidence"
+}
+```
 
----
+- `claim_origin` is where the **book** made the claim. It is provenance of the claim, not evidence for it: a book cannot vouch for itself. (The old schema stored this as `evidence[0]` with `verdict: SUPPORTS` and tier `trusted`; that was circular and is gone.)
+- `evidence` holds database records only. Each will carry the database name as `source`, a `url`, the exact `verbatim` passage, and the rewritten query in a separate field.
+- `fact_id` and `canonical` never change. Everything else joins to them.
+- `triage/triage.jsonl` joins to `facts.json` on `fact_id`.
 
-## Images and media links
-
-There **are** image links in the textbook, but they are chapter-level MDX links rather
-than glossary-term media records. In the current slice:
-
-- `terms.json` contains **0** media entries; every term has `"media": []`.
-- `content/docs/**/*.mdx` contains **149** image references, all local `/images/...` links.
-- `public/images/` contains **150** image files totaling **88.1 MB**.
-- **141** image references resolve to existing files.
-- **141** unique image files are referenced by chapters.
-- **8** chapter references are broken because the MDX points to a `.jpg` while the
-  corresponding asset exists with another extension.
-- **9** files in `public/images/` are currently unreferenced by the chapter MDX.
-
-**Files by extension**
-
-| Extension | Files in `public/images/` | Resolved chapter references |
-|---:|---:|---:|
-| `.jpg` | 124 | 124 |
-| `.png` | 22 | 14 |
-| `.gif` | 2 | 1 |
-| `.svg` | 2 | 2 |
-
-**Broken chapter image references**
-
-| Source section | Referenced path | Matching asset present |
-|---|---|---|
-| `Chapter11/4_Mitochondrial_Function_in_Cancer.mdx` | `/images/11-3-2-1.jpg` | `11-3-2-1.png` |
-| `Chapter2/3_Hallmarks_of_Cancer.mdx` | `/images/2-3-1-1.jpg` | `2-3-1-1.png` |
-| `Chapter24/4_Monoclonal_Antibodies.mdx` | `/images/24-3-1.jpg` | `24-3-1.gif` |
-| `Chapter4/2_Mutations_Types_and_Consequences.mdx` | `/images/4-2-2-4.jpg` | `4-2-2-4.png` |
-| `Chapter4/4_DNA_Repair_Mechanisms_and_Their_Failure_in_Cancer.mdx` | `/images/4-4-2-1.jpg` | `4-4-2-1.png` |
-| `Chapter4/4_DNA_Repair_Mechanisms_and_Their_Failure_in_Cancer.mdx` | `/images/4-4-2-2.jpg` | `4-4-2-2.png` |
-| `Chapter6/3_Key_Tumor_Suppressor_Genes.mdx` | `/images/6-3-4-1.jpg` | `6-3-4-1.png` |
-| `Chapter6/3_Key_Tumor_Suppressor_Genes.mdx` | `/images/6-3-5-1.jpg` | `6-3-5-1.png` |
-
-**Unreferenced files in `public/images/`**
-
-`11-3-2-1.png`, `2-3-1-1.png`, `24-3-1.gif`, `27-1-1.png`,
-`4-2-2-4.png`, `4-4-2-1.png`, `4-4-2-2.png`, `6-3-4-1.png`,
-`6-3-5-1.png`.
-
-So the answer is: yes, the textbook has image links; they are currently recoverable from
-the chapter MDX, not from the glossary-derived `terms.json` media field. A future extractor
-pass could add a separate `images.json` or attach chapter image references to fact evidence.
-
----
-
-## terms.json — 10,055 terms
-
-Every term carries a verbatim `definition`, a `category`, a within-book `url`
-(`/glossary/<slug>`), `related` terms (concept links), and a `media` list.
-
-- **10,055** terms, **all with a definition** (0 missing)
-- **8,227** terms (81.8%) link to at least one other term
-- **22** categories:
-
-| Count | Category | Count | Category |
-|---:|---|---:|---|
-| 4,103 | Biomedical Science | 209 | Toxicology |
-| 1,687 | Biochemistry | 180 | Genomics |
-| 946 | Oncology | 151 | Pharmacology |
-| 464 | Cell Biology | 49 | Immunology |
-| 457 | Genetics | 44 | Pharmaceutical |
-| 443 | Biotechnology | 30 | Chemotherapy |
-| 394 | Molecular Biology | 23 | Biomarkers |
-| 337 | Nanotechnology | 17 | Diagnostics |
-| 244 | Pathology | 16 | Immunotherapy |
-| 230 | Medical Imaging | 12 | Surgery |
-| | | 11 | Drug Delivery |
-| | | 8 | Biosensing |
-
----
-
-## graph.json — 10,055 nodes · 24,347 edges
-
-An edge `A → B` means term **B** is mentioned inside term **A**'s definition. A term's
-`in_degree` (how many other definitions reference it) is a prerequisite/foundation signal.
-
-- **24,347** edges, **2.42** edges per term on average
-- **7,659** isolated nodes (in_degree 0) — the graph's value is in its high-in-degree core, not the long tail
-- in_degree: **max 1,618**, mean 2.42, median 0
-
-**Top 25 most-connected concepts**
-
-| In-degree | Concept | In-degree | Concept |
-|---:|---|---:|---|
-| 1,618 | Protein | 211 | Translation |
-| 1,053 | Gene | 209 | Virus |
-| 897 | Cancer | 206 | Chromosome |
-| 426 | Genome | 206 | Metabolism |
-| 421 | Bacteria | 197 | Amino acid |
-| 410 | Molecular biology | 177 | Sequencing |
-| 316 | Enzyme | 167 | Biochemistry |
-| 298 | Receptor | 159 | Bioinformatics |
-| 244 | Transcription | 139 | Carcinoma |
-| 230 | MicroRNA | 138 | Breast cancer |
-| 224 | Therapy | 135 | Biotechnology |
-| 213 | Gene expression | 133 | Lipid |
-| | | 133 | Mass spectrometry |
-
----
-
-## facts.json — 3,165 candidate facts
-
-Scoured from the chapter prose: **15,844** raw sentences were segmented and filtered
-(declarative, decontextualized, factual-verb-bearing, length 40–300 chars, no discourse-marker
-or attribution openers, no truncated abbreviations) down to **3,165** candidate facts — a
-**~20% yield**. Each is cited to its source section with the same fact schema as the rest
-of the dictionary.
-
-- **243** distinct source sections (of 320) produced facts
-- canonical length: min 40 · mean 157 · max 300 chars
-- consensus: **3,165 unverified** (single-source candidates); **0** need review
-
-**By category**
-
-| Count | Category |
-|---:|---|
-| 2,192 | BASIC |
-| 557 | MECHANISM |
-| 267 | QUANTITY |
-| 107 | CLASSIFICATION |
-| 42 | DEFINITION |
-
-**By chapter** (facts extracted per chapter)
-
-| # | Chapter | Facts |
-|---:|---|---:|
-| 1 | The Building Blocks of Life: Normal Cell Biology | 83 |
-| 2 | Introduction to Cancer: A Disease of Deregulation | 152 |
-| 3 | Cancer Epidemiology and Risk Factors | 92 |
-| 4 | Genetics and Genomic Instability in Cancer | 133 |
-| 5 | Oncogenes | 67 |
-| 6 | Tumor Suppressor Genes | 108 |
-| 7 | Epigenetics in Cancer | 83 |
-| 8 | Cancer Etiology | 87 |
-| 9 | Cell Cycle Control and Cancer | 79 |
-| 10 | Apoptosis and Programmed Cell Death in Cancer | 52 |
-| 11 | Cancer Metabolism — The Warburg Effect and Beyond | 83 |
-| 12 | Angiogenesis | 105 |
-| 13 | Invasion and Metastasis — The Spread of Cancer | 124 |
-| 14 | The Tumor Microenvironment | 66 |
-| 15 | Cancer Stem Cells and Tumor Heterogeneity | 278 |
-| 16 | Tumor Immunology | 118 |
-| 17 | Cancer Prevention and Screening | 67 |
-| 18 | Cancer Detection and Diagnosis | 67 |
-| 19 | Principles of Cancer Therapy | 34 |
-| 20 | Surgical Oncology | 76 |
-| 21 | Radiation Oncology | 88 |
-| 22 | Chemotherapy | 57 |
-| 23 | Hormonal Therapies | 61 |
-| 24 | Targeted Therapies | 113 |
-| 25 | Cancer Immunotherapy | 29 |
-| 26 | Gene Therapy and Oncolytic Virotherapy | 54 |
-| 27 | Nanotechnology in Cancer | 92 |
-| 28 | Clinical Trials and Regulatory Pathways | 37 |
-| 29 | Future Directions in Cancer Treatment Research | 67 |
-| 30 | Principles of Cancer Classification | 32 |
-| 31 | Solid Tumors by Organ/System | 50 |
-| 32 | Central Nervous System Tumors | 57 |
-| 33 | Hematologic Malignancies | 105 |
-| 34 | Pediatric Cancers | 41 |
-| 35 | Rare and Orphan Cancers | 100 |
-| 36 | Supportive Care and Palliative Care in Oncology | 46 |
-| 37 | Cancer Survivorship | 59 |
-| 38 | Health Economics and Access to Cancer Care | 59 |
-| A | Experimental Models in Cancer Research | 14 |
-| B | Essential Techniques and Assays in Cancer Research | 7 |
-| C | Advanced Imaging and Photodynamic Therapy | 17 |
-| D | Molecular Biology Techniques | 23 |
-| — | index | 3 |
-
----
-
-## Reconciliation with the shared dictionary
-
-Every candidate fact was matched against the shared dictionary `facts/facts.json` using the
-same deterministic logic as `extract-facts.py` (difflib token-sort ratio + Jaccard, with a
-numeric guard), at the standard thresholds: **0.82** to merge, **0.70** for a near-duplicate
-flag. The master dictionary was **not** modified.
-
-**Result: 0 corroborations, 0 conflicts — all 3,165 facts are new to the dictionary.**
-
-This is an honest outcome, not a failure of the matcher. The shared dictionary currently
-holds only **253** facts, all from a single OpenStax anatomy book. The highest similarity any
-cancer sentence reached was **0.55** — the two books cover overlapping topics (cell cycle,
-CNS, apoptosis) but phrase them as genuinely different atomic claims. As more books enter the
-dictionary, these candidates will start corroborating and reaching `agreement` (two
-independent publishers). See `cancer/match-report.md` for the 25 closest sub-threshold pairs.
-
----
-
-## Provenance & trust
-
-- **Publisher:** `medhavi` · **Source:** `medhavi-cancer` · **Tier:** `solid`
-  (an authored textbook — below OpenStax `trusted`, above general `web`). To treat it as a
-  vetted textbook, set its tier to `trusted` in `facts/facts-sources.yaml`.
-- **Status:** every fact is `source-attested`, `verified: false`, `consensus: unverified`.
-  Human sign-off is the only path to `verified` — by design, not policy.
-
-## Reproducing
+## Running step 1
 
 ```bash
-python3 medhavi-facts/extract-medhavi-facts.py
+python3 pipeline/01_extract.py ../medhavi-cancer
 ```
 
-Reads `data/keywords.json` and `content/docs/**/*.mdx`, matches against `facts/facts.json`,
-and rewrites everything under `medhavi-facts/cancer/`. Deterministic: same inputs produce
-identical outputs.
+It needs a `medhavi-cancer` checkout (`content/docs/**/*.mdx` and `data/keywords.json`) and nothing else. **Do not expect it to reproduce `data/cancer/` today.** The local book has changed since June (its glossary lost its definitions), so a fresh run gives different numbers. The committed data is the June extraction, converted with `legacy_migrate_facts.py`.
 
-*Generated 2026-06-29.*
+## What changed from medhavy-facts
+
+| Kept | Why |
+|---|---|
+| the extractor, `facts.json`, `terms.json`, `graph.json` | the candidate pool, with stable ids and the book's own wording |
+| the triage | decides what is worth sending to a database |
+| the textbook citation, as `claim_origin` | provenance of the claim, kept apart from evidence |
+
+| Dropped | Why |
+|---|---|
+| the Codex output (287 section reports, master report, data file) | rule-based labels with no sources; see `notes/heuristic-codex-pass.md` |
+| the Claude and Codex fact-check prompts | they ask each checker for a verdict |
+| `merge_verdicts.py` and the consensus / vote fields | they count checker votes; status is now derived from evidence |
+| matching against the shared 253-fact dictionary | 0 matches; it belonged to the vote model |
+| `tier: trusted` on the book's own citation | a book's tier says nothing about a database |
+
+Git history keeps all of it: `git show 2a61bb2` is the repo as it was inherited.
