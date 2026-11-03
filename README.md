@@ -74,20 +74,30 @@ Together with the pilot (1,172 claims attempted; 1,170 with an open API):
 
 | Database | Claims | Records returned | Supported | Partial | Related only | Conflicting / dated | None found |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| PubMed | 950 | 945 | 289 | 419 | 83 | 10 | 149 |
-| Gene / protein | 146 | 121 | 22 | 58 | 16 | 1 | 49 |
-| ClinicalTrials.gov | 20 | 18 | 5 | 8 | 0 | 1 | 6 |
-| openFDA | 54 | 47 | 23 | 19 | 4 | 1 | 7 |
-| **All** | **1,170** | **1,131** | **339 (29%)** | **504 (43%)** | **103 (9%)** | **13 (1%)** | **211 (18%)** |
+| PubMed | 950 | 945 | 107 | 601 | 83 | 10 | 149 |
+| Gene / protein | 146 | 121 | 4 | 76 | 16 | 1 | 49 |
+| ClinicalTrials.gov | 20 | 18 | 0 | 13 | 0 | 1 | 6 |
+| openFDA | 54 | 47 | 6 | 36 | 4 | 1 | 7 |
+| **All** | **1,170** | **1,131** | **117 (10%)** | **726 (62%)** | **103 (9%)** | **13 (1%)** | **211 (18%)** |
+
+These counts are after the strict re-read below. Before it, 339 (29%) were `supported` and 504 (43%) `partially_supported`.
 
 **What it shows**
-- **Most claims are only partly confirmed.** Under a third reach `supported`. Textbook sentences bundle several claims, and a record states one piece of one.
-- **Genes and proteins are the weak spot.** 22 of 146 supported, 49 with nothing. Short summaries rarely state the relations the book claims.
-- **FDA and trials give the cleanest hits.** openFDA: 23 of 54 supported.
+- **Most claims are only partly confirmed.** One in ten reaches `supported`. Textbook sentences bundle several claims, and a record states one piece of one.
+- **Genes and proteins are the weak spot.** 4 of 146 supported, 49 with nothing. Short summaries rarely state the relations the book claims.
+- **No database is clean.** Even openFDA, the best, has 6 of 54 that pass the strict reading.
 - **"No evidence found" is not "no evidence exists".** It means none of the top-5 records returned bears on the claim. A claim can be well supported in a paper that ranked sixth.
 - **"Supported" can be a lucky top-5.** It means a passage that a model read as stating the claim, in a record the database ranked highly. It is not a systematic review.
-- **The review queue is 30 claims:** 12 `conflicting_evidence` (one of them also a plural claim), 1 `dated_evidence`, and 17 plural claims where one record shows one instance. See `review/QUEUE.md`. I read all of the conflicts. Each is one study or record pointing the other way, usually in a narrower setting (one cell line, one glioma series, one New York study), with a few opposite-direction findings (Hedgehog inhibition inducing autophagy, gamma-secretase inhibition reducing oxaliplatin-induced apoptosis). So `conflicting_evidence` means "a person should look", not "the book is wrong"; several should have been `partial`.
-- **Audit.** I read 8 random `supported` rows and 6 that a crude number check flagged. All held up (the flags were gene names like `p53`, or figures that matched, like 20,000 deaths against "18,200 to 21,300"). The sample is small and the stances are one model pass.
+- **The review queue is now 17 claims** (it was 30 before the strict re-read, which turned 13 of the plural cases into plain `partially_supported`): 12 `conflicting_evidence`, 1 `dated_evidence`, and 4 plural claims where one record shows one instance. See `review/QUEUE.md`. I read all of the conflicts. Each is one study or record pointing the other way, usually in a narrower setting (one cell line, one glioma series, one New York study), with a few opposite-direction findings (Hedgehog inhibition inducing autophagy, gamma-secretase inhibition reducing oxaliplatin-induced apoptosis). So `conflicting_evidence` means "a person should look", not "the book is wrong"; several should have been `partial`.
+- **Audit, first look.** I read 8 random `supported` rows and 6 that a crude number check flagged. They held up on numbers, but that sample was too small to catch the bigger problem below.
+
+### Strict re-read (step 5b)
+
+A second hand check of 24 random `supports` quotes found 9 where the quote covered only one clause of a multi-part claim (e.g. "adverse effects that *restrict clinical application*" matched by "adverse effects have been reported"). So `pipeline/05b_strict_recheck.py` re-read all 496 `supports` quotes under a strict rule: keep only if the quote, read by itself, states every substantive part of the claim. Five model readers, each given about 100 quotes, could only keep or downgrade to `partial`. **361 were downgraded, 135 kept.**
+
+- The original label stays on every row as `stance_original`; the missing part is added to `stance_note`; all 496 verdicts are in `data/cancer/strict_recheck.jsonl`. Nothing is lost and it can be reversed.
+- Calibration on my 24: the strict readers downgraded all 9 I had called loose, and also 7 of the 15 I had called clean. Several of those 7 are nitpicks (e.g. a quote about CDK4/6 that never writes the name "CDK6"). So the strict pass errs on the cautious side. `supported` now means "the quote states all of it"; `partially_supported` includes many claims that are fine in substance.
+- It is still a model reading and unreviewed by a person.
 
 Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempts.jsonl` (one row per retrieval, no third-party text) and `ids.json`. The raw record text (9 MB) is cached in `data/cancer/full/cache/` and is git-ignored.
 
@@ -103,8 +113,8 @@ Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempt
 | `no_open_api` | 229 | queryable, but SEER/GLOBOCAN, a guideline body or Ensembl has no open API |
 | `no_evidence_found` | 211 | retrieved; nothing returned bears on the claim |
 | `related_only` | 103 | same topic, no passage states the claim's relation or value |
-| `partially_supported` | 504 | a passage supports part of it, a different number or scope, or one record for a plural claim |
-| `supported` | 339 | a passage states the claim's relation or value |
+| `partially_supported` | 726 | a passage supports part of it, a different number or scope, or one record for a plural claim |
+| `supported` | 117 | a passage states the claim's relation or value |
 | `conflicting_evidence` | 12 | a passage states a conflicting value or relation (needs a human) |
 | `dated_evidence` | 1 | a record differs only through today's state of a time-bound claim (needs a human) |
 
@@ -114,11 +124,11 @@ Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempt
 
 ## Human review
 
-The 30 claims step 6 flagged are in `review/QUEUE.md`: each shows the book's claim and where it appears, the quoted evidence with a link to each record, and one question with a fixed set of answers (`pipeline/review_vocab.py`). A reviewer records an answer in `review/decisions.jsonl` (`decision`, `reviewer`, `date`, optional `note`), then runs `06_derive_status.py` and `07_merge_into_facts.py`.
+The 17 claims step 6 flagged are in `review/QUEUE.md`: each shows the book's claim and where it appears, the quoted evidence with a link to each record, and one question with a fixed set of answers (`pipeline/review_vocab.py`). A reviewer records an answer in `review/decisions.jsonl` (`decision`, `reviewer`, `date`, optional `note`), then runs `06_derive_status.py` and `07_merge_into_facts.py`.
 
 A decision is attached to the claim as `status_detail.human_review` and sets `human_reviewed: true`. **It does not change the evidence or the derived status**: the status says what the records show, and the decision says what a person made of it. That keeps "a model read this" and "a person checked this" countable separately. `06` rejects an answer that is not on the list, and a decision without a reviewer and date. Rebuilding the queue (`08_build_review_queue.py`) never overwrites a decision.
 
-Nobody has reviewed anything yet: 0 of 30 decided.
+Nobody has reviewed anything yet: 0 of 17 decided.
 
 ## The triage in one paragraph
 
@@ -139,16 +149,19 @@ pipeline/
   08_build_review_queue.py   builds review/QUEUE.md and review/decisions.jsonl for the claims step 6 flagged
   review_vocab.py            the three kinds of review case and the answers allowed for each
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
+  05b_strict_recheck.py      step 5b: apply the strict re-read (supports -> partial only); keeps stance_original
+  09_build_report.py         writes REPORT.md, the plain-words summary, from facts.json
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/
   facts.json                 3,165 claims: claim_origin + evidence + status (step 7 merges the last two in)
   queries.jsonl              step 3: one database query per strict assertion (1,481 rows)
   pilot/                     steps 4-5 on 60 claims: pilot_ids.json, attempts.jsonl, evidence.pilot.jsonl (cache/ is git-ignored)
   full/                      steps 4-5 on the other 1,112: ids.json, attempts.jsonl, evidence.jsonl (cache/ is git-ignored)
+  strict_recheck.jsonl      step 5b: the 496 strict verdicts (keep / partial + what was missing)
   status.jsonl               step 6: the derived status of all 3,165 claims (regenerable)
   terms.json  graph.json     glossary (10,055 terms) and concept graph (24,347 edges)
 review/
-  QUEUE.md                   the 30 flagged claims: book's claim, quoted evidence, record links, the question to answer
+  QUEUE.md                   the 17 flagged claims: book's claim, quoted evidence, record links, the question to answer
   decisions.jsonl            one row per queued claim; a reviewer fills in decision / reviewer / date / note
 triage/
   SUMMARY.md  triage.jsonl   which claims are real assertions, and which database fits

@@ -3,7 +3,8 @@
 
 After this, facts.json holds the claim, where the book said it, the evidence found, and the status — one record each.
 
-Run order:  05_build_evidence.py  ->  06_derive_status.py  ->  07_merge_into_facts.py
+Run order:  05_build_evidence.py  ->  05b_strict_recheck.py  ->  06_derive_status.py  ->  07_merge_into_facts.py
+(re-running 05 rebuilds the evidence rows and drops the strict re-read; re-apply 05b from data/cancer/strict_recheck.jsonl)
 
 Rebuilt from scratch on every run (never appended), so it is idempotent. It touches ONLY these three keys of a claim:
   evidence       the evidence rows for this claim from every data/cancer/**/evidence*.jsonl (the fact_id inside each
