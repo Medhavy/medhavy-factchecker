@@ -132,9 +132,14 @@ Nobody has reviewed anything yet: 0 of 17 decided.
 
 ## Wording changes
 
-Where a book sentence is stronger than its evidence ("binds *exclusively* to...", "is apparently..."), the fix is usually looser wording, not a verdict. `changes/changes.jsonl` holds one row per proposed rewording: the book's sentence, the proposed one, the kind (`remove_absolute`, `hedge`, `scope`, `attribute`, `update`; `pipeline/changes_vocab.py`), the reason, the database quotes behind it, and who proposed and who decided. `pipeline/10_check_changes.py` checks that the original is the book's sentence character for character and that every quote is already stored on the claim, then writes `changes/CHANGES.md`. Step 7 adds them to the claim as `revisions`.
+Where a book sentence is stronger than its evidence ("binds *exclusively* to...", "is apparently..."), the fix is usually looser wording, not a verdict. The flow:
 
-The book's own sentence is never edited. A change starts as `proposed` (a model's suggestion) and only becomes `approved` when a person says so. Four are proposed so far (the first four conflicts); none is approved. A rewording is a separate record from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead.
+1. **Propose.** A model writes rows in `changes/changes.jsonl`: the book's sentence, the proposed one, the kind (`remove_absolute`, `hedge`, `scope`, `attribute`, `update`), the reason, and the database quotes behind it. Every proposal stays `proposed` in that file.
+2. **Order.** `pipeline/10_check_changes.py` checks each proposal (the original is the book's sentence character for character; every quote is already stored on the claim) and puts them in priority order in `changes/CHANGES.md`: first claims where a record points against the book, then time-bound claims that have moved on, then the rest.
+3. **Review.** A person goes down the sheet and, for each change, writes `accept`, `accept_edited` (their own wording) or `reject` in `changes/decisions.jsonl`, with their name, the date and an optional note. Answers are never overwritten. The script prints how many are left.
+4. **Implement.** `pipeline/11_implement_changes.py` applies only the accepted ones: `data/cancer/claims_current.jsonl` (every claim, with the accepted wording where there is one and the book's own sentence otherwise) and `changes/book_patch.jsonl` (the accepted edits, for whoever maintains the book text). It never touches the book's source files, `canonical` or `claim_origin`, and it never applies a proposal nobody has decided.
+
+Step 7 also attaches each change to its claim as `revisions`, with its status. A rewording is separate from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead. Wording a reviewer writes themselves is not machine-checked against the quotes. Four changes are proposed so far (the first four conflicts); none is decided.
 
 ## The triage in one paragraph
 
@@ -156,7 +161,8 @@ pipeline/
   review_vocab.py            the three kinds of review case and the answers allowed for each
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   05b_strict_recheck.py      step 5b: apply the strict re-read (supports -> partial only); keeps stance_original
-  10_check_changes.py        validates changes/changes.jsonl, writes changes/CHANGES.md; step 7 attaches them as `revisions`
+  10_check_changes.py        validates proposed rewordings, applies decisions, writes the priority-ordered review sheet changes/CHANGES.md
+  11_implement_changes.py    applies accepted rewordings: claims_current.jsonl + changes/book_patch.jsonl
   09_build_report.py         writes REPORT.md, the plain-words summary, from facts.json
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/

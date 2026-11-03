@@ -14248,9 +14248,12 @@
         "status": "proposed",
         "proposed_by": "model",
         "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
         "decided_by": null,
         "decided_date": null,
-        "note": null
+        "review_note": null
       }
     ]
   },
@@ -18358,9 +18361,12 @@
         "status": "proposed",
         "proposed_by": "model",
         "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
         "decided_by": null,
         "decided_date": null,
-        "note": null
+        "review_note": null
       }
     ]
   },
@@ -20551,9 +20557,12 @@
         "status": "proposed",
         "proposed_by": "model",
         "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
         "decided_by": null,
         "decided_date": null,
-        "note": null
+        "review_note": null
       }
     ]
   },
@@ -35141,9 +35150,12 @@
         "status": "proposed",
         "proposed_by": "model",
         "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
         "decided_by": null,
         "decided_date": null,
-        "note": null
+        "review_note": null
       }
     ]
   },

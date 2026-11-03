@@ -12,7 +12,7 @@ Rebuilt from scratch on every run (never appended), so it is idempotent. It touc
   status         copied from data/cancer/status.jsonl
   status_detail  the rest of that status row: reason, database, counts, sources, flags, needs_review,
                  review_reasons, human_reviewed
-  revisions      only on claims that have wording changes in changes/changes.jsonl (proposed or decided rewordings, with
+  revisions      only on claims that have wording changes in changes/resolved.jsonl (proposed or decided rewordings, with
                  the reason and quotes; the book's own sentence stays in `canonical` and `claim_origin`)
 fact_id, canonical, domain, stable, category and claim_origin are never changed; the script asserts this.
 
@@ -44,7 +44,7 @@ assert set(status) == {f["fact_id"] for f in facts}, "status.jsonl and facts.jso
 assert set(ev) <= set(status), "evidence for an unknown claim"
 
 chg = collections.defaultdict(list)
-for r in jl(REPO / "changes/changes.jsonl") if (REPO / "changes/changes.jsonl").exists() else []:
+for r in jl(REPO / "changes/resolved.jsonl") if (REPO / "changes/resolved.jsonl").exists() else []:
     chg[r["fact_id"]].append({k: v for k, v in r.items() if k != "fact_id"})
 assert set(chg) <= set(status), "change for an unknown claim; run 10_check_changes.py"
 
