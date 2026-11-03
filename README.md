@@ -86,7 +86,7 @@ Together with the pilot (1,172 claims attempted; 1,170 with an open API):
 - **FDA and trials give the cleanest hits.** openFDA: 23 of 54 supported.
 - **"No evidence found" is not "no evidence exists".** It means none of the top-5 records returned bears on the claim. A claim can be well supported in a paper that ranked sixth.
 - **"Supported" can be a lucky top-5.** It means a passage that a model read as stating the claim, in a record the database ranked highly. It is not a systematic review.
-- **The review queue is 30 claims:** 12 `conflicting_evidence`, 1 `dated_evidence`, and 18 plural claims where one record shows one instance. I read all of the conflicts. Each is one study or record pointing the other way, usually in a narrower setting (one cell line, one glioma series, one New York study), with a few opposite-direction findings (Hedgehog inhibition inducing autophagy, gamma-secretase inhibition reducing oxaliplatin-induced apoptosis). So `conflicting_evidence` means "a person should look", not "the book is wrong"; several should have been `partial`.
+- **The review queue is 30 claims:** 12 `conflicting_evidence` (one of them also a plural claim), 1 `dated_evidence`, and 17 plural claims where one record shows one instance. See `review/QUEUE.md`. I read all of the conflicts. Each is one study or record pointing the other way, usually in a narrower setting (one cell line, one glioma series, one New York study), with a few opposite-direction findings (Hedgehog inhibition inducing autophagy, gamma-secretase inhibition reducing oxaliplatin-induced apoptosis). So `conflicting_evidence` means "a person should look", not "the book is wrong"; several should have been `partial`.
 - **Audit.** I read 8 random `supported` rows and 6 that a crude number check flagged. All held up (the flags were gene names like `p53`, or figures that matched, like 20,000 deaths against "18,200 to 21,300"). The sample is small and the stances are one model pass.
 
 Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempts.jsonl` (one row per retrieval, no third-party text) and `ids.json`. The raw record text (9 MB) is cached in `data/cancer/full/cache/` and is git-ignored.
@@ -112,6 +112,14 @@ Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempt
 
 `facts.json` is the single record of a claim: where the book said it, the evidence found, and the status. `pipeline/07_merge_into_facts.py` rebuilds its `evidence`, `status` and `status_detail` from the evidence files and `status.jsonl` on every run (it never changes `fact_id`, `canonical`, `claim_origin` or the other claim fields, and asserts so). `status.jsonl` stays as a flat table of the same statuses, easy to count and filter.
 
+## Human review
+
+The 30 claims step 6 flagged are in `review/QUEUE.md`: each shows the book's claim and where it appears, the quoted evidence with a link to each record, and one question with a fixed set of answers (`pipeline/review_vocab.py`). A reviewer records an answer in `review/decisions.jsonl` (`decision`, `reviewer`, `date`, optional `note`), then runs `06_derive_status.py` and `07_merge_into_facts.py`.
+
+A decision is attached to the claim as `status_detail.human_review` and sets `human_reviewed: true`. **It does not change the evidence or the derived status**: the status says what the records show, and the decision says what a person made of it. That keeps "a model read this" and "a person checked this" countable separately. `06` rejects an answer that is not on the list, and a decision without a reviewer and date. Rebuilding the queue (`08_build_review_queue.py`) never overwrites a decision.
+
+Nobody has reviewed anything yet: 0 of 30 decided.
+
 ## The triage in one paragraph
 
 Of the 3,165 candidates, **885 (28%) are not assertions** (framing, evaluation, vagueness no source could support or refute), **799 (25%) are real claims only a general textbook could confirm**, and **1,481 (47%) map to a real database**: PubMed, SEER/GLOBOCAN, FDA, gene and protein databases, guideline bodies, ClinicalTrials.gov. Only the 1,481 go to step 3. PubMed takes 902 of them and is the weakest label, so real query terms are needed before any of it counts as evidence. See `triage/SUMMARY.md`.
@@ -128,6 +136,8 @@ pipeline/
   claim_flags.py             two word-pattern flags: time-bound and plural claims
   06_derive_status.py        step 6: status for every claim, derived from the evidence
   07_merge_into_facts.py     step 7: write evidence and status into facts.json (idempotent)
+  08_build_review_queue.py   builds review/QUEUE.md and review/decisions.jsonl for the claims step 6 flagged
+  review_vocab.py            the three kinds of review case and the answers allowed for each
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/
@@ -137,6 +147,9 @@ data/cancer/
   full/                      steps 4-5 on the other 1,112: ids.json, attempts.jsonl, evidence.jsonl (cache/ is git-ignored)
   status.jsonl               step 6: the derived status of all 3,165 claims (regenerable)
   terms.json  graph.json     glossary (10,055 terms) and concept graph (24,347 edges)
+review/
+  QUEUE.md                   the 30 flagged claims: book's claim, quoted evidence, record links, the question to answer
+  decisions.jsonl            one row per queued claim; a reviewer fills in decision / reviewer / date / note
 triage/
   SUMMARY.md  triage.jsonl   which claims are real assertions, and which database fits
 notes/

@@ -2,7 +2,7 @@
 """06_derive_status.py — step 6: derive each claim's status from its evidence. No votes, no verdict words.
 
 Reads   data/cancer/facts.json, triage/triage.jsonl, data/cancer/queries.jsonl,
-        data/cancer/pilot/attempts.jsonl, every data/cancer/**/evidence*.jsonl
+        data/cancer/pilot/attempts.jsonl, every data/cancer/**/evidence*.jsonl, review/decisions.jsonl (if filled in)
 Writes  data/cancer/status.jsonl  (one row per claim, same order as facts.json; always regenerable)
 
 The status says how far a claim has got and what the evidence found. It never says "true".
@@ -35,6 +35,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import claim_flags as cf  # noqa: E402
+from review_vocab import KINDS  # noqa: E402
 
 NO_API = {"seer-globocan", "guideline-body"}
 
@@ -113,6 +114,22 @@ for f in facts:
     row["needs_review"] = status in ("conflicting_evidence", "dated_evidence") or bool(row["review_reasons"])
     done(status)
 
+# human decisions (review/decisions.jsonl): attached to the claim, never used to change evidence or status
+dec_path = REPO / "review/decisions.jsonl"
+n_dec = 0
+if dec_path.exists():
+    by_id = {r["fact_id"]: r for r in rows}
+    for d in jl(dec_path):
+        if not d.get("decision"): continue
+        assert d["fact_id"] in by_id, f"decision for unknown claim {d['fact_id']}"
+        assert d["decision"] in KINDS[d["review_type"]]["answers"], \
+            f"{d['fact_id']}: '{d['decision']}' is not an allowed answer for a {d['review_type']} case"
+        assert d.get("reviewer") and d.get("date"), f"{d['fact_id']}: a decision needs a reviewer and a date"
+        r = by_id[d["fact_id"]]
+        r["human_reviewed"] = True
+        r["human_review"] = {k: d.get(k) for k in ("review_type", "decision", "reviewer", "date", "note")}
+        n_dec += 1
+
 out = REPO / "data/cancer/status.jsonl"
 out.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
 
@@ -123,4 +140,4 @@ assert sum(c.values()) == len(facts) and set(c) <= set(order)
 print(f"{len(rows)} claims -> {out}")
 for s in order:
     if c[s]: print(f"  {s:<22}{c[s]:>5}")
-print(f"  needs_review: {sum(r['needs_review'] for r in rows)}")
+print(f"  needs_review: {sum(r['needs_review'] for r in rows)} | human decisions attached: {n_dec}")
