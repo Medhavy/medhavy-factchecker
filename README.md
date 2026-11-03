@@ -136,10 +136,21 @@ Where a book sentence is stronger than its evidence ("binds *exclusively* to..."
 
 1. **Propose.** A model writes rows in `changes/changes.jsonl`: the book's sentence, the proposed one, the kind (`remove_absolute`, `hedge`, `scope`, `attribute`, `update`), the reason, and the database quotes behind it. Every proposal stays `proposed` in that file.
 2. **Order.** `pipeline/10_check_changes.py` checks each proposal (the original is the book's sentence character for character; every quote is already stored on the claim) and puts them in priority order in `changes/CHANGES.md`: first claims where a record points against the book, then time-bound claims that have moved on, then the rest.
-3. **Review.** A person goes down the sheet and, for each change, writes `accept`, `accept_edited` (their own wording) or `reject` in `changes/decisions.jsonl`, with their name, the date and an optional note. Answers are never overwritten. The script prints how many are left.
+3. **Review.** A person works down the list in the dashboard (below) and, for each change, chooses accept, rewrite it themselves (`accept_edited`) or reject, with an optional note. Each reviewer's answers go in their own file, `changes/decisions/<name>.jsonl`. Two reviewers who disagree make the change `disputed`; a row in `changes/decisions.jsonl` is the adjudicator's final call. Having separate files also lets the paper report how often reviewers agree.
 4. **Implement.** `pipeline/11_implement_changes.py` applies only the accepted ones: `data/cancer/claims_current.jsonl` (every claim, with the accepted wording where there is one and the book's own sentence otherwise) and `changes/book_patch.jsonl` (the accepted edits, for whoever maintains the book text). It never touches the book's source files, `canonical` or `claim_origin`, and it never applies a proposal nobody has decided.
 
-Step 7 also attaches each change to its claim as `revisions`, with its status. A rewording is separate from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead. Wording a reviewer writes themselves is not machine-checked against the quotes. Four changes are proposed so far (the first four conflicts); none is decided.
+Step 7 also attaches each change to its claim as `revisions`, with its status. A rewording is separate from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead. Wording a reviewer writes themselves is not machine-checked against the quotes. Proposals exist so far for all 13 flagged conflicts and dated claims (9 conflicts+dated added on 2026-11-03 with the first 4); none is decided. The pipeline always proposes a rewording; the 726 partly supported claims are next.
+
+### The review dashboard
+
+`review_app.py` is a small Streamlit app that runs on your own machine: no account, no hosting, nothing leaves the computer.
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install streamlit     # once
+.venv/bin/streamlit run review_app.py
+```
+
+Enter your name, then work through the changes in priority order. Each screen shows the book's sentence, the proposed sentence with the changed words marked, the reason, and the database quote with its link. Choose Accept, Rewrite it myself (the box starts with the proposal) or Reject, add a note, and Save and next. Every save re-runs the validator. "Apply accepted changes" runs step 11. The app has been tried end to end with a throwaway reviewer (accept, reject, rewrite); those test answers were removed.
 
 ## The triage in one paragraph
 
@@ -162,6 +173,7 @@ pipeline/
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   05b_strict_recheck.py      step 5b: apply the strict re-read (supports -> partial only); keeps stance_original
   10_check_changes.py        validates proposed rewordings, applies decisions, writes the priority-ordered review sheet changes/CHANGES.md
+  review_app.py (repo root)  the Streamlit review dashboard
   11_implement_changes.py    applies accepted rewordings: claims_current.jsonl + changes/book_patch.jsonl
   09_build_report.py         writes REPORT.md, the plain-words summary, from facts.json
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema

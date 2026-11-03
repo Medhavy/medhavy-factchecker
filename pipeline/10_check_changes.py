@@ -6,10 +6,10 @@ sentence is never edited: `canonical` and `claim_origin` in facts.json stay exac
 lives only in changes/ (and, via step 7, in a claim's `revisions` list).
 
 Reads   changes/changes.jsonl     proposals, written by a model. Every row stays `proposed` here; never edited by a reviewer.
-        changes/decisions.jsonl   one row per change, filled in by a reviewer: {change_id, decision, reviewer, date, note, edited}
+        changes/decisions/*.jsonl one file per reviewer: {change_id, decision, reviewer, date, note, edited}
+        changes/decisions.jsonl   (optional) the adjudicator's final calls, same row shape; overrides the reviewers
 Writes  changes/resolved.jsonl    each proposal + priority + derived status + the final wording (regenerable; steps 7 and 11 read it)
         changes/CHANGES.md        the review sheet, in priority order: what the book said, what is proposed, why, the quote
-        changes/decisions.jsonl   (new rows added for new proposals, in priority order; filled-in answers are never touched)
 
 Priority (what a reviewer sees first): 1 = a database record points against the claim (`conflicting_evidence`);
 2 = a time-bound claim a record shows has moved on (`dated_evidence`); 3 = everything else. Within a tier, more
@@ -53,7 +53,7 @@ for r in props:
     cid = r["change_id"]
     assert cid not in by_id, f"duplicate change_id {cid}"; by_id[cid] = r
     f = facts.get(r["fact_id"]); assert f, f"{cid}: unknown claim"
-    assert r["status"] == "proposed", f"{cid}: changes.jsonl rows stay 'proposed'; decisions go in decisions.jsonl"
+    assert r["status"] == "proposed", f"{cid}: changes.jsonl rows stay 'proposed'; decisions go in changes/decisions/"
     assert r["original"] == f["canonical"], f"{cid}: original is not the book's sentence"
     assert norm(r["proposed"]) and r["proposed"] != r["original"], f"{cid}: proposed wording is empty or unchanged"
     assert r["kind"] in KINDS, f"{cid}: kind '{r['kind']}' not allowed"
@@ -63,13 +63,30 @@ for r in props:
         assert any(x["record_id"] == e["record_id"] and norm(e["quote"]) in norm(x["verbatim"]) for x in f["evidence"]), \
             f"{cid}: quote from {e['record_id']} is not in this claim's stored evidence"
 
-# decisions file: one row per proposal; existing answers are never overwritten
-dpath = REPO / "changes/decisions.jsonl"
-dec = {r["change_id"]: r for r in jl(dpath)}
-assert set(dec) <= set(by_id), f"decision for an unknown change: {sorted(set(dec) - set(by_id))[:2]}"
-for cid in by_id:
-    dec.setdefault(cid, {"change_id": cid, "decision": None, "reviewer": None, "date": None, "note": None, "edited": None})
-dpath.write_text("".join(json.dumps(dec[c], ensure_ascii=False) + "\n" for c in by_id), encoding="utf-8")
+# decisions: one file per reviewer (changes/decisions/<name>.jsonl, only the changes that reviewer has answered),
+# plus changes/decisions.jsonl for the adjudicator's final calls. Filled-in answers are never touched by this script.
+def check_decision(d, who):
+    cid = d["change_id"]
+    assert cid in by_id, f"{who}: decision for an unknown change {cid[:40]}"
+    assert d["decision"] in ANSWERS, f"{who}: '{d['decision']}' is not an allowed answer"
+    assert d.get("reviewer") and d.get("date"), f"{who}: a decision needs a reviewer and a date ({cid[:40]})"
+    if d["decision"] == "accept_edited":
+        assert norm(d.get("edited")) and d["edited"] != by_id[cid]["proposed"], f"{cid[:40]}: accept_edited needs your own wording in `edited`"
+
+
+reviewers = {}
+for dp in sorted((REPO / "changes/decisions").glob("*.jsonl")):
+    for d in jl(dp):
+        if d.get("decision"):
+            check_decision(d, dp.name)
+            reviewers.setdefault(d["change_id"], {})[d["reviewer"]] = d
+final_call = {}
+adj = REPO / "changes/decisions.jsonl"
+for d in jl(adj):
+    if d.get("decision"):
+        check_decision(d, adj.name)
+        final_call[d["change_id"]] = d
+
 
 def priority(r):
     f = facts[r["fact_id"]]
@@ -80,40 +97,47 @@ def priority(r):
     return (tier, -n_ref, r["module"], r["change_id"]), tier, why
 
 
-order = sorted(by_id, key=lambda c: priority(by_id[c])[0])
-dpath.write_text("".join(json.dumps(dec[c], ensure_ascii=False) + "\n" for c in order), encoding="utf-8")
+def same(a, b):
+    return a["decision"] == b["decision"] and (a["decision"] != "accept_edited" or norm(a["edited"]) == norm(b["edited"]))
 
+
+order = sorted(by_id, key=lambda c: priority(by_id[c])[0])
 resolved = []
 for cid in order:
     r = by_id[cid]
-    d = dec[cid]
-    out = dict(r)
     _, tier, tier_why = priority(r)
-    out.update(priority=tier, priority_reason=tier_why, status="proposed", final=None, decided_by=None, decided_date=None, review_note=None)
-    if d.get("decision"):
-        assert d["decision"] in ANSWERS, f"{cid}: '{d['decision']}' is not an allowed answer"
-        assert d.get("reviewer") and d.get("date"), f"{cid}: a decision needs a reviewer and a date"
-        if d["decision"] == "accept":
-            out.update(status="accepted", final=r["proposed"])
-        elif d["decision"] == "accept_edited":
-            assert norm(d.get("edited")) and d["edited"] != r["proposed"], f"{cid}: accept_edited needs your own wording in `edited`"
-            out.update(status="accepted_edited", final=d["edited"])
+    out = dict(r)
+    ds = list(reviewers.get(cid, {}).values())
+    out.update(priority=tier, priority_reason=tier_why, status="proposed", final=None, decided_by=None, decided_date=None,
+               review_note=None, reviewers=sorted(reviewers.get(cid, {})), decision_source=None)
+    d = None
+    if cid in final_call:
+        d, out["decision_source"] = final_call[cid], "adjudicator"
+    elif len(ds) == 1:
+        d, out["decision_source"] = ds[0], "one reviewer"
+    elif len(ds) > 1:
+        if all(same(ds[0], x) for x in ds[1:]):
+            d, out["decision_source"] = ds[0], f"{len(ds)} reviewers agree"
         else:
-            out.update(status="rejected")
-        out.update(decided_by=d["reviewer"], decided_date=d["date"], review_note=d.get("note"))
+            out.update(status="disputed", decision_source="reviewers disagree",
+                       review_note=" | ".join(f"{x['reviewer']}: {x['decision']}" + (f" ({x['note']})" if x.get("note") else "") for x in ds))
+    if d:
+        out.update(status={"accept": "accepted", "accept_edited": "accepted_edited", "reject": "rejected"}[d["decision"]],
+                   final=r["proposed"] if d["decision"] == "accept" else (d["edited"] if d["decision"] == "accept_edited" else None),
+                   decided_by=d["reviewer"], decided_date=d["date"], review_note=d.get("note"))
     resolved.append(out)
 (REPO / "changes/resolved.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in resolved), encoding="utf-8")
 
 n = {s: sum(1 for r in resolved if r["status"] == s) for s in STATUSES}
-left = n["proposed"]
+left = n["proposed"] + n["disputed"]
 L = ["# Wording changes — review sheet\n", "## Summary\n"]
-L.append(f"**{len(resolved)} proposed rewordings** of the book's sentences: {n['proposed']} waiting for a reviewer, "
+L.append(f"**{len(resolved)} proposed rewordings** of the book's sentences: {n['proposed']} waiting for a reviewer, {n['disputed']} disputed between reviewers, "
          f"{n['accepted'] + n['accepted_edited']} accepted, {n['rejected']} rejected. They are listed in priority order; work from the top. A model wrote every proposal. "
          "The book's own sentence is never edited; each change records what it said, what is proposed, why, and the database quote behind it.\n")
 L.append("### How to review\n")
 L.append("1. Read the book's sentence, the proposal, the reason and the quote. Open the record link if the quote is not enough.")
-L.append("2. In `changes/decisions.jsonl`, set `decision` to one of: " + "; ".join(f"`{a}` ({t})" for a, t in ANSWERS.items()) + ".")
-L.append("3. Add your name as `reviewer`, today's date as `date`, and a `note` if you want to say why.")
+L.append("2. Use the review dashboard (`streamlit run review_app.py`), or write a row in `changes/decisions/<your-name>.jsonl` with `decision` one of: " + "; ".join(f"`{a}` ({t})" for a, t in ANSWERS.items()) + ".")
+L.append("3. A row needs `change_id`, `decision`, your name as `reviewer`, the `date`, and optionally `note` and `edited`. Two reviewers who disagree make the change `disputed`; a row in `changes/decisions.jsonl` is the final call.")
 L.append("4. Run `python3 pipeline/10_check_changes.py`. When you are through, run `python3 pipeline/11_implement_changes.py` to apply the accepted ones.\n")
 L.append("A proposal is checked against the stored quotes by the pipeline. Wording you write yourself (`accept_edited`) is not; you are the check on it.\n")
 L.append("---\n")
@@ -134,4 +158,4 @@ for i, r in enumerate(resolved, 1):
     L.append("")
 (REPO / "changes/CHANGES.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 print(f"{left} still to review; next up: " + (", ".join(r["change_id"][:50] for r in resolved if r["status"] == "proposed")[:200] or "none"))
-print(f"{len(resolved)} changes valid -> changes/resolved.jsonl, changes/CHANGES.md, changes/decisions.jsonl  {n}")
+print(f"{len(resolved)} changes valid -> changes/resolved.jsonl, changes/CHANGES.md  {n}")

@@ -21,4 +21,5 @@ STATUSES = {
     "accepted": "a person accepted the proposed wording",
     "accepted_edited": "a person accepted the change but wrote the wording themselves",
     "rejected": "a person rejected it; the book's sentence stands",
+    "disputed": "two or more reviewers answered differently; an adjudicator makes the final call",
 }

@@ -14253,7 +14253,9 @@
         "final": null,
         "decided_by": null,
         "decided_date": null,
-        "review_note": null
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
       }
     ]
   },
@@ -18366,7 +18368,9 @@
         "final": null,
         "decided_by": null,
         "decided_date": null,
-        "review_note": null
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
       }
     ]
   },
@@ -20562,7 +20566,9 @@
         "final": null,
         "decided_by": null,
         "decided_date": null,
-        "review_note": null
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
       }
     ]
   },
@@ -31353,7 +31359,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-the-mutant-aberrant-activation-of-the-wnt-pathway-is-a-major-factor-drivi#1",
+        "module": "15.3 Implications for Treatment Resistance",
+        "original": "The mutant aberrant activation of the Wnt pathway is a major factor driving most types of tissue stem cells and contributes to DTP cell development and stemness maintenance.",
+        "proposed": "Wnt/β-catenin signalling has been linked to chemoresistance, but the evidence is predominantly preclinical and varies with treatment context; in one lineage-tracing study, persister Mex3a+ cells downregulated the WNT/stem cell gene program immediately after chemotherapy.",
+        "kind": "hedge",
+        "why": "A review says the Wnt-chemoresistance evidence is mostly preclinical and context-dependent, and a lineage-tracing study found the WNT program downregulated in persister cells after chemotherapy. The book's \"major factor driving most types of tissue stem cells\" has no record behind it, so that part is dropped, not softened.",
+        "evidence": [
+          {
+            "record_id": "PMID:42882474",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42882474/",
+            "quote": "Evidence linking chemoresistance with Wnt/β-catenin, Notch and Hippo/Yes-associated protein 1 (YAP1) signalling is predominantly preclinical and varies according to treatment context, with stronger direct pathway-specific evidence for 5-FU and oxaliplatin than for irinotecan."
+          },
+          {
+            "record_id": "PMID:35773527",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35773527/",
+            "quote": "Lineage-tracing analysis showed that persister Mex3a+ cells downregulate the WNT/stem cell gene program immediately after chemotherapy and adopt a transient state reminiscent to that of YAP+ fetal intestinal progenitors."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-trastuzumab-treatment-of-breast-cancer-cells-enriches-cscs-with-elevated-",
@@ -32512,7 +32551,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-the-hedgehog-pathway-regulates-autophagy-in-cancer-cells-and-inhibition-o#1",
+        "module": "15.3 Implications for Treatment Resistance",
+        "original": "The Hedgehog pathway regulates autophagy in cancer cells, and inhibition of this pathway augments the efficacy of chemotherapeutic agents through suppression of autophagy.",
+        "proposed": "The Hedgehog pathway interplays with autophagy in multiple cancers; in BCR-ABL-positive CML cells, pharmacological or genetic inhibition of the pathway markedly induced autophagy.",
+        "kind": "scope",
+        "why": "The CML study found the opposite direction from the book (inhibiting Hh induced autophagy rather than suppressing it), and a review supports only that Hh and autophagy interact. The book's claim that inhibition augments chemotherapy by suppressing autophagy has no supporting record here, so it is dropped.",
+        "evidence": [
+          {
+            "record_id": "PMID:30081498",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30081498/",
+            "quote": "Recent evidence demonstrated that Hh signaling interplays with autophagy in multiple cancers."
+          },
+          {
+            "record_id": "PMID:25701353",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25701353/",
+            "quote": "Our results indicated that pharmacological or genetic inhibition of Hh pathway could markedly induce autophagy in BCR-ABL(+) CML cells."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-epithelial-mesenchymal-transition-transcription-factors-play-important-ro",
@@ -35155,7 +35227,9 @@
         "final": null,
         "decided_by": null,
         "decided_date": null,
-        "review_note": null
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
       }
     ]
   },
@@ -37988,7 +38062,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-regorafenib-an-oral-multikinase-inhibitor-blocking-activity-of-protein-ki#1",
+        "module": "15.3 Implications for Treatment Resistance",
+        "original": "Regorafenib, an oral multikinase inhibitor blocking activity of protein kinases involved in angiogenesis, oncogenesis, metastasis, and tumor immunity, decreases stemness phenotypes including tumor sphere formation and side population fraction in colorectal cancer cells.",
+        "proposed": "Regorafenib, an oral multikinase inhibitor blocking activity of protein kinases involved in angiogenesis, oncogenesis, metastasis, and tumor immunity, decreased stemness phenotypes including tumor sphere formation and side-population in HCT-116R and DLD-1R colorectal cancer cells; another study found that colorectal cancer tumorsphere formation was not inhibited by regorafenib.",
+        "kind": "scope",
+        "why": "One study supports the decrease in two colorectal cell lines (HCT-116R and DLD-1R; the quote does not say what the R stands for); a second found tumorsphere formation was inhibited by BBI608 but not by regorafenib. The wording now names the cells and states both. The descriptive clause about the drug was left as the book wrote it and was not checked.",
+        "evidence": [
+          {
+            "record_id": "PMID:30005681",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30005681/",
+            "quote": "We showed that regorafenib treatment decreased the stemness phenotypes including tumor sphere formation, and side-population, of both HCT-116R and DLD-1R cells."
+          },
+          {
+            "record_id": "PMID:33023006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33023006/",
+            "quote": "The formation of colorectal cancer stem-like tumorspheres was inhibited by BBI608, a STAT3 inhibitor, but not by regorafenib."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-understanding-cancer-stem-cells-and-tumor-heterogeneity-has-revolutionize",
@@ -67435,7 +67542,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-imrt-has-higher-integral-radiation-dose-and-increases-the-total-volume-of#1",
+        "module": "21.2 Types of Radiation Therapy",
+        "original": "IMRT has higher integral radiation dose and increases the total volume of tissues exposed to low-dose radiation compared to conventional radiotherapy.",
+        "proposed": "Higher dose to skin and a larger low-dose region of normal tissue have been reported for MR-linac IMRT plans; another planning study found total integral dose reduced by 7-10% with IMRT without a significant increase in the 0.5-5 Gy low-dose volume.",
+        "kind": "scope",
+        "why": "The two records point in opposite directions and concern different comparisons (an MR-linac against a conventional linac, and IMRT against three-dimensional conformal radiotherapy in one planning study). The book's general statement that IMRT has a higher integral dose is not carried by either; the rewording states each finding for its own setting.",
+        "evidence": [
+          {
+            "record_id": "PMID:33472549",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33472549/",
+            "quote": "However, MRL-IMRT plans had higher dose to skin and larger low dose region of normal tissues."
+          },
+          {
+            "record_id": "PMID:17208388",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17208388/",
+            "quote": "Overall, total integral dose was reduced by 7-10% with IMRT, p < 0.001, without significantly increasing the 0.5-5 Gy low-dose volume."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-the-clinical-significance-of-this-theoretical-risk-remains-under-investig",
@@ -74839,7 +74979,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-no-dose-adjustment-is-necessary-for-patients-with-renal-or-liver-impairme#1",
+        "module": "23.4 Aromatase Inhibitors",
+        "original": "No dose adjustment is necessary for patients with renal or liver impairment or elderly patients.",
+        "proposed": "For anastrozole, no dosage adjustment is necessary for patients with renal impairment or for elderly patients; for letrozole, the dose in patients with cirrhosis and severe hepatic dysfunction should be reduced by 50%.",
+        "kind": "scope",
+        "why": "The two drug labels differ: the anastrozole label gives no adjustment for renal impairment or age, and the letrozole label says to reduce the dose by 50% in cirrhosis with severe hepatic dysfunction. The book's blanket statement for patients with liver impairment is therefore not carried. Other aromatase inhibitors were not checked.",
+        "evidence": [
+          {
+            "record_id": "03586c40-eb32-45c5-beb7-6762a6b78790",
+            "url": "https://api.fda.gov/drug/label.json?search=set_id:03586c40-eb32-45c5-beb7-6762a6b78790",
+            "quote": "No dosage adjustment is necessary for patients with renal impairment or for elderly patients [see Use in Specific Populations ( 8.6 )]."
+          },
+          {
+            "record_id": "065cc89f-3a3f-4d78-b9f6-1c32a77ceb1c",
+            "url": "https://api.fda.gov/drug/label.json?search=set_id:065cc89f-3a3f-4d78-b9f6-1c32a77ceb1c",
+            "quote": "The dose of letrozole tablets in patients with cirrhosis and severe hepatic dysfunction should be reduced by 50% [see Warnings and Precautions ( 5.3 )]."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-letrozole-is-also-a-selective-aromatase-inhibitor",
@@ -98646,7 +98819,40 @@
         "a passage conflicts with the claim; another supports it"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-socioeconomic-factors-and-physician-supply-are-key-predictors-of-crc-scre#1",
+        "module": "3.5 Cancer Health Disparities and Social Determinants",
+        "original": "Socioeconomic factors and physician supply are key predictors of CRC screening.",
+        "proposed": "Socioeconomic factors and physician supply have been reported as key predictors of colorectal cancer screening; one state-wide analysis found physician density completely unassociated with screening, while health insurance status remained strongly related.",
+        "kind": "hedge",
+        "why": "One record states the book's sentence as a finding; a state-wide analysis found physician density unassociated with screening. The wording attributes the original finding and states the contrary one.",
+        "evidence": [
+          {
+            "record_id": "PMID:23277775",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23277775/",
+            "quote": "Socioeconomic factors and physician supply are key predictors of CRC screening."
+          },
+          {
+            "record_id": "PMID:39029926",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39029926/",
+            "quote": "In this state-wide representative analysis, physician density was completely unassociated with CRC screening, although health insurance status remains strongly related."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-physician-distribution-is-a-potentially-remediable-contributor-to-ethnicr",
@@ -134272,7 +134478,40 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-mechanistically-up-regulation-of-hells-confers-transcription-factor-sp1-h#1",
+        "module": "6.2 Mechanisms of Tumor Suppressor Inactivation",
+        "original": "Mechanistically, up-regulation of HELLS confers transcription factor SP1 hyperactivation, leading to epigenetic silencing of multiple tumor suppressor genes through altered chromatin accessibility and nucleosome positioning.",
+        "proposed": "Mechanistically, hyperactivation of the transcription factor SP1 confers up-regulation of HELLS in hepatocellular carcinoma, and up-regulated HELLS mediates epigenetic silencing of multiple tumor suppressor genes, including E-cadherin, FBP1, IGFBP3, XAF1 and CREB3L3.",
+        "kind": "scope",
+        "why": "The record reverses the direction of the first step: SP1 hyperactivation confers HELLS up-regulation, not the other way round. The silencing step is supported by the same record, which names the genes and the cancer (HCC). The book's \"altered chromatin accessibility and nucleosome positioning\" is not in the quotes and is dropped.",
+        "evidence": [
+          {
+            "record_id": "PMID:30516846",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30516846/",
+            "quote": "We further showed that up-regulation of HELLS in HCC was conferred by hyperactivation of transcription factor specificity protein 1 (SP1)."
+          },
+          {
+            "record_id": "PMID:30516846",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30516846/",
+            "quote": "Though this mechanism, up-regulation of HELLS mediated epigenetic silencing of multiple tumor suppressor genes including E-cadherin, FBP1, IGFBP3, XAF1 and CREB3L3 in HCC."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-chromatin-remodeling-does-not-occur-in-isolation-but-rather-functions-in-",
@@ -134581,7 +134820,35 @@
         "a passage conflicts with the claim"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-gene-specificity-of-the-epigenetic-silencing-was-observed-in-each-of-thes#1",
+        "module": "6.2 Mechanisms of Tumor Suppressor Inactivation",
+        "original": "Gene specificity of the epigenetic silencing was observed in each of these tumor types, as hypermethylation of MSH2 was not detected in any of several studies.",
+        "proposed": "Hypermethylation of the MSH2 promoter has been found in at least one study, in which other mismatch repair genes were not hypermethylated.",
+        "kind": "scope",
+        "why": "The book says MSH2 hypermethylation was not detected in any of several studies; the record found it in the promoter, while other mismatch repair genes were not. The book's \"gene specificity in each of these tumor types\" has no record checked here and is dropped.",
+        "evidence": [
+          {
+            "record_id": "PMID:30784122",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30784122/",
+            "quote": "Hypermethylation also was found in the promoter of MSH2 but not in other MMR genes."
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 1,
+        "priority_reason": "a record points against the claim",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-the-p53-gene-like-the-rb-gene-is-a-tumor-suppressor-gene-ie-its-activity-",
@@ -142059,7 +142326,40 @@
         "time-bound claim: record shows today's state, which differs"
       ],
       "human_reviewed": false
-    }
+    },
+    "revisions": [
+      {
+        "change_id": "cancer-as-of-january-2022-rnk05047-has-entered-clinical-trials-to-treat-advanced#1",
+        "module": "7.7: Epigenetic Therapy",
+        "original": "As of January 2022, RNK05047 has entered clinical trials to treat advanced solid tumors and lymphomas.",
+        "proposed": "RNK05047 is in a registered clinical trial (CHAMP-1, NCT05487170) in advanced solid tumors and diffuse large B-cell lymphoma, with a start date of 12 July 2022.",
+        "kind": "update",
+        "why": "The registry gives a start date of 2022-07-12, after the book's \"as of January 2022\", and lists advanced solid tumor and DLBCL as the conditions. Lymphomas other than DLBCL were not found. The wording states the registered start date instead.",
+        "evidence": [
+          {
+            "record_id": "NCT05487170",
+            "url": "https://clinicaltrials.gov/study/NCT05487170",
+            "quote": "2022-07-12"
+          },
+          {
+            "record_id": "NCT05487170",
+            "url": "https://clinicaltrials.gov/study/NCT05487170",
+            "quote": "Advanced Solid Tumor, DLBCL"
+          }
+        ],
+        "status": "proposed",
+        "proposed_by": "model",
+        "proposed_date": "2026-11-03",
+        "priority": 2,
+        "priority_reason": "a record shows a time-bound claim has moved on",
+        "final": null,
+        "decided_by": null,
+        "decided_date": null,
+        "review_note": null,
+        "reviewers": [],
+        "decision_source": null
+      }
+    ]
   },
   {
     "fact_id": "cancer-cancer-is-a-complex-disease-and-cancer-cells-typically-harbor-multiple-ge",
