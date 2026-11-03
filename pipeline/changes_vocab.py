@@ -21,5 +21,6 @@ STATUSES = {
     "accepted": "a person accepted the proposed wording",
     "accepted_edited": "a person accepted the change but wrote the wording themselves",
     "rejected": "a person rejected it; the book's sentence stands",
+    "needs_more_reviewers": "fewer reviewers have answered than changes/policy.json requires; not applied yet",
     "disputed": "two or more reviewers answered differently; an adjudicator makes the final call",
 }

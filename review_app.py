@@ -144,8 +144,9 @@ else:
         c3.write(f"Viewing {st.session_state.pos + 1} of {len(shown)}")
 
 st.divider()
-undecided = [r for r in rows if r["status"] in ("proposed", "disputed")]
+undecided = [r for r in rows if r["status"] in ("proposed", "disputed", "needs_more_reviewers")]
 st.markdown(f"**Whole project:** {len(rows) - len(undecided)} of {len(rows)} changes have a decision; "
+            f"{sum(1 for r in rows if r['status'] == 'needs_more_reviewers')} waiting for more reviewers, "
             f"{sum(1 for r in rows if r['status'] == 'disputed')} disputed.")
 if st.button("Apply accepted changes"):
     ok, msg = run("11_implement_changes.py")

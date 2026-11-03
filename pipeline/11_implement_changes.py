@@ -27,7 +27,7 @@ def jl(p):
 
 facts = json.loads((REPO / "data/cancer/facts.json").read_text(encoding="utf-8"))
 res = jl(REPO / "changes/resolved.jsonl")
-pending = [r for r in res if r["status"] in ("proposed", "disputed")]
+pending = [r for r in res if r["status"] in ("proposed", "disputed", "needs_more_reviewers")]
 acc = {}
 for r in res:
     if r["status"] in ("accepted", "accepted_edited"):

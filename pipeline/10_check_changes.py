@@ -102,6 +102,9 @@ def same(a, b):
 
 
 order = sorted(by_id, key=lambda c: priority(by_id[c])[0])
+policy = json.loads((REPO / "changes/policy.json").read_text(encoding="utf-8")) if (REPO / "changes/policy.json").exists() else {}
+MIN = int(policy.get("min_reviewers", 1))
+assert MIN >= 1, "changes/policy.json: min_reviewers must be at least 1"
 ent = {r["change_id"]: r for r in jl(REPO / "changes/entailment.jsonl")}
 resolved = []
 for cid in order:
@@ -114,11 +117,11 @@ for cid in order:
     d = None
     if cid in final_call:
         d, out["decision_source"] = final_call[cid], "adjudicator"
-    elif len(ds) == 1:
-        d, out["decision_source"] = ds[0], "one reviewer"
-    elif len(ds) > 1:
+    elif len(ds) >= 1 and len(ds) < MIN and all(same(ds[0], x) for x in ds[1:]):
+        out.update(status="needs_more_reviewers", decision_source=f"{len(ds)} of {MIN} reviewers so far")
+    elif len(ds) >= 1:
         if all(same(ds[0], x) for x in ds[1:]):
-            d, out["decision_source"] = ds[0], f"{len(ds)} reviewers agree"
+            d, out["decision_source"] = ds[0], ("one reviewer" if len(ds) == 1 else f"{len(ds)} reviewers agree")
         else:
             out.update(status="disputed", decision_source="reviewers disagree",
                        review_note=" | ".join(f"{x['reviewer']}: {x['decision']}" + (f" ({x['note']})" if x.get("note") else "") for x in ds))
@@ -130,9 +133,9 @@ for cid in order:
 (REPO / "changes/resolved.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in resolved), encoding="utf-8")
 
 n = {s: sum(1 for r in resolved if r["status"] == s) for s in STATUSES}
-left = n["proposed"] + n["disputed"]
+left = n["proposed"] + n["disputed"] + n["needs_more_reviewers"]
 L = ["# Wording changes — review sheet\n", "## Summary\n"]
-L.append(f"**{len(resolved)} proposed rewordings** of the book's sentences: {n['proposed']} waiting for a reviewer, {n['disputed']} disputed between reviewers, "
+L.append(f"**{len(resolved)} proposed rewordings** of the book's sentences: {n['proposed']} waiting for a reviewer, {n['needs_more_reviewers']} waiting for more reviewers (policy: {MIN} needed), {n['disputed']} disputed between reviewers, "
          f"{n['accepted'] + n['accepted_edited']} accepted, {n['rejected']} rejected. They are listed in priority order; work from the top. A model wrote every proposal. "
          "The book's own sentence is never edited; each change records what it said, what is proposed, why, and the database quote behind it.\n")
 L.append("### How to review\n")

@@ -1,0 +1,4 @@
+{
+  "min_reviewers": 1,
+  "note": "How many different reviewers must answer a change before it counts. 1 = one human approves it. 2 or more = that many must agree; if they differ the change is 'disputed' and a row in changes/decisions.jsonl (the adjudicator) settles it."
+}

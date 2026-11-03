@@ -157,6 +157,8 @@ The first run sets itself up (a private Python environment in `.venv`, then Stre
 
 Enter your name, then work through the changes in priority order. Each screen shows the book's sentence, the proposed sentence with the changed words marked, the reason, the database quote with its link, and a warning if a second reader found the sentence says more than the quotes do. Choose Accept, Rewrite it myself (the box starts with the proposal) or Reject, add a note, and Save and next. Your answers are saved on your computer in `changes/decisions/<your-name>.jsonl` as you go.
 
+**How many readers?** `changes/policy.json` has `min_reviewers`. At 1 (the default), one human's answer settles a change. At 2 or more, that many different reviewers must answer, and the change stays `needs_more_reviewers` (not applied) until they have. If reviewers disagree the change is `disputed`; a row in `changes/decisions.jsonl` (the adjudicator's final call) settles it. Two reviewers who give the same answer always count as agreeing, so adding a second reader to a one-reader project never undoes the first answer. Because every reviewer's answers stay in their own file, the paper can report how often readers agreed.
+
 - **Send my answers to GitHub** commits only your own decisions file and pushes it. Each reviewer has their own file, so reviewers never conflict.
 - **Get latest from GitHub** pulls new proposals and other reviewers' answers.
 - **Apply accepted changes** (for the maintainer) runs step 11 once the reviewing is done.
