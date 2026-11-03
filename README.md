@@ -130,6 +130,12 @@ A decision is attached to the claim as `status_detail.human_review` and sets `hu
 
 Nobody has reviewed anything yet: 0 of 17 decided.
 
+## Wording changes
+
+Where a book sentence is stronger than its evidence ("binds *exclusively* to...", "is apparently..."), the fix is usually looser wording, not a verdict. `changes/changes.jsonl` holds one row per proposed rewording: the book's sentence, the proposed one, the kind (`remove_absolute`, `hedge`, `scope`, `attribute`, `update`; `pipeline/changes_vocab.py`), the reason, the database quotes behind it, and who proposed and who decided. `pipeline/10_check_changes.py` checks that the original is the book's sentence character for character and that every quote is already stored on the claim, then writes `changes/CHANGES.md`. Step 7 adds them to the claim as `revisions`.
+
+The book's own sentence is never edited. A change starts as `proposed` (a model's suggestion) and only becomes `approved` when a person says so. Four are proposed so far (the first four conflicts); none is approved. A rewording is a separate record from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead.
+
 ## The triage in one paragraph
 
 Of the 3,165 candidates, **885 (28%) are not assertions** (framing, evaluation, vagueness no source could support or refute), **799 (25%) are real claims only a general textbook could confirm**, and **1,481 (47%) map to a real database**: PubMed, SEER/GLOBOCAN, FDA, gene and protein databases, guideline bodies, ClinicalTrials.gov. Only the 1,481 go to step 3. PubMed takes 902 of them and is the weakest label, so real query terms are needed before any of it counts as evidence. See `triage/SUMMARY.md`.
@@ -150,6 +156,7 @@ pipeline/
   review_vocab.py            the three kinds of review case and the answers allowed for each
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   05b_strict_recheck.py      step 5b: apply the strict re-read (supports -> partial only); keeps stance_original
+  10_check_changes.py        validates changes/changes.jsonl, writes changes/CHANGES.md; step 7 attaches them as `revisions`
   09_build_report.py         writes REPORT.md, the plain-words summary, from facts.json
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/

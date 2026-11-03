@@ -6,12 +6,14 @@ After this, facts.json holds the claim, where the book said it, the evidence fou
 Run order:  05_build_evidence.py  ->  05b_strict_recheck.py  ->  06_derive_status.py  ->  07_merge_into_facts.py
 (re-running 05 rebuilds the evidence rows and drops the strict re-read; re-apply 05b from data/cancer/strict_recheck.jsonl)
 
-Rebuilt from scratch on every run (never appended), so it is idempotent. It touches ONLY these three keys of a claim:
+Rebuilt from scratch on every run (never appended), so it is idempotent. It touches ONLY these keys of a claim:
   evidence       the evidence rows for this claim from every data/cancer/**/evidence*.jsonl (the fact_id inside each
                  row is dropped; it is the parent's)
   status         copied from data/cancer/status.jsonl
   status_detail  the rest of that status row: reason, database, counts, sources, flags, needs_review,
                  review_reasons, human_reviewed
+  revisions      only on claims that have wording changes in changes/changes.jsonl (proposed or decided rewordings, with
+                 the reason and quotes; the book's own sentence stays in `canonical` and `claim_origin`)
 fact_id, canonical, domain, stable, category and claim_origin are never changed; the script asserts this.
 
 status.jsonl stays as a flat table of the same statuses (easy to count and filter). Its contents are derived
@@ -41,6 +43,11 @@ for p in sorted(glob.glob(str(REPO / "data/cancer/**/evidence*.jsonl"), recursiv
 assert set(status) == {f["fact_id"] for f in facts}, "status.jsonl and facts.json disagree on claims; run 06 first"
 assert set(ev) <= set(status), "evidence for an unknown claim"
 
+chg = collections.defaultdict(list)
+for r in jl(REPO / "changes/changes.jsonl") if (REPO / "changes/changes.jsonl").exists() else []:
+    chg[r["fact_id"]].append({k: v for k, v in r.items() if k != "fact_id"})
+assert set(chg) <= set(status), "change for an unknown claim; run 10_check_changes.py"
+
 merged = []
 for f in facts:
     fid = f["fact_id"]
@@ -49,6 +56,8 @@ for f in facts:
     g["evidence"] = ev.get(fid, [])
     g["status"] = s["status"]
     g["status_detail"] = {k: v for k, v in s.items() if k not in ("fact_id", "status")}
+    if fid in chg:
+        g["revisions"] = chg[fid]
     merged.append(g)
 
 # nothing but evidence / status / status_detail may differ from what was there
