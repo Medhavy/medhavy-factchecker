@@ -17,7 +17,9 @@ Output  data/cancer/pilot/evidence.pilot.jsonl — one row per evidence record:
 It is not a verdict on the claim and it is unreviewed; the record, url and verbatim are the evidence.
 facts.json is NOT modified here (the pilot is kept apart until the shape is agreed).
 
+Also writes data/cancer/pilot/attempts.jsonl (one row per retrieval attempt, no third-party text).
 Usage:  python3 pipeline/05_build_evidence.py PASSAGES.jsonl [PASSAGES2.jsonl ...]
+        If a claim appears in more than one file, the LAST file wins (use this to re-run a few claims).
 """
 import json, re, sys, collections
 from pathlib import Path
@@ -47,7 +49,7 @@ sel = {}
 for p in sys.argv[1:]:
     for l in Path(p).read_text(encoding="utf-8").splitlines():
         if l.strip():
-            r = json.loads(l); assert r["fact_id"] not in sel, f"duplicate {r['fact_id']}"; sel[r["fact_id"]] = r
+            r = json.loads(l); sel[r["fact_id"]] = r      # a later file overrides an earlier one (re-runs)
 
 stats = collections.Counter()
 rows = []
@@ -72,6 +74,15 @@ for fid, s in sel.items():
                      "stance": ps["stance"], "stance_note": norm(ps.get("note")), "stance_by": "model, unreviewed"})
         kept += 1
     stats["claims with evidence" if kept else "claims without evidence"] += 1
+
+# attempts.jsonl: one row per retrieval attempt, no third-party text (safe to commit). Step 6 uses it to tell
+# "searched, nothing bore on the claim" from "never searched".
+with open(PILOT / "attempts.jsonl", "w", encoding="utf-8") as f:
+    for fid, r in ret.items():
+        f.write(json.dumps({"fact_id": fid, "database": r["database"], "retrieved": r["retrieved"],
+                            "request": r.get("request"), "effective_query": r.get("effective_query"),
+                            "relaxed": r.get("relaxed", 0), "total_hits": r.get("total_hits"),
+                            "records_returned": len(r["records"]), "error": r.get("error")}, ensure_ascii=False) + "\n")
 
 out = PILOT / "evidence.pilot.jsonl"
 out.write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in rows), encoding="utf-8")

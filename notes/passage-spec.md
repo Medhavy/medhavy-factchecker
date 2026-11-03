@@ -34,4 +34,14 @@ For EVERY item write exactly one output line (JSON Lines) with:
 - If nothing in the records bears on the claim, return passages: [] with a none_reason. That is a good answer.
 - Never invent or paraphrase a verbatim passage. A program will check each verbatim string is a substring of
   the record field text (whitespace-normalised); any that is not will be thrown away.
+- TIME-BOUND CLAIMS. If the claim says something holds now or is under way ("currently", "now approved", "ongoing",
+  "underway", "being tested", "at present"), the record shows the state TODAY, which may differ from what the book
+  truthfully said when it was written. A record whose present-day status or date differs from the claim (a trial now
+  COMPLETED or TERMINATED, a label since revised) is NOT a refutation. Use `partial` (or `related`) and begin the note
+  with "dated:". Use `refutes` for a time-bound claim only if the record shows the claim was already false when the
+  book was written (for example a start date later than the book's date, or a drug never approved).
+- PLURAL CLAIMS. If the claim asserts more than one instance or a share ("several", "many", "numerous", "multiple",
+  "various", "a number of", "the majority", "most of"), one record showing one instance is `partial`, not `supports`.
+  Begin the note with "one instance:". You may return up to 2 passages from 2 DIFFERENT records for such a claim; two
+  records each showing a different instance may both be `supports`.
 - Output JSON Lines only, UTF-8, no markdown fences, no commentary.
