@@ -6,15 +6,15 @@ This started as a copy of `Medhavy/medhavy-facts` and is being reworked for a pa
 
 ## Where it stands
 
-Steps 1 to 3 are done for one book (medhavi-cancer). Steps 4 to 6 are not built yet.
+Steps 1 to 3 are done for one book (medhavi-cancer). Steps 4 and 5 have run on a 60-claim pilot only. Step 6 is not built.
 
 | Step | What | State |
 |---|---|---|
 | 1. Extract | Pull candidate claims (verbatim sentences) out of the book | done: 3,165 claims in `data/cancer/facts.json` |
 | 2. Triage | Decide which claims are real assertions and which database could check each | done: `triage/triage.jsonl` (one model-labeler pass, a first filter) |
 | 3. Map and query | Rewrite each assertion as a query for its database | done: `data/cancer/queries.jsonl`, 1,399 queries (model-written, smoke-tested on a sample) |
-| 4. Retrieve | Look it up; keep the record | not built |
-| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | not built |
+| 4. Retrieve | Look it up; keep the record | pilot: 60 claims retrieved (`pipeline/04_retrieve.py`); SEER/GLOBOCAN and guideline bodies have no open API and are not in it |
+| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | pilot: `data/cancer/pilot/evidence.pilot.jsonl`, 77 records; NOT merged into `facts.json` yet |
 | 6. Derive status | Status computed from the evidence records | not built |
 
 Nothing here is verified. Every claim has `evidence: []` and `status: "no_evidence"`.
@@ -37,6 +37,31 @@ Where the queries go (`database_final`): PubMed 972, NCBI Gene / UniProt / Ensem
 - **Known weak spots for step 4.** Some PubMed queries have too many AND terms and return 0 (relax and retry). openFDA generic names with a salt or qualifier ("sorafenib tosylate", "BCG live") returned 0. A gene "symbol" that is really a family ("CDK family") returns 0. 44 rows have a number from the `check` sentence also in the query; a few queries carry a name or direction from the claim (for example an author's name), which tilts the search toward confirming. 
 - **Not independent.** The queries were written by model agents in one pass and I read about a dozen. The same caveat as the triage applies.
 
+## Pilot: steps 4 and 5 on 60 claims
+
+A seeded, stratified sample (`data/cancer/pilot/pilot_ids.json`): 30 PubMed, 14 gene/protein, 8 ClinicalTrials.gov, 8 openFDA. `04_retrieve.py` ran each query and cached the records. Model agents then picked up to two quoted passages per claim (rules: `notes/passage-spec.md`), and `05_build_evidence.py` kept a passage **only if it is an exact substring of the record field it cites**. All 77 offered passages passed; none were fabricated or altered.
+
+| | Claims | Records returned | Got evidence | Best passage is "supports" |
+|---|---:|---:|---:|---:|
+| PubMed | 30 | 29 | 24 | 8 |
+| Gene / protein | 14 | 13 | 10 | 1 |
+| ClinicalTrials.gov | 8 | 8 | 6 | 2 |
+| openFDA | 8 | 6 | 6 | 3 |
+| **All** | **60** | **56** | **46** | **14** |
+
+Strongest stance per claim: supports 14, partial 25, related 5, refutes only 2, no evidence 14 (4 had no records; in 10 the records never state the specific number or relation).
+
+**What the pilot shows**
+- **Most evidence is partial, not confirming.** 25 of 46 claims got at best a partial match. Textbook sentences bundle several claims; a database record states one piece of one. A "claim is confirmed" outcome will be the minority, and the pipeline should say so plainly.
+- **Time-sensitive claims need a date.** "AZD3965 is currently being tested" was marked *refutes* because the trial record now says `COMPLETED`. The book may have been right when written. Claims with "currently", "now", "recent" need their date handled before a later status counts against them.
+- **One record cannot support a plural claim.** A single trial was marked *supports* for "several trials are underway". The passage spec should say a quantifier ("several", "many", "most") needs more than one record.
+- **Gene records confirm little.** 1 of 14. NCBI Gene and UniProt summaries are short, and the claims routed there are mostly relations, not properties.
+- **One real discrepancy worth a human look:** the book says no dose adjustment is needed with liver impairment for aromatase inhibitors; the letrozole label says to reduce the dose 50% in cirrhosis with severe hepatic dysfunction.
+- **`stance` is a model's reading, not a finding.** It is stored as `stance_by: "model, unreviewed"`. I read about a dozen; two overreached. The evidence itself is the record, URL and quoted passage.
+- **Not independent.** One pass of model agents; no second reader.
+
+Evidence rows live in `data/cancer/pilot/evidence.pilot.jsonl` and are not merged into `facts.json`; step 6 (status from evidence) is still open. The raw record text is cached in `data/cancer/pilot/cache/` and is git-ignored (third-party text; regenerate with `04_retrieve.py`).
+
 ## The triage in one paragraph
 
 Of the 3,165 candidates, **885 (28%) are not assertions** (framing, evaluation, vagueness no source could support or refute), **799 (25%) are real claims only a general textbook could confirm**, and **1,481 (47%) map to a real database**: PubMed, SEER/GLOBOCAN, FDA, gene and protein databases, guideline bodies, ClinicalTrials.gov. Only the 1,481 go to step 3. PubMed takes 902 of them and is the weakest label, so real query terms are needed before any of it counts as evidence. See `triage/SUMMARY.md`.
@@ -49,15 +74,19 @@ pipeline/
   01_extract.py              step 1: textbook -> terms.json, graph.json, facts.json (deterministic, no AI)
   03_check_queries.py        step 3: validates queries.jsonl (ids, shapes, one row per strict assertion)
   03b_probe_queries.py       step 3: smoke test, counts hits per query on a sample (network; stores nothing)
+  04_retrieve.py             step 4: run queries against PubMed / ClinicalTrials.gov / openFDA / NCBI Gene / UniProt, cache records
+  05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema
 data/cancer/
   facts.json                 3,165 candidate claims
   queries.jsonl              step 3: one database query per strict assertion (1,481 rows)
+  pilot/                     steps 4-5 on 60 claims: pilot_ids.json, evidence.pilot.jsonl (cache/ is git-ignored)
   terms.json  graph.json     glossary (10,055 terms) and concept graph (24,347 edges)
 triage/
   SUMMARY.md  triage.jsonl   which claims are real assertions, and which database fits
 notes/
   query-spec.md              the rules the query writers followed (query shape per database)
+  passage-spec.md            the rules for picking a quoted passage and its stance
   heuristic-codex-pass.md    why the earlier Codex "fact-check" was removed, and where it is in git
   slice-stats-2026-06.md     counts for the June extraction (terms, graph, claims by chapter, images)
 ```
