@@ -1,0 +1,736 @@
+{"change_id": "cancer-plgf-is-predominantly-expressed-in-placenta-and-binds-exclusively-to-vegf#1", "verdict": "over_reach", "extra": "Predominant expression in placenta is not in the quote; the quote does not name PlGF.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-authors-concluded-that-the-use-of-bevacizumab-was-significantly-assoc#1", "verdict": "over_reach", "extra": "Quotes do not mention cancer patients; they say bevacizumab possibly increases venous risk, not that studies found it in cancer patients.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aberrant-de-novo-expression-of-n-cadherin-has-been-noted-in-carcinomas-fr#1", "verdict": "over_reach", "extra": "Carcinoma types and E-cadherin downregulation/differentiation findings are not in the quote, which only reports no correlations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gamma-secretase-inhibitors-that-target-notch-signaling-sensitize-colon-ca#1", "verdict": "over_reach", "extra": "Colon cancer models are not named in quotes; oxaliplatin-induced Notch-1 activity not stated.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-mutant-aberrant-activation-of-the-wnt-pathway-is-a-major-factor-drivi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-hedgehog-pathway-regulates-autophagy-in-cancer-cells-and-inhibition-o#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-regorafenib-an-oral-multikinase-inhibitor-blocking-activity-of-protein-ki#1", "verdict": "over_reach", "extra": "Quotes do not say HCT-116R/DLD-1R are colorectal, nor describe regorafenib as oral multikinase inhibitor with those targets.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-imrt-has-higher-integral-radiation-dose-and-increases-the-total-volume-of#1", "verdict": "over_reach", "extra": "Quote gives MRL-IMRT, not MR-linac; planning-study framing not stated.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-no-dose-adjustment-is-necessary-for-patients-with-renal-or-liver-impairme#1", "verdict": "over_reach", "extra": "Anastrozole is never named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-socioeconomic-factors-and-physician-supply-are-key-predictors-of-crc-scre#1", "verdict": "over_reach", "extra": "CRC is expanded to colorectal cancer, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mechanistically-up-regulation-of-hells-confers-transcription-factor-sp1-h#1", "verdict": "over_reach", "extra": "HCC is expanded to hepatocellular carcinoma, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gene-specificity-of-the-epigenetic-silencing-was-observed-in-each-of-thes#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-as-of-january-2022-rnk05047-has-entered-clinical-trials-to-treat-advanced#1", "verdict": "over_reach", "extra": "RNK05047, CHAMP-1 and NCT05487170 do not appear in the quotes; only a date and conditions are given.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-during-g1-phase-cdk-activity-is-reduced-to-a-minimum-by-cdk-inhibitors-ck#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-mammalian-cells-for-example-dna-damage-leads-to-the-activation-of-the-#1", "verdict": "over_reach", "extra": "Quotes never name p53 as the actor.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-main-tumor-suppressor-gene-that-plays-a-crucial-role-in-maintaining-t#1", "verdict": "over_reach", "extra": "Quotes never name p53.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-can-also-use-specific-telomerase-to-create-long-repeated-seq#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bcl-2-family-proteins-the-bcl-2-family-of-intracellular-proteins-helps-re#1", "verdict": "over_reach", "extra": "Quotes never name Bcl-2 as the protein that inhibits caspase activity.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cytochrome-c-assembles-with-apaf-1-and-atp-to-form-the-apoptosome-which-a#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-death-inducing-signaling-complex-disc-ligand-binding-leads-to-the-recruit#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-death-receptors-membrane-death-receptors-belong-to-the-tumor-necrosis-fac#1", "verdict": "over_reach", "extra": "Quote does not name Fas.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-following-death-receptor-stimulation-activation-of-caspase-8-may-result-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-stimulation-of-death-receptors-of-the-tumor-necrosis-factor-tnf-receptor-#1", "verdict": "over_reach", "extra": "Quote does not name Fas or CD95.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-clustered-fas-proteins-then-recruit-intracellular-adaptor-proteins-th#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-upon-apoptosis-induction-proapoptotic-bcl-2-proteins-with-multidomains-su#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chromosomal-translocations-bcl-2-was-the-first-member-to-be-discovered-wh#1", "verdict": "over_reach", "extra": "Follicular lymphoma is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-decreased-expression-of-death-receptors-was-associated-with-reduced-sensi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-elevated-bcl-2-gene-levels-inhibit-apaf-1-consequently-inactivating-caspa#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-inhibitors-of-apoptosis-proteins-iaps-family-includes-x-linked-iap-xiap-c#1", "verdict": "over_reach", "extra": "XIAP is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-loss-of-pro-apoptotic-members-conversely-loss-of-function-mutations-have-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-wild-type-wt-p53-and-intact-signaling-pathways-are-essential-for-the-prev#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aeg40995-degrades-ciap1-protein-and-combination-with-enzalutamide-increas#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-castration-resistant-prostate-cancer-cells-were-sensitized-to-enzalutamid#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mdm2-antagonists-the-major-negative-regulator-of-p53-is-the-mdm2-proto-on#1", "verdict": "over_reach", "extra": "Quotes never name Mdm2 or call it a proto-oncogene or negative regulator.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mdm2-is-transcriptionally-induced-by-p53-thus-p53-triggers-its-own-destru#1", "verdict": "over_reach", "extra": "Quote does not name Mdm2.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-trail-and-agonists-for-trail-specific-receptors-dr4-trail-r1-and-dr5-trai#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-another-developing-application-of-the-warburg-effect-is-the-use-of-gene-e#1", "verdict": "over_reach", "extra": "BC is expanded to breast cancer, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-even-when-oxidative-phosphorylation-is-actively-continuing-aerobic-glycol#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-for-warburg-several-questions-remained-unanswered-including-why-cancer-ce#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mitochondrial-shape-changes-occur-throughout-the-progression-of-pancreati#1", "verdict": "over_reach", "extra": "Pancreatic cancer is not mentioned in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-nucleus-contains-the-genes-that-encode-most-of-the-mitochondrial-prot#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-proteins-encoded-by-these-genes-more-than-95-of-mitochondrial-protein#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-atp-citrate-lyase-acly-is-found-to-be-elevated-in-many-types-of-cancers-i#1", "verdict": "over_reach", "extra": "ACLY is expanded to ATP citrate lyase, which the quote does not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-endogenous-fatty-acid-synthesis-is-frequently-upregulated-in-cancer-becau#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-nineteen-lipids-were-specifically-identified-that-were-produced-and-secre#1", "verdict": "over_reach", "extra": "CRC is expanded to colorectal cancer, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-taken-together-stromal-catabolites-such-as-free-fatty-acids-promote-tumor#1", "verdict": "over_reach", "extra": "FFAs expanded to free fatty acids; cancer cells not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-avantaggiati-research-group-has-extensively-studied-the-mitochondrial#1", "verdict": "over_reach", "extra": "CIC expanded to mitochondrial citrate transporter and CTP alias are not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-addition-to-blocking-glutamate-production-from-glutamine-glutamine-sup#1", "verdict": "over_reach", "extra": "REE is expanded to resting energy expenditure, which the quote does not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-an-attempt-to-block-glycine-biosynthesis-researchers-are-using-antimet#1", "verdict": "over_reach", "extra": "MTX and PTX are expanded to methotrexate and pemetrexed, which the quote does not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-cancer-treatment-the-use-of-dietary-glutamine-supplementation-is-to-ma#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-shmt-catalyzes-the-conversion-of-serine-to-glycine-and-is-regulated-by-c-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-by-providing-lactate-and-ketone-bodies-acidic-compounds-that-can-form-ace#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-fibroblast-assays-are-currently-being-studied-as-a-means-of-predicting-ho#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-azd3965-an-mct1-inhibitor-is-currently-being-tested-in-phase-i-clinical-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-inhibition-of-glycolysis-and-increase-in-oxidative-phosphorylation-can-re#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-low-glucose-environments-result-in-cancer-cells-that-are-less-susceptible#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-metformin-can-be-used-to-inhibit-glycolysis-and-block-the-function-of-caf#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pancreatic-tumors-were-targeted-by-bis-2-5-phenylacetamido-134-thiadiazol#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rather-than-killing-the-tumor-hypoxia-triggers-changes-in-cancer-cell-met#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-first-fatty-acid-synthase-fas-inhibitor-tvb-2640-is-in-clinical-trial#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-hypoperfusion-secondary-to-the-hyperpermeability-of-the-aberrant-va#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-li-and-colleagues-demonstrated-that-dauricine-dose-dependently-suppressed#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-lack-of-exercise-leads-to-capillary-regression#1", "verdict": "over_reach", "extra": "Short-term cessation of training (detraining) is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clearly-angiogenesis-occurs-throughout-life#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-for-a-tumor-to-develop-a-metastatic-or-a-lethal-phenotype-it-must-first-r#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-size-limits-of-experimental-tumors-when-angiogenesis-is-blocked-or-ab#1", "verdict": "over_reach", "extra": "Quote does not call the tumors nonangiogenic or say it was one study design.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-activation-of-proangiogenic-fgf-signaling-represents-an-escape-mechanism-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ang1-activates-tie2-to-promote-blood-vessel-maturation-and-stabilization#1", "verdict": "over_reach", "extra": "Quotes never name Ang1.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ang1-plays-a-critical-role-in-vessel-maturation-endothelial-cell-migratio#1", "verdict": "over_reach", "extra": "Quotes never name Ang1.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-angiopoietin-ang-1-is-a-ligand-for-endothelium-specific-receptor-tyrosine#1", "verdict": "over_reach", "extra": "Quote does not name Ang1 or Tie-2; TEK not named in quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-as-vegfr-3-is-the-main-receptor-for-vegf-c-and-is-predominantly-expressed#1", "verdict": "over_reach", "extra": "Quote does not name VEGFR-3.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hepatocyte-growth-factor-hgf-promotes-angiogenesis-and-represents-an-esca#1", "verdict": "over_reach", "extra": "HGF is expanded to Hepatocyte Growth Factor, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-interruption-of-the-angiogenic-signal-by-ifns-precedes-the-antiproliferat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pdgf-bb-and-fgf2-synergistically-promote-tumor-angiogenesis-through-recip#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-sdf-1-is-a-transcriptional-target-of-hif-1α#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-stromal-derived-factor-1-sdf-1-primary-mechanism-for-recruiting-bone-marr#1", "verdict": "over_reach", "extra": "SDF-1 is expanded to Stromal-Derived Factor-1, which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tgf-α-belongs-to-the-epidermal-growth-factor-egf-family-and-plays-essenti#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-angiopoietins-ang1-angpt1-and-ang2-angpt2-are-secreted-factors-that-b#1", "verdict": "over_reach", "extra": "Quotes do not name Ang2/ANGPT2 as the subject or equate it with angiopoietin 2.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-extensively-studied-tie2-ligands-are-angiopoietin-1-and-2-ang1-a#1", "verdict": "over_reach", "extra": "Quote does not name Tie2.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-pdgf-family-consists-of-four-heparin-binding-members-pdgf-a-b-c-d-tha#1", "verdict": "over_reach", "extra": "Quote does not name PDGF-A or the PDGF family.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-tyrosine-kinase-receptor-tie2-was-initially-identified-as-a-specific-#1", "verdict": "over_reach", "extra": "Quote does not name Tie2.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-vegf-family-molecules-include-vegf-a-vegf-b-vegf-c-vegf-d-and-placent#1", "verdict": "over_reach", "extra": "Quote does not name VEGF-A.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-weakened-cellcell-adhesion-enables-tip-cells-to-depart-from-the-endot#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vegf-a-directly-stimulates-ec-proliferation-by-engaging-with-the-vegfr-2-#1", "verdict": "over_reach", "extra": "Quotes do not name VEGFR-2, and VEGF-A alone is not given as its ligand beyond VEGFA.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-following-the-prolyl-hydroxylase-inhibition-hif-1α-is-stabilized-accumula#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hifs-exists-as-a-heterodimeric-complex-containing-one-of-three-α-subunits#1", "verdict": "over_reach", "extra": "Quote does not name HIF-1α as the protein forming the heterodimer.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hypoxia-activates-a-hypoxia-inducible-factor-1-hif-1-binding-sequence-in-#1", "verdict": "over_reach", "extra": "Quote does not name HIF-1α.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hypoxia-serves-as-the-principal-physiological-stimulus-that-induces-angio#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hypoxia-triggers-a-unique-gene-transcription-program-specific-set-of-gene#1", "verdict": "over_reach", "extra": "Quote does not name HIF-1α or call it hypoxia-inducible factor.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-multiple-growth-factors-can-activate-hif-1-signaling-independently-of-oxy#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mutations-within-cancer-cells-upregulate-angiogenic-factors-leading-to-a-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-hypoxia-is-associated-with-more-aggressive-malignant-behavior-and-r#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-under-normal-physiological-conditions-oxygen-inhibits-neovascularization-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vegf-is-up-regulated-by-hypoxia-and-is-often-elevated-near-areas-of-tumor#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-situ-hybridization-suggested-that-dll4-expression-is-restricted-to-dev#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-upon-destabilization-of-the-endothelial-cell-monolayer-the-cells-then-mig#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-50-reduction-of-vegf-a-expression-is-lethal-embryonically-because-of-va#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-1971-folkman-proposed-a-new-view-of-the-role-of-blood-vessels-in-tumor#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-neoangiogenesis-in-human-glioma-is-driven-by-multiple-molecules-including#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-progression-to-high-grade-is-characterized-by-increased-vascularity-a#1", "verdict": "over_reach", "extra": "Expands MVD to microvessel density in the first study; quote only says MVD.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vascular-endothelial-growth-factor-vegf-is-a-major-contributor-to-the-gro#1", "verdict": "over_reach", "extra": "Names glioblastoma; the quote never names the tumor type.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bevacizumab-induces-ovarian-damage-it-is-likely-that-this-damage-is-tempo#1", "verdict": "over_reach", "extra": "Expands BVZ to bevacizumab; quote never gives that expansion.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bevacizumab-is-a-humanized-monoclonal-antibody-against-vascular-endotheli#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bevacizumab-is-a-recombinant-humanized-monoclonal-antibody-that-binds-to-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-congestive-heart-failure-bevacizumab-treatment-significantly-increases-ca#1", "verdict": "over_reach", "extra": "Identifies MVASI as a bevacizumab product; quote does not say so.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-scid-mice-bearing-human-pancreatic-cancer-human-recombinant-endostatin#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-administration-of-bevacizumab-inhibits-microvascular-growth-and-angio#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-binding-of-vegf-a-to-vegfr-1-and-vegfr-2-leads-to-endothelial-cell-pr#1", "verdict": "over_reach", "extra": "Names VEGF-A as the ligand; the quote does not name VEGF-A or any ligand.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-were-statistically-significant-increases-in-risk-of-high-grade-prot#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-research-and-development-of-drugs-in-this-area-have-so-far-begun-to-yield#1", "verdict": "over_reach", "extra": "Attributes these indications to bevacizumab; the quote never names the drug.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-all-three-tgfβ-mammalian-isoforms-tgfβ1-tgfβ2-and-tgfβ3-can-regulate-emts#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-carcinosarcoma-is-the-tumor-best-studied-in-which-monoclonality-of-both-e#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-human-pancreatic-tumor-samples-fibronectin-and-vimentin-are-increased-#1", "verdict": "over_reach", "extra": "Says pancreatic tumor study and expands APC/PDAC; quote names neither pancreas nor the abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-secretion-of-tgfβ-is-increased-in-many-tumor-cells-which-respond-to-tgfβ-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-results-of-studies-demonstrate-participation-of-emt-in-therapy-resist#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-transforming-growth-factor-β-tgfβ-is-involved-in-a-whole-range-of-bio#1", "verdict": "over_reach", "extra": "Names TGFb as the protein; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-whereas-emt-occurs-in-several-stages-of-embryonic-development-and-can-be-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-at-present-several-synthetic-mmp-inhibitors-are-in-clinical-trials-evalua#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-matrix-metalloproteinase-1-mmp-1-plays-an-important-role-in-the-breakdown#1", "verdict": "over_reach", "extra": "Names MMP-1 as the enzyme; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-is-strong-evidence-for-the-role-of-mmps-in-physiological-ecm-remode#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-treatment-of-mcf-7-cells-with-mmp7-results-in-e-cadherin-cleavage-produci#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-metastases-are-selectively-derived-from-a-genotypically-distinct-cell-pop#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-capacity-of-invasion-and-metastasizing-of-the-cancerous-cell-depends-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-metastatic-process-is-selective-and-metastatic-potential-proves-to-in#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-anywhere-from-10-to-26-of-patients-who-die-from-their-cancer-will-develop#1", "verdict": "over_reach", "extra": "Says brain metastases; the quote gives an incidence with no named condition.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-brain-metastases-are-a-common-complication-of-cancer-and-the-most-common-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancers-involving-other-organs-such-as-the-pancreas-appendix-small-intest#1", "verdict": "over_reach", "extra": "Peritoneal metastasis is not mentioned in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancers-that-spread-to-the-endobronchial-tree-of-the-lungs-include-colore#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-common-cancers-that-metastasize-to-lung-parenchyma-include-breast-lung-co#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-peritoneal-involvement-is-most-common-with-cancers-of-the-gastrointestina#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-spinal-metastases-are-the-most-common-tumors-of-the-spine-comprising-appr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-circulating-tumor-cells-ctcs-represent-a-biomarker-for-tumor-progression-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-different-cell-clones-each-derived-from-the-same-primary-tumor-displayed-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-patients-the-precise-number-of-ctcs-has-not-been-well-characterized-es#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-visible-deletions-of-chromosome-13q14-were-found-in-some-retinoblastomas-#1", "verdict": "over_reach", "extra": "Retinoblastoma and the loss-not-activation inference are not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-assays-performed-by-methylation-sensitive-pcr-on-small-tissue-biopsies-sh#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-beyond-dna-methylation-and-histone-modifications-chromatin-remodeling-com#1", "verdict": "over_reach", "extra": "Calls HELLS a chromatin remodeler and adds contrast with DNA methylation/histone modifications; not in quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-p16-gene-resides-on-chromosome-9p-in-a-region-that-is-subject-to-freq#1", "verdict": "over_reach", "extra": "Names the gene p16; the quotes never name it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-among-the-earliest-and-most-common-events-in-the-colorectal-tumor-progres#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-brca1-and-brca2-are-essential-for-efficient-hrr-homologous-recombinationa#1", "verdict": "over_reach", "extra": "Names BRCA1 as the subject; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-brca1-colocalizes-with-brca2-and-rad51-at-sites-of-dna-damage-and-activat#1", "verdict": "over_reach", "extra": "Attributes the repair role to BRCA1; the quote does not name BRCA1 as the subject of that function.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-brca2-regulates-the-availability-and-activity-of-rad51-which-coats-single#1", "verdict": "over_reach", "extra": "Names BRCA2 as the subject; the quotes never name it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-addition-brca1-forms-complexes-with-both-brca2-and-rad51-the-human-hom#1", "verdict": "over_reach", "extra": "Names Rad51 as the enzyme; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-addition-pten-is-the-major-phosphatase-for-phosphoinositide-345-tripho#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-the-cell-p53-protein-binds-dna-which-in-turn-stimulates-another-gene-t#1", "verdict": "over_reach", "extra": "Names p21 as the protein; the quotes never name it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-loss-of-apc-allows-β-catenin-to-accumulate-and-activate-tcf4-driving-unco#1", "verdict": "over_reach", "extra": "Names APC; the quote never names it. The accumulation inference is also not stated.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-most-of-the-cancers-demonstrate-a-biallelic-loss-of-function-mutation-in-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-parp-inhibitors-have-emerged-as-a-promising-treatment-in-individuals-with#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-specifically-the-phosphatidylinositol-3-kinase-pi3kaktmammalian-target-of#1", "verdict": "over_reach", "extra": "Names PTEN as the protein; the quote does not name PTEN.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-apc-gene-on-chromosome-5q21-encodes-a-2843-amino-acid-protein-that-is#1", "verdict": "over_reach", "extra": "Names APC and amino acid length; quote gives only the number 2843.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-brca1bard1-protein-complex-enhances-ubiquitin-ligase-activity-which-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-predominant-apc-transcript-encodes-a-2843-amino-acid-protein-expresse#1", "verdict": "over_reach", "extra": "Names APC and says amino acids; quote gives only the number 2843.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-pten-gene-located-on-chromosome-10q23-is-missing-or-mutated-in-a-vari#1", "verdict": "over_reach", "extra": "Names the PTEN gene; the quotes never name it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-retinoblastoma-gene-rb1-was-the-first-tumor-suppressor-gene-to-be-ide#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-brca1-and-brca2-are-key-tumor-suppressor-genes-that-are-essential-for-the#1", "verdict": "over_reach", "extra": "Names BRCA2 as the subject; the quotes never name it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-four-parpi-olaparib-rucaparib-niraparib-and-talazoparib-are-now-approved-#1", "verdict": "over_reach", "extra": "Talazoparib/olaparib naming and PARP-inhibitor class are not in the quotes (only TALZENNA, unnamed drug).", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-germline-mutations-in-the-tumor-suppressor-brca1-and-brca2-genes-have-bee#1", "verdict": "over_reach", "extra": "Names BRCA1 as the gene; the quote says only this gene.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-several-clinical-trials-are-currently-underway-investigating-the-effects-#1", "verdict": "over_reach", "extra": "Trial status active, not recruiting is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-several-compounds-have-been-developed-to-specifically-target-protein-prot#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-concept-of-synthetic-lethality-led-to-the-development-of-parp-inhibit#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-first-molecule-in-this-category-is-nutlin-which-has-been-identified-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-are-even-familial-cancer-syndromes-associated-with-the-loss-of-func#1", "verdict": "over_reach", "extra": "Names TP53 as the gene; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-dna-damage-repair-deficiency-leads-to-the-increased-risk-of-genome-instab#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-unfortunately-as-with-many-anti-cancer-agents-drugs-used-to-treat-patient#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-abundance-of-cancer-mutations-involving-epigenetic-regulator-genes-pr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-during-cell-division-genome-wide-patterns-of-dna-and-histone-modification#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-epigenetic-silencing-of-the-o6-methylguanine-dna-methyltransferase-mgmt-g#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-functional-silencing-of-tumor-associated-genes-is-usually-associated-with#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genomic-hypomethylation-contributes-to-genetic-instability-and-proto-onco#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chromatin-deregulation-is-an-emerging-theme-in-cancer-pathogenesis-and-bl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mutations-in-histone-genes-or-chromatin-modifier-proteins-are-frequently-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-s-adenosylmethionine-sam-is-the-cofactor-of-dna-and-histone-methyltransfe#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-common-mutations-in-bladder-cancer-occur-in-genes-functioning-in#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-large-cohort-studies-have-identified-mirnas-that-are-differentially-expre#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-first-human-long-non-coding-rna-to-be-causally-linked-to-cancer-was-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-major-hallmark-of-pcg-silencing-is-the-h3k27me3-histone-modification-ob#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-human-trxg-gene-mixed-lineage-leukemia-mll1-was-initially-identified-#1", "verdict": "over_reach", "extra": "Names MLL1/Mixed Lineage Leukemia as the gene; the quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-with-ongoing-developmental-time-and-programming-the-signals-are-resolved-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-is-also-a-disease-of-transcriptional-mis-regulation-and-given-the-#1", "verdict": "over_reach", "extra": "Names pancreatic neuroendocrine tumours; the quote never names the tumor type.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-main-drawback-of-epi-drugs-are-their-less-promising-results-in-solid-tu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-accordingly-the-combinatorial-use-of-dnmt-and-histone-deacetylases-hdac-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-at-present-seven-agents-in-three-epigenetic-target-classes-dnmt-hdac-and-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-azacitidine-and-decitabine-are-cytosine-analogue-inhibitors-and-have-been#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-azacitidine-and-decitabine-are-nucleotide-analogues-that-function-as-inhi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-by-targeting-the-salvage-ddr-pathway-cancer-cell-killing-can-be-achieved-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-is-a-complex-disease-and-cancer-cells-typically-harbor-multiple-ge#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-dna-demethylating-agents-are-now-approved-by-the-us-food-and-drug-adminis#1", "verdict": "over_reach", "extra": "FDA and 'now indicated in FDA drug labels' are not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-epz-6438-is-an-orally-bioavailable-ezh2-inhibitor-by-competing-with-sam-w#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-guadecitabine-sgi-110-is-a-second-generation-decitabine-and-deoxyguanosin#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-on-june-18-2020-tazemetostat-tazverik-epizyme-inc-was-added-to-the-list-o#1", "verdict": "over_reach", "extra": "TAZVERIK, NDA numbers and FDA are not named in the quotes, only bare codes and dates.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-parp-inhibitors-are-currently-used-in-the-management-of-tumors-with-absen#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rnk05047-a-selective-protac-degrader-developed-by-ranok-therapeutics-targ#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-since-all-four-mentioned-drugs-are-pan-inhibitors-of-hdac-and-may-exhibit#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tazemetostat-is-a-first-in-class-inhibitor-of-the-ezh2-hmt-writer-used-fo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-non-selective-inhibition-characteristic-of-pan-hdac-inhibitors-often-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-each-puff-of-each-cigarette-contains-a-mixture-of-thousands-of-compounds-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-smoking-is-the-undisputed-cause-of-80-to-90-of-lung-cancers-as-well-as-be#1", "verdict": "over_reach", "extra": "Quote does not say the PAF of 65% is for lung cancer.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-epidemiological-studies-consistently-show-no-significant-cancer-increase-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-action-spectrum-for-ultraviolet-induced-skin-carcinogenesis-in-albino#1", "verdict": "over_reach", "extra": "Quotes do not say skin carcinogenesis or ultraviolet induction.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-cancers-induced-by-radiation-are-of-the-same-histologic-types-as-occu#1", "verdict": "over_reach", "extra": "Basal cell carcinoma is not named; BCC abbreviation expanded and contrasted with thyroid cancer.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-linear-no-threshold-lnt-model-derived-from-atomic-bomb-survivor-studi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-models-clinical-utility-is-particularly-evident-in-prostate-cancer-wh#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-continuous-expression-of-papillomavirus-early-genes-may-directly-promote-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hbv-dna-is-integrated-into-the-host-genome-and-isolation-of-restriction-f#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-individuals-who-are-latently-infected-with-an-oncogenic-virus-are-at-grea#1", "verdict": "over_reach", "extra": "Quote does not say the lymphomas arise in immunodeficient patients.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-first-two-human-retroviruses-discovered-htlv-i-and-htlv-ii-have-been-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gnotobiotic-mouse-models-have-provided-definitive-evidence-for-causal-rel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-japans-national-h-pylori-eradication-program-initiated-in-2013-populat#1", "verdict": "over_reach", "extra": "Japan, H. pylori and 2013 program are not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-prospective-cohort-studies-with-up-to-17-years-of-follow-up-confirm-that-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hormones-particularly-estrogens-are-important-as-tumor-promoters-in-the-d#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hpv-infections-are-maintained-significantly-longer-and-are-less-likely-to#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hpv-vaccination-programs-have-achieved-remarkable-success-with-pre-approv#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vaccination-represents-the-most-successful-primary-prevention-strategy-wi#1", "verdict": "over_reach", "extra": "Hepatitis B is not named; 'HB' and 'effective vaccines' only.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-type-cyclins-function-during-s-phase-and-g2-with-cyclin-a1-showing-spec#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-s-cdk-activation-not-only-initiates-replication-but-also-prevents-re-repl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-different-molecular-mechanism-is-used-to-control-cell-cycle-progression#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-complexes-of-cdk4-and-cdk6-with-the-d-type-cyclins-cyclin-d1-d2-and-d3-pl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cyclin-e-is-expressed-later-in-g1-and-cdk2cyclin-e-complexes-are-required#1", "verdict": "over_reach", "extra": "Subject Cdk2 is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-dna-damage-induced-pathways-target-cyclin-d-and-then-cyclin-e-cdk2#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-addition-to-p21-p16ink4a-and-p15ink4b-which-are-pure-inhibitors-of-cyc#1", "verdict": "over_reach", "extra": "Subject p16 (CDKN2A) is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-dna-damage-leads-to-rapid-induction-of-p53-which-activates-transcription-#1", "verdict": "over_reach", "extra": "p53 is not named as the subject of either quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-mdm2-p53-interaction-is-obligatory-for-p53-degradation#1", "verdict": "over_reach", "extra": "Mdm2 is not named in the quote as the E3 ligase.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-p53-protein-is-also-involved-in-cell-differentiation-dna-repair-senes#1", "verdict": "over_reach", "extra": "p53 is not named as the subject in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-l-myc-was-discovered-through-its-amplification-in-small-cell-carcinoma-of#1", "verdict": "over_reach", "extra": "L-myc as a name for MYCL1 is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-n-myc-was-discovered-as-a-new-member-of-the-myc-protooncogene-family-thro#1", "verdict": "over_reach", "extra": "Neuroblastoma is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-surprisingly-however-when-ras-or-myc-is-experimentally-hyperactivated-in-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chronic-exposures-to-carcinogens-accumulation-of-mutations-development-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-loss-of-p53-function-leads-to-genomic-instability-abnormal-centrosome-dup#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chk1-inhibitors-can-force-p53-deficient-cancer-cells-to-bypass-g2-arrest-#1", "verdict": "over_reach", "extra": "Chk1 is not named; quote says only 'these kinases'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-replication-checkpoints-atr-atm-and-rad3-related-inhibitors-target-the-re#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-success-of-cdk46-inhibitors-has-validated-the-cell-cycle-as-a-therape#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-wee1-kinase-targeting-wee1-inhibitors-like-mk-1775-adavosertib-prevent-g2#1", "verdict": "over_reach", "extra": "MK-1775 is not named; the 'these effects' quote has no drug.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-centrosome-amplification-can-lead-to-chromosomal-instability-and-an-abnor#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-viral-and-cellular-oncogenes-have-defined-a-large-group-of-genes-abou#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-widespread-epigenetic-mutations-high-throughput-genomic-studies-reveal-th#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-ability-of-cancer-cells-to-evade-apoptosis-represents-one-of-the-fund#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-term-chemotherapy-was-coined-by-german-chemist-paul-ehrlich-who-inves#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-more-than-40-percent-of-pediatric-cancer-survivors-develop-a-severe-or-li#1", "verdict": "over_reach", "extra": "Chronic health conditions (CHC expansion) and survivors are not stated in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-research-demonstrates-that-as-many-as-two-thirds-of-survivors-will-experi#1", "verdict": "over_reach", "extra": "Hearing loss as a late effect of treatment is not stated in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-risk-factors-for-posttreatment-fatigue-include-the-presence-of-pretreatme#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ki-67-is-a-nuclear-protein-expressed-in-all-active-phases-of-the-cell-cyc#1", "verdict": "over_reach", "extra": "Ki-67 and 'nuclear protein' not stated; quote is only a list of locations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-well-characterized-gemm-is-described-the-efficient-development-of-medul#1", "verdict": "over_reach", "extra": "Quote does not say a mouse model.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-broadly-speaking-chemically-induced-models-are-suitable-to-reproduce-the-#1", "verdict": "over_reach", "extra": "Chemically induced and hepatocellular carcinoma are not stated; quote has HCC and experimental model.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-photosensitivity-reactions-after-the-injection-of-verteporfin-are-quite-c#1", "verdict": "over_reach", "extra": "Verteporfin is not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-fractionation-needs-to-be-accomplished-within-seconds-to-minutes-and-in-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-meta-analysis-of-50-studies-showed-a-significantly-heightened-risk-haza#1", "verdict": "over_reach", "extra": "Quote does not say meta-analysis.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adult-survivors-are-twice-as-likely-as-sibling-controls-to-report-signifi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-positive-outcomes-were-found-with-psycho-education-cognitive-behavioral-t#1", "verdict": "over_reach", "extra": "CRF, MBSR and BC expanded to cancer-related fatigue, mindfulness-based stress reduction, breast cancer without quote support.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-prevalence-of-depression-and-anxiety-among-cancer-patients-is-signifi#1", "verdict": "over_reach", "extra": "Quote does not name anxiety or depression, nor a guideline.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-commonly-reported-factors-associated-with-ft-were-being-female-y#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-rates-of-anxiety-and-depression-were-higher-among-caregivers-of-cance#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-existing-interventions-are-effective-in-achieving-modest-increases-in-phy#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-one-study-163-women-with-metastatic-breast-cancer-reported-a-total-of-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-cancer-transition-is-clearly-underway-in-countries-transiting-to-high-l#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-prevention-potential-more-than-90-of-cancers-are-directly-attributable-to#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-unfavorable-count-presence-of-5-or-more-ctcs-per-75-ml-peripheral-blo#1", "verdict": "over_reach", "extra": "Quotes do not name prostate cancer.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-vasculature-induced-by-cancer-cells-is-crooked-leaky-and-constantly-r#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-experimental-and-clinical-evidence-suggests-that-the-process-of-metastasi#1", "verdict": "over_reach", "extra": "Organoids (PDTO expansion) and the link of metastasis to angiogenesis conclusion are not stated.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-basement-membrane-thickness-of-tumor-blood-vessels-is-uneven-and-the-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-angiogenesis-is-essential-for-tumor-progression#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-endothelial-cells-are-irregular-monolayers-have-a-higher-expression#1", "verdict": "over_reach", "extra": "TEC abbreviation expanded to tumor endothelial cells is not given in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vegf-is-highly-expressed-in-tumor-endothelial-cells-tecs-and-because-vegf#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-integrin-α3β1-is-involved-in-breast-cancer-cell-migration-and-invasion-by#1", "verdict": "over_reach", "extra": "MDA-MB-231 and breast cancer cells are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-integrins-αvβ3-and-αvβ5-are-involved-in-bone-sialoprotein-induced-cancer-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-critical-aspect-of-caf-activation-involves-metabolic-reprogramming-part#1", "verdict": "over_reach", "extra": "Quote does not mention cancer-associated fibroblasts or cancer cells.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cafs-can-originate-from-the-activation-and-differentiation-of-quiescent-f#1", "verdict": "over_reach", "extra": "CAF and TME abbreviations expanded without quote support.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-associated-fibroblasts-cafs-represent-one-of-the-most-abundant-and#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-can-change-the-microenvironment-which-in-turn-can-affect-how#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-fibroblast-assays-are-currently-being-studied-as-a-means-of-predicting-ho-1#1", "verdict": "over_reach", "extra": "SCC expanded to squamous cell carcinoma is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genetic-alterations-that-result-in-the-deactivation-of-caveolin-1-cav-1-e#1", "verdict": "over_reach", "extra": "CAFs expanded to cancer-associated fibroblasts is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-il-4-and-il-13-produced-by-th2-cells-or-by-eosinophils-elicit-alternative#1", "verdict": "over_reach", "extra": "Lung cancer (LLC-1) and TAM expansion are not in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-several-studies-indicate-that-tumor-associated-macrophages-tams-usually-h#1", "verdict": "over_reach", "extra": "TAMs expanded to tumor-associated macrophages is not in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vegf-a-vascular-endothelial-growth-factor-a-expression-is-greatly-stimula#1", "verdict": "over_reach", "extra": "HIFs expanded to hypoxia-pathway factors is not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-among-the-most-highly-up-regulated-genes-were-members-of-the-cxccc-chemok#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-caf-derived-lactate-is-crucial-in-prostate-cancer-metabolic-transformatio#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-stroma-can-form-up-to-90-of-the-tumor-volume-a-property-which-is-uniq#1", "verdict": "over_reach", "extra": "Pancreatic cancer is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-transcription-growth-factor-alpha-and-beta-tgf-a-and-tgf-b-platelet-deriv#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-activation-of-mmps-in-the-tumour-microenvironment-promotes-tumour-cell-mi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-constitutive-activation-of-nf-κb-and-stat3-is-found-in-several-human-tumo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-il-23-is-a-key-cytokine-in-tumour-growth-and-invasion-it-causes-upregulat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-il-6-also-promotes-tumour-angiogenesis-and-invasion#1", "verdict": "over_reach", "extra": "IL-6 and IL-1 are never named in the quote, which says only 'such cytokines'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-key-cytokines-in-tumour-associated-inflammation-are-il-1-and-tumour-necro#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-an-important-and-almost-immediate-consequence-of-vegf-a-action-is-leakage#1", "verdict": "over_reach", "extra": "Quote says VPF/VEGF, not VEGF-A.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-various-aggressive-subtypes-of-cancer-associated-fibroblasts-caf-identifi#1", "verdict": "over_reach", "extra": "Pancreatic cancer and cholangiocarcinoma are not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-small-number-of-cscs-can-reconstruct-the-entire-cancer-tissue-hierarchy#1", "verdict": "over_reach", "extra": "Glioblastoma not named; quote only says 'GBM'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-at-the-bottom-tier-are-the-most-differentiated-cancer-cells-which-compris#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-at-the-top-tier-are-the-cscs-themselvesa-relatively-small-population-of-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genetic-studies-performed-over-20-years-ago-demonstrated-that-the-maligna#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-acute-myeloid-leukemia-aml-the-cd34cd38-marker-combination-was-used-to#1", "verdict": "over_reach", "extra": "Acute myeloid leukemia/AML is not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-breast-cancer-the-hierarchy-includes-cd44cd24-mesenchymal-like-cells-a#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-pancreatic-cancer-several-csc-markers-such-as-cd24cd44esa-triple-posit#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-solid-tumors-cscs-were-initially-identified-in-breast-cancer-bca-using#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-side-population-cells-from-pancreatic-cancer-cell-lines-also-contain-csc-#1", "verdict": "over_reach", "extra": "'Pancreatic cancer' is not stated; quotes say PDAC (unexpanded).", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-side-population-sp-a-marker-independent-strategy-was-originally-used-to-e#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-atp-binding-cassette-abc-transporter-family-proteins-such-as-mdr1-and#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-as-a-tumor-expands-or-develops-metastasis-these-clones-would-compete-for-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-intratumoral-heterogeneity-referring-to-the-variations-among-different-tu#1", "verdict": "over_reach", "extra": "Non-small cell lung cancer is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-on-the-other-hand-the-csc-theory-states-that-a-significant-source-of-hete#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-clonal-evolution-theory-claims-that-genetically-and-metabolically-dis#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-unstable-genome-in-tumor-cells-leads-to-the-occurrence-of-a-wide-range-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-distinct-gene-signature-associated-with-tumorigenic-cd24lowcd44-cell-po#1", "verdict": "over_reach", "extra": "Quote does not say the signature derives from CD44+CD24-/low cells; it names only 'IGS'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-activation-of-the-stat3-pathway-through-il-6-results-in-trastuzumab-resis#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-activation-of-the-transcription-factor-foxa1-in-egfr-mutant-non-small-cel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-associated-fibroblasts-create-a-chemoresistant-niche-through-incre#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-associated-fibroblasts-secrete-many-growth-factors-cytokines-and-c#1", "verdict": "over_reach", "extra": "Colorectal cancer cells are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-car-t-cells-are-being-developed-to-target-csc-markers-such-as-cd133-cd44-#1", "verdict": "over_reach", "extra": "Quotes do not say either trial/study is registered, nor tie EpCAM CAR-T to a clinical study.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd10gpr77-cancer-associated-fibroblasts-promote-tumor-formation-and-chemo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd13-hepatocellular-cscs-predominate-in-the-g0-phase-of-the-cell-cycle-an#1", "verdict": "over_reach", "extra": "Hepatocellular is not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd133-hcc-cells-isolated-from-human-cell-lines-and-xenograft-mouse-models#1", "verdict": "over_reach", "extra": "Hepatocellular carcinoma is not named; quotes only name HepG2 and Huh7 cells.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd44-expression-suppresses-ferroptosis-in-cancer-cells-indicating-a-corre#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd44-expression-suppresses-ferroptosis-in-cancer-cells-indicating-correla#1", "verdict": "over_reach", "extra": "Lung tumors not named; quote says MEN1-deficient tumors.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cd80-subsequently-binds-to-ctla-4-thereby-suppressing-cytotoxicity-of-cyt#1", "verdict": "over_reach", "extra": "Quote does not name CD80 or state it interacts with CTLA-4 directly.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chemotherapy-such-as-oxaliplatin-induces-notch-1-receptor-and-its-downstr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cisplatin-pretreatment-in-cells-contributes-to-the-interaction-of-histone#1", "verdict": "over_reach", "extra": "Non-small cell lung cancer cells are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-combining-oncolytic-viruses-with-mesenchymal-stem-cells-increases-treatme#1", "verdict": "over_reach", "extra": "'Brainstem glioma' is not stated; quote says brainstem DIPG xenografts.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-combining-pathway-inhibitors-such-as-pi3kaktmtor-inhibitors-with-cisplati#1", "verdict": "over_reach", "extra": "Ovarian cancer is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-compared-with-single-cisplatin-treatment-combined-treatment-with-pathway-#1", "verdict": "over_reach", "extra": "Ovarian cancer is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cscs-are-characterized-by-high-intracellular-iron-content-and-iron-addict#1", "verdict": "over_reach", "extra": "Cholangiocarcinoma is not named; quote only says CCA-SPH.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cscs-are-reported-to-be-highly-resistant-to-the-current-chemotherapeutic-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cscs-in-breast-cancer-were-initially-identified-using-the-cd44cd24-marker#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cyclin-d2-promotes-colorectal-cscs-to-survive-after-radiation-by-activati#1", "verdict": "over_reach", "extra": "Colorectal not stated; quotes only say CRC and CRC patients.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cytidine-deaminase-expression-is-significantly-increased-in-cells-obtaine#1", "verdict": "over_reach", "extra": "Cytidine deaminase is not stated; quote says CDA.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-endothelial-cells-promote-csc-properties-through-the-il-8-mediated-pathwa#1", "verdict": "over_reach", "extra": "'Conditioned medium' is not in the quote, which says paracrine role of liver ECs.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-epithelial-mesenchymal-transition-and-csc-marker-expression-are-significa#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-expression-levels-of-abc-transporters-in-cancer-cells-determine-chemoresi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ferroptosis-inducing-agents-like-erastin-combined-with-chemotherapeutic-a#1", "verdict": "over_reach", "extra": "Doxorubicin not named; quote says Dox.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genetic-studies-demonstrate-that-the-malignant-clone-in-chronic-myeloid-l#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-histone-deacetylase-inhibitors-effectively-target-quiescent-cancer-stem-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-neuroblastoma-amplification-and-upregulation-of-frizzled-1-wnt-recepto#1", "verdict": "over_reach", "extra": "Neuroblastoma is not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-pancreatic-cancer-neuroblastoma-and-basal-cell-carcinoma-activation-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-pancreatic-cancer-several-csc-markers-such-as-cd24cd44esa-triple-posit-1#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ironomycin-ebselen-pyrazole-and-benzylisothiourea-containing-agents-and-a#1", "verdict": "over_reach", "extra": "Artemisinin derivatives not stated; quote only says ARTs.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mesenchymal-stem-cell-loaded-oncolytic-adenoviruses-produce-significant-t#1", "verdict": "over_reach", "extra": "Glioblastoma and adenoviruses are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-metformin-an-antidiabetic-drug-targets-ampk-signaling-to-inhibit-cell-pro#1", "verdict": "over_reach", "extra": "Colorectal CSCs and 'HCC' expansion are not stated in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-metformin-shows-promising-results-for-attenuating-resistance-through-inhi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-micab-downregulation-is-modulated-by-oncogenic-mir-20a-and-leads-to-resis#1", "verdict": "over_reach", "extra": "Breast cancer is not named; quotes only say 'BC cells'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-microrna-18a-5p-overexpression-increases-the-radiosensitivity-of-cd133-lu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-multiple-signaling-pathways-and-their-crosstalk-including-epcam-wntβ-cate#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-notch-signaling-is-highly-expressed-in-glioblastoma-and-activation-of-thi#1", "verdict": "over_reach", "extra": "Glioblastoma/GBM stem cells not stated for NOTCH maintaining stemness; quote says GSCs, CL and MES.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-of-particular-relevance-to-cancer-chemotherapy-are-the-transporters-p-gly#1", "verdict": "over_reach", "extra": "MDR1 expanded to 'multidrug resistance 1', which the quotes do not give.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-oncolytic-virotherapy-mesenchymal-stem-cells-neural-stem-cells-and-adipos#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pd-l1-expression-promotes-stemness-properties-including-self-renewal-tumo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-peroxisome-proliferator-activated-receptor-alpha-and-betadelta-regulate-m-1#1", "verdict": "over_reach", "extra": "PPARα expanded to peroxisome proliferator-activated receptor alpha; not in quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pharmacological-inhibition-of-smyd3-prevents-the-spreading-of-patient-der#1", "verdict": "over_reach", "extra": "Colorectal cancer not stated; quote only says CRC and CRC-SC.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-salinomycin-triggers-ferritin-degradation-and-reactive-oxygen-species-med#1", "verdict": "over_reach", "extra": "Salinomycin is not named in the quotes; breast CSCs not tied to these compounds.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-selective-pressure-from-chemotherapy-directs-the-evolution-of-cancer-cell#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-several-novel-strategies-are-in-clinical-trials-including-multikinase-inh#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-side-population-cells-are-reported-to-express-high-level-of-atp-binding-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-side-population-cells-from-pancreatic-cancer-cell-lines-contain-csc-fract#1", "verdict": "over_reach", "extra": "Pancreatic cancer not stated; quotes say PDAC.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-side-population-cells-in-pancreatic-cancer-also-express-abcb1-and-abcg2-w#1", "verdict": "over_reach", "extra": "Pancreatic cancer cell lines are not named in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-similarly-autocrine-tgf-β-signaling-and-il-8-expression-are-enhanced-afte#1", "verdict": "over_reach", "extra": "TNBC expanded to triple-negative breast cancer; not in quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-similarly-notch-pathway-inhibition-is-effective-in-ovarian-cancer-therapy#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-sox2-olig2-and-nanog-are-stem-cell-markers-expressed-in-glioblastoma-dtp-#1", "verdict": "over_reach", "extra": "GBM expanded to glioblastoma; not in quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-stroma-secreted-chemokine-stromal-derived-factor-1α-and-its-cognate-recep#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-stromal-derived-factor-1αcxcr4-interaction-mediates-resistance-of-leukemi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-targeting-the-pi3kaktmtor-pathway-is-effective-in-resistant-ovarian-cance#1", "verdict": "over_reach", "extra": "Ovarian tumor cells are not named in the quote about FGFR3 and PI3K/AKT.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-cd133cd44high-xenografts-but-not-other-marker-combinations-produce-in#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-extracellular-matrix-contains-several-proteins-that-interact-with-mem#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-hedgehog-signaling-pathway-which-plays-important-roles-in-embryonic-d#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-humanized-vegf-antibody-bevacizumab-reduces-glioblastoma-multiforme-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-notch-signaling-pathway-particularly-notch3-plays-an-essential-role-i#1", "verdict": "over_reach", "extra": "HGSC equated with ovarian cancer for Notch3 reprogramming; the quote does not say so.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-reasons-for-resistance-against-conventional-therapy-and-regrowth-of-u#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-wntβ-catenin-pathway-is-activated-through-acetylcholine-muscarinic-re#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-trastuzumab-treatment-of-breast-cancer-cells-enriches-cscs-with-elevated-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-associated-macrophages-induce-drug-resistance-in-non-small-cell-lun#1", "verdict": "over_reach", "extra": "Non-small cell lung cancer is not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumors-remove-natural-killer-group-2d-ligands-which-is-one-of-the-primary#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-using-aldehyde-dehydrogenase-in-combination-with-cd133-to-analyze-ovarian#1", "verdict": "over_reach", "extra": "Ovarian tumors are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-distinct-gene-signature-associated-with-tumorigenic-cd24lowcd44-cell-po-1#1", "verdict": "over_reach", "extra": "Quote does not say the signature derives from tumorigenic CD24-/low/CD44+ cells; names only 'IGS'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aldehyde-dehydrogenase-1-plays-a-crucial-role-in-maintaining-csc-properti#1", "verdict": "over_reach", "extra": "Expands LCSCs to 'lung cancer stem cells'; quotes never name lung.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aldh1-expression-is-associated-with-tumor-progression-and-therapy-resista#1", "verdict": "over_reach", "extra": "Names prostate cancer; quotes never name prostate cancer.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-crispr-based-functional-screens-enable-systematic-interrogation-of-genes-#1", "verdict": "over_reach", "extra": "Expands GBM to glioblastoma; quotes only say GBM.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-organoids-are-used-as-in-vitro-models-to-understand-tumor-heterogeneity-a#1", "verdict": "over_reach", "extra": "Expands GC to gastric cancer; quotes only say GC.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ov6-hcc-cells-with-endogenously-active-wntβ-catenin-signaling-are-resista#1", "verdict": "over_reach", "extra": "Wnt/beta-catenin signaling is not mentioned in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-small-numbers-of-cscs-can-reconstruct-entire-cancer-tissue-leading-to-rec#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-boolean-logic-circuits-implemented-in-car-t-cells-enable-and-gate-activat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cell-fusion-between-bone-marrow-derived-mesenchymal-stem-cells-and-cancer#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-crispr-based-epigenome-editing-tools-including-dcas9-fused-to-epigenetic-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-crispr-based-functional-screens-enable-systematic-interrogation-of-genes--1#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-msc-loaded-oncolytic-adenoviruses-produce-substantial-tumor-shrinkage-in-#1", "verdict": "over_reach", "extra": "Expands OV to oncolytic virus; quotes only say OV-loaded MSCs.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-switchable-car-systems-provide-temporal-control-over-therapeutic-activity#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-synthetic-notch-receptors-enable-engineered-cells-to-sense-tumor-microenv#1", "verdict": "over_reach", "extra": "Quotes never say the cells are T cells.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-can-lose-tumor-associated-antigens-through-genetic-mutations#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-reduce-expression-of-cxcr3-chemokine-ligands-cxcl9-cxcl10-an#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-even-though-the-immune-defense-system-possesses-multiple-mechanisms-for-e#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-exhausted-t-cells-gradually-lose-their-capacity-for-robust-cytokine-produ#1", "verdict": "over_reach", "extra": "Expands Ttex to terminally exhausted; quotes do not give that expansion.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-experiments-in-animals-have-however-provided-evidence-for-immune-response#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genetic-alterations-affecting-pd-l1-expression-are-frequent-in-hematologi#1", "verdict": "over_reach", "extra": "Quotes do not say N-glycosylation stabilizes PD-L1 generally; only that TMUB1 enhances N-glycosylation and stability.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-loss-and-downregulation-of-mhc-class-i-expression-one-of-the-most-fundame#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-myeloid-derived-suppressor-cells-mdscs-regulatory-t-cells-and-tumor-assoc#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tams-which-often-constitute-a-substantial-fraction-of-the-tumor-mass-gene#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-incidence-of-the-common-tumors-in-mice-that-lack-lymphocytes-is-littl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-molecular-basis-of-t-cell-exhaustion-involves-persistent-antigen-expo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-transcriptional-regulation-of-exhaustion-is-governed-by-specific-tran#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-treg-cells-suppress-effector-t-cell-function-through-production-of-immuno#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-derived-factors-including-vegf-il-10-and-pge2-interfere-with-dc-dif#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumors-also-transform-nearby-blood-vessels-through-production-of-vascular#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aberrant-glycosylation-is-particularly-common-with-tumor-associated-glyca#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-absence-of-central-tolerance-because-neoantigens-are-not-present-during-t#1", "verdict": "over_reach", "extra": "Expands mTECs to medullary thymic epithelial cells; quotes do not.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-anti-idiotype-vaccines-and-antibody-therapies-have-been-developed-to-targ#1", "verdict": "over_reach", "extra": "Expands DC to dendritic cell; quotes only say Id-pulsed DC.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-testis-antigens-ctas-represent-a-unique-category-of-proteins-expre#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-evidence-from-both-murine-tumor-models-and-human-cancer-studies-has-demon#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-functional-melanoma-specific-t-cells-can-be-propagated-from-peripheral-bl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-high-immunogenicity-novel-amino-acid-sequences-in-neoantigens-are-readily#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-immune-surveillance-appears-particularly-effective-against-virus-associat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-melanoma-tumor-specific-antigens-were-discovered-by-culturing-irradiat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-the-presence-of-ifn-γ-the-catalytic-subunits-of-standard-proteasomes-a#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mucin-glycoproteins-such-as-muc1-display-altered-glycosylation-in-cancers#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-shared-neoantigens-arise-from-recurrent-driver-mutations-that-occur-in-cr#1", "verdict": "over_reach", "extra": "'Driver' mutations are not in the quotes for the shared-neoantigen claim.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-similarly-her2neu-erbb2-shows-dramatic-overexpression-in-approximately-20#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-mage-melanoma-associated-antigen-family-and-ny-eso-1-are-among-the-mo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-success-of-prophylactic-vaccines-against-hpv-and-hbv-in-preventing-vi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-b-cell-mediated-tumour-promotion-has-been-shown-to-involve-different-mech#1", "verdict": "over_reach", "extra": "Quote does not say B-cell tumour promotion involves immunosuppressive cytokines generally.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-infiltration-of-tams-is-generally-associated-with-worse-prognosis-which-i#1", "verdict": "over_reach", "extra": "Expands PCa to prostate cancer; quotes only say PCa.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-natural-killer-cells-are-innate-lymphoid-cells-that-have-long-been-consid#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-nk-cells-have-granules-with-perforins-and-granzymes-that-act-on-target-ce#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aicd-is-considered-to-be-one-of-the-mechanisms-responsible-for-the-increa#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-dysfunctional-immune-responses-can-result-as-some-tumor-cells-express-fas#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-over-the-past-decade-a-number-of-reports-have-provided-data-indicating-th#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-overexpression-of-cox-2-results-in-increased-production-of-pgs-by-tumor-c#1", "verdict": "over_reach", "extra": "Gastric cancer cells are not named; quotes only mention PTGS2 and cisplatin.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rapidly-growing-tumor-cells-require-nutrients-oxygen-and-essential-metabo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-pathway-responsible-for-these-effects-has-recently-been-elucidated-as#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-tumor-microenvironment-physically-constitutes-a-barrier-against-t-cel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-is-ample-evidence-that-tumor-cells-produce-immunosuppressive-factor#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-acquired-resistance-develops-through-various-mechanisms-including-loss-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-car-t-cells-combined-with-checkpoint-blockade-particularly-anti-pd-1-repr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clinical-trials-combining-car-t-cells-targeting-mesothelin-egfrviii-or-ot#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mechanisms-of-primary-resistance-include-lack-of-neoantigen-expression-de#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-novel-immune-checkpoint-targets-beyond-pd-1-and-ctla-4including-lag-3-tim#1", "verdict": "over_reach", "extra": "Quotes do not describe LAG-3/TIM-3 as checkpoint targets beyond PD-1 and CTLA-4.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-oncolytic-viruses-which-selectively-infect-and-lyse-tumor-cells-while-rel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pd-l1-expression-on-tumor-cells-tumor-mutational-burden-tmb-microsatellit#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-personalized-neoantigen-vaccines-require-complex-manufacturing-workflows-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-preclinical-studies-have-demonstrated-that-pd-1-inhibition-combined-with-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-predicted-neoantigens-are-prioritized-based-on-multiple-factors-including#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-selected-neoantigens-are-then-synthesized-as-peptides-encoded-in-mrna-or-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-successful-car-t-cell-products-target-cd19-a-b-cell-lineage-mark#1", "verdict": "over_reach", "extra": "ALL and CAR T-cell product are not named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-unleashing-the-anti-tumor-potential-of-innate-immune-cellsparticularly-nk#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-much-of-the-burden-of-cancer-in-the-united-states-can-be-traced-to-modifi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-major-limitation-is-that-many-observational-studies-reporting-dramatic-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-broader-pattern-of-failure-chemoprevention-of-cancer-has-been-characteriz#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clinical-development-randomized-clinical-trials-have-demonstrated-signifi#1", "verdict": "over_reach", "extra": "Oral leukoplakia is not named; quotes say OPLs / no condition for the first trial.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clinical-evidence-and-challenges-short-term-clinical-trials-have-confirme#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cox-2-expression-is-virtually-undetectable-in-normal-intestinal-mucosa-bu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-direct-effects-on-cancer-cells-involve-activation-of-amp-activated-protei#1", "verdict": "over_reach", "extra": "Quote does not say these are direct effects on cancer cells.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-exceptions-exist-aspirin-and-tamoxifen-show-clear-benefit-when-targeted-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-fenretinide-represents-a-leading-candidate-for-bladder-cancer-chemopreven#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-indirect-effects-occur-through-systemic-metabolic-changes-including-reduc#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rationale-and-mechanism-cyclooxygenase-2-cox-2-has-emerged-as-a-compellin#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-strikingly-two-trials-in-smokers-found-that-beta-carotene-was-associated-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tamoxifen-increases-risks-of-endometrial-cancer-and-thromboembolic-events#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-synergistic-benefits-across-disease-categories-an-important-advantage-of-#1", "verdict": "over_reach", "extra": "Quotes do not say these risk factors are shared by several chronic diseases.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tamoxifen-and-raloxifene-for-breast-cancer-prevention-represent-successfu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mced-tests-are-built-upon-the-concept-of-liquid-biopsy-which-leverages-th#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-regular-pap-testing-enables-detection-of-precancerous-changes-before-symp#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cell-blocks-enable-immunohistochemistry-in-situ-hybridization-and-molecul#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-revised-figo-staging-system-markedly-clarified-tumor-characteristics-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adrenal-metastasis-can-occur-from-primaries-in-the-lung-39-breast-35-mela#1", "verdict": "over_reach", "extra": "Adrenal metastasis is not mentioned in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-cancerous-cell-is-particularly-characterized-by-a-poor-use-of-oxygen-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-median-time-from-cancer-diagnosis-to-the-identification-of-adrenal-me#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-virchow-was-the-first-to-correctly-link-the-origin-of-cancers-from-otherw#1", "verdict": "over_reach", "extra": "The definition of the theory (cancer caused by tissue irritation, chronic) is not in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hanahan-and-weinberg-identified-these-traits-as-the-hallmarks-of-cancer-w#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-enabling-characteristic-identified-in-2000-as-genomic-instability-was#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-identification-of-tumour-promoting-inflammation-as-the-second-enablin#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-angiosarcoma-as-comprises-1-of-all-soft-tissue-sarcoma-sts-which-are-them#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-local-recurrences-can-occur-in-all-phyllodes-tumors-at-an-overall-rate-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-about-one-quarter-of-cancers-in-low-and-middle-income-nations-are-due-to-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chronic-hepatitis-b-virus-hbv-infection-chronic-hepatitis-causes-about-52#1", "verdict": "over_reach", "extra": "Expands HBV to hepatitis B virus and HCC to hepatocellular carcinoma; quotes give only abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-massetti-emphasized-that-almost-a-third-of-cancer-deaths-globally-are-due#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-massetti-stressed-that-30-percent-of-cancer-deaths-globally-are-due-to-le#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-more-than-90-of-cancers-are-directly-attributable-to-environmental-and-li#1", "verdict": "over_reach", "extra": "Expands CRC to colorectal cancers; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-nearly-half-of-cancers42-percentare-attributed-to-modifiable-risk-factors#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-is-convincing-epidemiological-evidence-from-both-cohort-and-case-co#1", "verdict": "over_reach", "extra": "Says clear dose-risk relationship for all listed cancers including liver; quote gives it only for oral, oesophageal, colorectal, laryngeal, breast.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tobacco-through-its-various-forms-of-exposure-constitutes-the-main-cause-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ultraviolet-radiation-is-a-recognized-cause-of-skin-cancer-including-mali#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-complete-surgical-cytoreduction-possible-is-decisive-for-the-prognosi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-move-towards-extensive-surgery-has-been-coupled-with-a-greater-string#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-to-quantify-the-extent-of-peritoneal-metastases-and-determine-the-feasibi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-true-colonic-mucosal-recurrences-are-rare#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-evidence-of-moderate-quality-supports-that-robotic-surgery-for-rectal-can#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adipose-tissue-undergoes-decellularization-using-physical-chemical-and-en#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-essential-differences-between-oncoplastic-surgery-and-conventional-br#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-importance-of-dna-repair-is-illustrated-by-diseases-such-as-ataxia-te#1", "verdict": "over_reach", "extra": "Names the ATM gene; quote says only 'this gene'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-p53-tumor-suppressor-protein-plays-a-crucial-role-in-radiation-induce#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-carbon-ions-create-a-unique-dna-damage-signature-characterized-by-complex#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-following-thyroidectomy-for-differentiated-thyroid-cancers-papillary-foll#1", "verdict": "over_reach", "extra": "Expands FTC to follicular thyroid cancer; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-for-endometrial-cancer-vaginal-cuff-boost-advanced-ebrt-planning-techniqu#1", "verdict": "over_reach", "extra": "Mentions vaginal cuff boost; quote only says HDR-VCBT, with no expansion or endometrial/vaginal cuff context.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-intensity-modulation-has-permitted-radiation-oncologists-to-place-sharper#1", "verdict": "over_reach", "extra": "Expands LAPC to locally advanced pancreatic cancer; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-peptide-receptor-radionuclide-therapy-prrt-using-lutetium-177-lu-177-conj#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-radiation-emitted-from-targeted-cells-can-penetrate-and-destroy-adjacent-#1", "verdict": "over_reach", "extra": "Attributes antigen-negative LSC targeting to radioimmunotherapy and expands LSC to leukemic stem cells; quote says only 'Its ability'.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-randomized-trials-comparing-proton-versus-carbon-ion-therapy-for-skull-ba#1", "verdict": "over_reach", "extra": "Says trials have been registered; quotes only give trial titles.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-inability-to-deliver-adequate-brachytherapy-boost-is-associated-with-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-relative-biological-effectiveness-rbe-of-protons-is-approximately-11-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-more-recent-development-in-mri-guided-rt-is-application-of-ai-methods-f#1", "verdict": "over_reach", "extra": "Expands IGRT to image-guided radiotherapy; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-high-accuracy-offline-mri-planning-requires-addressing-geometric-distorti#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-widespread-implementation-of-adaptive-radiotherapy-including-mr-guided-ap#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chronic-effects-include-chronic-diarrhea-malabsorption-recurrent-bouts-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-irradiation-to-ovaries-leads-to-infertility-or-premature-ovarian-failure-#1", "verdict": "over_reach", "extra": "Names ovaries and irradiation of ovaries; quote says only higher doses and older age are associated with greater damage.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-late-complications-include-alopecia-telangiectasia-fibrosis-of-masticator#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ai-automated-planning-tools-like-the-radiation-planning-assistant-rpa-aim#1", "verdict": "over_reach", "extra": "Expands RPA to Radiation Planning Assistant; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-is-projected-to-become-the-number-one-cause-of-death-across-the-gl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-barriers-to-rt-implementation-are-numerous-including-perceptions-that#1", "verdict": "over_reach", "extra": "Expands LMICs to low- and middle-income countries; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-barriers-to-the-implementation-of-rt-are-numerous-and-include-percept#1", "verdict": "over_reach", "extra": "Expands LMICs to low- and middle-income countries; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-acquire-spontaneous-mutations-that-cause-drug-resistance#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-term-chemotherapy-was-coined-by-german-chemist-paul-ehrlich-who-inves-1#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cisplatin-for-example-is-fda-approved-for-the-treatment-of-advanced-ovari#1", "verdict": "over_reach", "extra": "Says FDA label; quotes never mention the FDA.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-development-of-pyrimidine-and-purine-analogs-as-potential-antineoplas#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-drugs-like-bortezomib-docetaxel-etoposide-imatinib-sunitinib-sorafenib-an#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-stem-cells-stromal-cells-and-immune-cells-can-be-reprogrammed-by-m#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-elevated-expressions-of-repair-system-genes-are-often-associated-with-che#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-involving-other-transport-proteins-such-as-multidrug-resistance-associate#1", "verdict": "over_reach", "extra": "Names the protein as breast cancer resistance protein (BCRP); quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mediated-primarily-by-p-glycoprotein-overexpression-which-pumps-various-s#1", "verdict": "over_reach", "extra": "Names P-glycoprotein; quote never names it.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-early-intervention-by-perioperative-multidisciplinary-teams-has-been-show#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-foxtrot-trial-results-have-prompted-implementation-of-novel-treatment#1", "verdict": "over_reach", "extra": "Expands NAC to neoadjuvant chemotherapy; quote gives only the abbreviation.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-raloxifene-raloxifene-is-a-selective-estrogen-receptor-modulator-that-has#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tamoxifen-is-a-selective-estrogen-receptor-modulator-serm-medication-used#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-anastrozole-a-selective-aromatase-inhibitor-is-available-as-a-1-mg-tablet#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aromatase-estrogen-synthetase-is-a-member-of-the-cytochrome-p450-superfam#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-letrozole-is-also-a-selective-aromatase-inhibitor#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-enzalutamide-is-a-third-generation-oral-nonsteroidal-antiandrogen-used-in#1", "verdict": "over_reach", "extra": "Identifies XTANDI as enzalutamide; quote never names enzalutamide.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-therapy-with-enzalutamide-has-been-shown-to-prolong-relapse-free-as-well-#1", "verdict": "over_reach", "extra": "Identifies XTANDI as enzalutamide; quote never names enzalutamide.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-commercial-names-and-year-of-approval-in-the-united-states-of-the-cur#1", "verdict": "over_reach", "extra": "Names triptorelin (Trelstar) and US approval; quote is only 'ORIG 1 AP 20000615' with no drug or country.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-principal-mechanism-of-action-of-lhrh-antagonists-is-the-competitive-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-abiraterone-is-associated-with-an-appreciable-rate-of-serum-enzyme-elevat#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-use-of-adt-in-prostate-cancer-patients-corresponded-with-a-significan#1", "verdict": "over_reach", "extra": "Specifies prostate cancer patients; quote does not name prostate cancer or expand ADT.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-enz-is-moderately-effective-in-crpc-patients-who-were-pretreated-with-che#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-inevitable-resistance-most-patients-eventually-develop-resistance-to-targ#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-cancer-cells-cross-linking-cd20-can-induce-cell-cycle-arrest-inhibit-d#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rb-pathway-alterations-loss-of-rb-function-or-alterations-in-upstream-reg#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ribociclib-a-unique-cyclin-dependent-kinase-inhibitor-that-is-used-in-com#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-cyclin-kinases-4-and-6-regulate-the-cellular-transition-from-the-g1-t#1", "verdict": "over_reach", "extra": "Names cyclin-dependent kinase 6; quote never names CDK6.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-during-the-prevascular-phase-when-angiogenic-activity-is-absent-or-insuff#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hypertension-the-overall-incidence-of-significantly-raised-blood-pressure#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-thromboembolism-the-use-of-bevacizumab-was-significantly-associated-with-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-angiogenesis-is-required-for-tumors-to-grow-beyond-a-few-millimeter#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-classic-example-is-the-t790m-mutation-in-egfr-mutant-non-small-cell-lun#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cell-spheroids-allow-study-of-the-tumor-microenvironment-and-how-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-cells-employ-diverse-strategies-to-evade-therapeutic-interventions#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-common-examples-include-activation-of-the-pi3kakt-pathway-in-response-to-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-drug-metabolism-alterations-in-drug-metabolizing-enzymes-can-lead-to-drug#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-immune-evasion-tumors-can-recruit-immunosuppressive-cells-including-myelo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-egfr-mutant-nsclc-met-amplification-can-activate-parallel-signaling-pa#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-resistance-occurs-through-enhanced-activity-of-nucleotide-excision-repair#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-similarly-in-chronic-myelogenous-leukemia-cml-bcr-abl-kinase-activity-is-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-target-mutations-cancer-cells-frequently-develop-second-site-or-gatekeepe#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-upstream-activation-amplification-or-mutation-of-upstream-activators-can-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-immuno-pet-radiolabeled-antibodies-such-as-89zr-atezolizumab-enable-asses#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pet-imaging-positron-emission-tomography-using-specific-tracers-can-asses#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-national-cancer-institute-has-established-a-30-point-checklist-to-det#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-mutational-burden-tmb-high-tmb-has-been-associated-with-increased-n#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-antigen-spreading-therapies-inducing-immunogenic-cell-death-promote-epito#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-emerging-checkpoints-clinical-trials-are-evaluating-inhibitors-of-lag-3-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-protacs-tag-specific-cancer-causing-proteins-for-degradation-by-the-cells#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-protein-degraders-protacs-proteolysis-targeting-chimeras-and-molecular-gl#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-stromal-targeting-inhibiting-cancer-associated-fibroblasts-and-disrupting#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-combination-of-anti-ctla-4-and-anti-pd-1-antibodies-has-shown-improve#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-vertical-targeting-combining-drugs-that-target-different-nodes-within-the#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-experimental-animal-models-tumors-induced-by-carcinogens-or-oncogenic-#1", "verdict": "over_reach", "extra": "Says tumors usually express unique TSTAs; quotes only say such antigens are unique when expressed on carcinogen-induced cancers.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-human-cancer-patients-the-presence-of-antibodies-to-tumor-associated-a#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-loss-of-mhc-class-i-expression-is-particularly-significant-as-it-occu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-programmed-cell-death-protein-1-pd-1-represents-a-distinct-immune-checkpo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-development-and-clinical-implementation-of-immune-checkpoint-inhibito#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-success-of-prophylactic-vaccines-against-hpv-and-hbv-in-dramatically-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-the-response-to-dna-damage-p53-activates-genes-involved-in-cell-cycle-#1", "verdict": "over_reach", "extra": "Names p53; the quote only says multifunctional transcription factor, no p53.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-first-therapeutics-based-on-clustered-regularly-interspaced-short-pal#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-aav-2-is-the-predominant-serotype-used-in-gene-therapy-approaches#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-retroviruses-are-single-stranded-rna-viruses-that-consist-of-the-5-and-3-#1", "verdict": "over_reach", "extra": "Quote does not name retroviruses; says only \"their\" similarity and gag-pol structure.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-common-theme-emerging-from-studying-the-interaction-of-viruses-with-cel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-another-technique-to-achieve-tumor-specific-cytotoxicity-with-replication#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-g207-was-generated-by-deleting-the-ribonucleotide-reductase-and-γ1345-gen#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-to-target-hepatocellular-carcinoma-cells-the-promoterenhancer-of-the-α-fe#1", "verdict": "over_reach", "extra": "Liver cancer/hepatocellular targeting is never stated; quotes mention only AFP promoter and E1 genes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-crisprcas9-based-technology-is-currently-ongoing-in-early-stages-of-clini#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-newer-gene-editing-systems-are-even-more-powerful-than-the-crispr-cas9-sy#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-voretigene-neparvovec-rzyl-was-granted-approval-in-december-2017-for-trea#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-distinct-and-predominant-mechanism-of-drug-resistance-found-in-cancer-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-abraxane-is-a-130-nm-albumin-based-nanoparticle-formulation-of-paclitaxel#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-abraxane-was-approved-by-the-fda-in-2005-for-breast-cancer-2010-for-non-s#1", "verdict": "over_reach", "extra": "Quote is only ORIG 1 AP 20050107; Abraxane is not named.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adsorptive-mediated-transcytosis-amt-favorable-interactions-between-the-s#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-albumin-bound-nab-paclitaxel-nps-abraxane-were-approved-in-2012-by-the-us#1", "verdict": "over_reach", "extra": "Quotes give dates only; Abraxane/nab-paclitaxel is not named.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-as-drug-carriers-polymersomes-modify-the-distribution-of-drugs-in-body-pr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-being-of-high-atomic-number-and-electron-density-gnps-are-optimal-contras#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-carbon-based-nanoparticles-are-effective-in-melanoma-cells#1", "verdict": "over_reach", "extra": "\"Graphene-encapsulated\" and \"carbon-dot\" are not stated; quotes give only GEMNS-PEI and CDs abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-doxil-the-first-fda-approved-nano-drug-1995-represents-a-landmark-achieve#1", "verdict": "over_reach", "extra": "Quote is only ORIG 1 AP 19951117; Doxil is not named.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-doxil-was-the-first-nanotherapeutic-approved-to-treat-cancer-and-is-used-#1", "verdict": "over_reach", "extra": "Quote lists indications without naming Doxil.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-melanoma-models-phosphatidylethanolamine-liposomal-cisplatin-was-prove#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-the-context-of-glioblastoma-multiforme-gbm-the-surrounding-brain-paren#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-lipid-bilayer-composition-the-liposome-lipid-bilayer-exists-in-a-liquid-o#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-sparc-mediated-release-in-the-tumoral-interstitium-sparc-secreted-protein#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-blood-brain-barrier-bbb-constitutes-a-microvascular-network-responsib#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-protein-corona-spontaneously-develops-and-evolves-on-the-surface-of-n#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-treatment-of-brain-tumors-is-limited-by-the-impermeability-of-the-bbb-and#1", "verdict": "over_reach", "extra": "Expands GBM to glioblastoma and ties low survival to glioblastoma; quotes use GBM and an unattributed survival statement.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-upon-entering-into-the-biological-environments-the-surface-of-the-nanopar#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-another-novel-theranostic-nanostructure-for-melanoma-was-a-biodegradable-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gd-based-nanoparticles-aguix-were-successfully-used-as-both-mri-contrast-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-multifunctional-mesoporous-silica-nanoparticles-m-msns-were-designed-and-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-multifunctional-nanoparticles-integrate-different-functions-to-further-ex#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-nanoparticle-based-drug-delivery-systems-have-been-shown-to-play-a-role-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-accelerated-approval-is-intended-for-developing-drugs-with-long-term-clin#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cells-are-removed-by-centrifugation-leaving-plasma-from-which-cfdna-can-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-patient-derived-orthotopic-xenograft-pdox-models-are-created-from-direct-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-value-of-pdx-models-in-predicting-human-clinical-trial-drug-responses#1", "verdict": "over_reach", "extra": "Refers to PDX models; quotes mention only PCTs and never PDX.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-accumulating-evidence-from-preclinical-and-clinical-studies-demonstrates-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clinical-and-preclinical-studies-have-indicated-that-the-composition-of-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-essentially-all-curative-chemotherapy-involves-combinations-of-2-and-usua#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bispecific-antibodies-such-as-cd19-directed-cd3-t-cell-engaged-blinatumom#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-relapse-has-become-the-most-frequent-cause-of-treatment-failure-after-hsc#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-elsewhere-and-especially-in-low-and-middle-income-countries-the-cancer-bu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-an-increase-in-the-amount-of-carcinogens-in-the-environment-has-contribut#1", "verdict": "over_reach", "extra": "Quote says \"these increases\" with no mention of breast cancer incidence.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-clustering-of-cancer-among-relatives-is-common#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-environmental-exposures-are-responsible-for-7090-of-disease-risk#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pathogenic-variants-in-high-penetrance-genes-have-been-identified-as-the-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cigarette-smoke-contains-more-than-7000-compounds-at-least-60-of-which-ar#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-consumption-of-red-meat-and-processed-meat-increases-the-risk-of-colorect#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-physical-inactivity-is-a-major-contributor-to-rising-rates-of-overweight-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-physical-inactivity-is-a-major-contributor-to-the-rise-in-rates-of-overwe#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-are-more-than-7000-chemicals-in-combustible-tobacco-cigarette-smoke#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-occupational-exposure-to-carcinogens-is-a-major-cause-of-death-and-disabi#1", "verdict": "over_reach", "extra": "Quote does not say the DALYs/deaths are from occupational carcinogen exposure.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-people-of-color-are-more-likely-than-their-white-counterparts-to-be-unins#1", "verdict": "over_reach", "extra": "Quote does not say the listed factors concern racial cancer disparities.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-researchers-have-found-that-tnbc-is-more-prevalent-in-black-women-who-tra#1", "verdict": "over_reach", "extra": "Expands AA/Gh/WA/Eth to Ghanaian, white American, Ethiopian; quotes give only abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-model-is-based-on-the-premise-that-social-setting-contributes-to-dise#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-an-indicator-of-mitotic-activity-the-ki-67-labeling-index-is-usually-belo#1", "verdict": "over_reach", "extra": "Ki-67 labeling index is never named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-primary-cns-tumors-comprise-approximately-50-to-70-of-intracranial-tumors#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mammaprint-is-the-first-assay-based-on-microarrays-that-has-completed-the#1", "verdict": "over_reach", "extra": "MammaPrint and FDA 510(k) review are not named in quotes; only a date and Substantially Equivalent.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-50-gene-molecular-signature-pam50-was-developed-for-clinical-use-in-pro#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gene-expression-profiling-revolutionized-breast-cancer-classification-in-#1", "verdict": "over_reach", "extra": "Quote does not name breast cancer or immunohistochemical markers, or say classification only partly matches.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-most-breast-cancer-is-sporadic-90-95-with-only-5-to-10-of-patients-having#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-approximately-80-of-lung-cancer-cases-in-men-and-90-of-cases-in-women-are#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-nsclc-is-now-recognized-not-as-a-singular-entity-but-as-multiple-patholog#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-due-to-different-triggering-mutations-and-critical-mutations-in-the-gbm-s#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gbm-is-usually-associated-with-pseudoprogression-or-radionecrosis-which-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-results-from-some-epidemiological-studies-suggest-that-ionizing-radiation#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-landmark-2005-eortc-ncic-trial-established-the-current-gold-standard-#1", "verdict": "over_reach", "extra": "EORTC-NCIC trial name is not in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-only-well-established-causative-factor-is-exposure-to-high-doses-of-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-risk-of-surgical-site-infection-increases-with-irradiation-and-multip#1", "verdict": "over_reach", "extra": "Quote does not name glioma cohort.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-rate-of-recurrence-and-the-risk-of-transformation-to-malignancy-is-de#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-recurrence-and-mortality-are-lower-for-intraventricular-meningiomas-t#1", "verdict": "over_reach", "extra": "Quote does not name intraventricular meningiomas; only \"Their\" recurrence rate.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-various-genetic-susceptibility-loci-have-been-identified-for-gliomas-and-#1", "verdict": "over_reach", "extra": "\"Genome-wide study\" is not stated in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cml-typically-arises-from-reciprocal-translocation-and-fusion-of-bcr-on-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tyrosine-kinase-inhibitors-are-effective-in-most-cases-however-the-patien#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adult-t-cell-lymphoma-and-mycosis-fungoides-are-the-most-common-mature-t-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-disease-is-associated-with-epstein-barr-virus-ebv-human-immunodeficie#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-monoclonal-protein-m-protein-exists-in-about-3-of-adults-older-than-50-ye#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-sbp-shows-progression-to-pcm-or-multiple-plasmacytoma-in-up-to-70-of-case#1", "verdict": "over_reach", "extra": "Expands SPB and EMP to solitary bone and extramedullary plasmacytoma; quote gives only abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-solitary-plasmacytoma-is-the-most-common-form-of-plasmacytoma#1", "verdict": "over_reach", "extra": "Expands SPB, SEP, MSP to plasmacytoma names; quote gives only abbreviations.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-mildest-and-most-common-pcd-is-the-precancerous-monoclonal-gammopathy#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-fdg-petct-scan-is-considered-to-have-superior-sensitivity-because-of-the-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-patients-with-multiple-myeloma-and-other-monoclonal-gammopathies-often-ha#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cranial-irradiation-a-history-of-intrathecal-chemotherapy-older-age-at-th#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mycn-amplification-present-in-approximately-20-25-of-neuroblastomas-mycn-#1", "verdict": "over_reach", "extra": "Neuroblastoma is never named in the quote; it says only MYCN amplification in ~25% of cases.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-since-neuroblastoma-cells-produce-catecholamines-breakdown-products-inclu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-genetic-markers-including-wt1-ctnnb1-and-wtx-gene-alterations-are-found-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-includes-male-pseudo-hermaphroditism-and-progressive-renal-failure-starti#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-present-day-survival-rates-are-80-90-with-the-addition-of-radiation-thera#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-cause-of-wilms-tumor-is-believed-to-be-due-to-genetic-alterations-aff#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-median-age-of-diagnosis-is-35-years-with-90-of-cases-diagnosed-before#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-are-notable-racial-differences-with-higher-incidence-in-africans-an#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-wilms-tumor-is-thought-to-develop-from-persistent-metanephric-tissue-or-n#1", "verdict": "over_reach", "extra": "Quotes never say Wilms tumor equals nephroblastoma or that Wilms tumor develops from nephrogenic rests.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-deletions-in-17p-leading-to-loss-of-heterozygosity-are-also-frequently-re#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-extraneural-metastases-occur-in-approximately-7-of-pediatric-cases-most-c#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-medulloblastoma-is-thought-to-originate-from-granule-cell-precursors-in-t#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-highest-survival-rates-are-seen-in-wnt-subgroup-97-100-while-group-3-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-common-cytogenetic-mutation-is-isochromosome-17q-resulting-from-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-time-from-symptom-onset-to-diagnosis-is-usually-short-typically-2-3-month#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-osteosarcoma-demonstrates-a-bimodal-age-distribution-and-most-commonly-oc#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pain-is-often-attributed-to-trauma-or-vigorous-physical-exercise-both-of-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-symptoms-are-usually-present-for-several-months-before-the-diagnosis-is-m#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-vast-majority-of-patients-about-85-to-90-with-osteosarcoma-undergo-li#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-variants-in-the-tp53-gene-are-found-in-approximately-70-of-patients-with-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-about-one-third-of-patients-present-with-symptoms-that-arise-either-from-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-degree-of-invasion-or-tumor-stage-is-generally-thought-to-be-a-more-i#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-most-accurate-adverse-prognostic-marker-is-the-invasiveness-of-the-tu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-thymomas-and-thymic-carcinomas-are-the-most-common-mass-of-the-anterior-m#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-late-findings-of-the-disease-typically-occurring-around-14-to-16-weeks-of#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-adrenocortical-carcinomas-acc-are-very-uncommon-these-lesions-are-less-co#1", "verdict": "over_reach", "extra": "Quotes do not say surgical series or incidentaloma series; they give only percentages of lesion types.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ensat-has-shown-that-ki67-is-the-most-powerful-prognostic-marker-in-both-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-median-overall-survival-os-of-all-acc-patients-is-about-3-4-years#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-worldwide-incidence-of-acc-is-05-to-2-per-1-million-people-annually#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-malignant-peritoneal-mesothelioma-mpm-on-the-other-hand-is-an-aggressive-#1", "verdict": "over_reach", "extra": "Quote never names mesothelioma, peritoneal site, MPM, or states an association with asbestos beyond exposure history tracing.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-most-reported-cases-of-eoppc-are-of-serous-histology-serous-surface-carci#1", "verdict": "over_reach", "extra": "EOPPC is never named or defined in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-probability-of-survival-is-better-for-advanced-ovarian-cancer-for-whi#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chemotherapy-induced-nv-is-one-of-the-most-common-and-distressing-acute-s#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-a-review-of-1612-patients-referred-to-an-outpatient-palliative-care-ce#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-methadone-is-both-a-mu-receptor-agonist-and-an-n-methyl-d-aspartate-nmda-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-pain-is-one-of-the-most-common-symptoms-in-cancer-patients-and-often-has-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-studies-have-shown-that-following-antiemetic-protocols-that-include-dexam#1", "verdict": "over_reach", "extra": "Quote says CIV control; the sentence expands CIV to vomiting.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-malnutrition-is-a-common-problem-in-cancer-patients-that-has-been-recogni#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-simplified-method-called-malnutrition-screening-test-mst-which-is-bas#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-tumor-induced-weight-loss-occurs-frequently-in-patients-with-solid-tumors#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-distress-is-prevalent-in-approximately-one-third-of-cancer-survivors-and-#1", "verdict": "over_reach", "extra": "CRC expanded to colorectal and FCR to fear of recurrence; neither expansion is in the quotes.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mood-disorders-including-anxiety-depression-or-post-traumatic-stress-diso#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-studies-have-shown-that-using-palliative-care-teams-can-decrease-overall-#1", "verdict": "over_reach", "extra": "ED expanded to emergency department; quotes never give that expansion.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-their-efforts-to-define-the-concept-of-a-good-death-researchers-narrow#1", "verdict": "over_reach", "extra": "Quotes never mention the concept of a Good Death; only title counts.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cost-sharing-policies-have-increased-out-of-pocket-expenses-for-patients-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-hartstein-noted-that-cms-which-is-the-biggest-payer-for-cancer-care-in-th#1", "verdict": "over_reach", "extra": "Hartstein, CMS as biggest payer, and prohibition on negotiating are not in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-there-were-no-significant-associations-between-monthly-treatment-costs-fo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-but-nearly-80-percent-of-the-worlds-children-who-develop-cancer-are-in-re#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-indigenous-people-are-more-likely-to-have-cancers-that-are-largely-preven#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chromosomal-instability-in-early-cancer-stages-is-caused-by-stress-on-dna#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-prolonged-replication-stress-can-lead-to-the-collapse-of-replication-fork#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-activated-p53-induces-p21-mediated-g1-s-checkpoint-arrest-or-triggers-apo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-for-human-pancreatic-cancer-the-most-common-causative-event-is-a-single-m#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-he-discussed-that-both-the-alleles-of-a-gene-need-to-be-lost-or-mutated-f#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-particular-studies-of-the-cloned-gene-have-established-that-rb-is-lost#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-total-mutations-of-p53-may-play-a-role-in-up-to-50-of-all-cancers-maki#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-active-p53-upregulated-the-expressions-of-important-proteins-like-cyc#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-concept-of-tumor-suppression-was-further-solidified-by-alfred-knudson#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-dna-damage-is-perceived-by-complexes-comprising-kinases-of-the-atmatr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-accumulating-evidence-suggests-that-chromosome-abnormalities-represent-a-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-bloom-syndrome-is-an-autosomal-recessive-disease-caused-by-a-lack-of-blm-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-cancer-is-a-multistep-progressive-disease-and-early-chromosomal-changes-p#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-chromosome-1-abnormalities-are-present-in-most-breast-carcinomas#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-numerical-chromosome-abnormalities-mainly-including-aneuploidy-and-chromo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-philadelphia-chromosome-is-the-hallmark-of-chronic-myeloid-leukemia-cml-a#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-theodor-boveri-first-proposed-that-chromosomal-abnormalities-were-a-commo#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-atm-kinase-detects-the-break-and-activates-repair-pathways-homologous-rec#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mutations-in-at-least-30-dna-repair-associated-genes-have-been-linked-to-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-mutations-in-genes-for-proteins-responsible-for-mismatch-repairs-such-as-#1", "verdict": "over_reach", "extra": "Quote says only This gene; MLH1 is never named.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-atm-kinase-plays-an-early-pivotal-role-in-the-signaling-process-by-de#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-proto-oncogene-on-chromosome-9-c-abl-the-precursor-to-the-viral-oncogen#1", "verdict": "over_reach", "extra": "ABL1 is never named in the quotes; they say This gene.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-an-avian-erythroblastosis-virus-aev-was-isolated-from-a-spontaneous-eryth#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-insertions-can-occur-over-a-broad-range-upstream-or-downstream-from-many-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-later-identified-as-a-derivative-of-chromosome-22-this-abnormality-was-de#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-retroviruses-cause-a-variety-of-naturally-occurring-cancers-in-many-anima#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-rous-sarcoma-virus-rsv-was-the-first-acutely-transforming-virus-shown-to-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-several-overactive-growth-promoting-genes-were-identified-by-isolating-an#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-studies-revealed-that-v-src-was-not-truly-a-viral-gene-but-rather-a-captu#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-abl-protein-made-from-the-translocated-gene-in-the-philadelphia-chrom#1", "verdict": "over_reach", "extra": "ABL1 is never named in the quote; it says This gene.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-truly-revolutionary-insight-came-when-it-was-discovered-that-viral-on#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-a-significant-example-of-activating-point-mutations-is-represented-by-tho#1", "verdict": "over_reach", "extra": "ret is never named; quote says This proto-oncogene.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ras-has-been-shown-to-be-oncogenically-activated-by-mutations-in-over-15-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-k-ras-gene-is-now-known-to-be-mutated-in-a-vast-number-of-human-cance#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-single-nucleotide-changes-that-turned-a-ras-proto-oncogene-into-an-on#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-in-another-childhood-tumor-called-neuroblastoma-a-different-member-of-the#1", "verdict": "over_reach", "extra": "Neuroblastoma is never named in the quote.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-proto-oncogenes-called-harvey-ras-h-ras-and-kirsten-ras-k-ras-are-the-pro#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-ras-was-first-discovered-as-the-hyperactive-product-of-a-mutant-ras-gene-#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-initial-tyrosine-kinase-inhibitor-approved-for-use-was-imatinib-gleev#1", "verdict": "over_reach", "extra": "Imatinib/Gleevec never named; quote is only a coded approval date.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-the-myc-family-represents-another-major-class-of-oncogenes-that-function-#1", "verdict": "over_reach", "extra": "MYC is never named in the quote; it says Transcription factor.", "checked_by": "model, blind, unreviewed"}
+{"change_id": "cancer-gene-mapping-studies-further-indicated-that-tumor-development-resulted-fr#1", "verdict": "ok", "extra": "", "checked_by": "model, blind, unreviewed"}

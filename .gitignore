@@ -2,3 +2,5 @@ data/cancer/pilot/cache/
 __pycache__/
 data/cancer/*/cache/
 .venv/
+changes/resolved.jsonl
+changes/CHANGES.md

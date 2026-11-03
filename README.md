@@ -139,18 +139,31 @@ Where a book sentence is stronger than its evidence ("binds *exclusively* to..."
 3. **Review.** A person works down the list in the dashboard (below) and, for each change, chooses accept, rewrite it themselves (`accept_edited`) or reject, with an optional note. Each reviewer's answers go in their own file, `changes/decisions/<name>.jsonl`. Two reviewers who disagree make the change `disputed`; a row in `changes/decisions.jsonl` is the adjudicator's final call. Having separate files also lets the paper report how often reviewers agree.
 4. **Implement.** `pipeline/11_implement_changes.py` applies only the accepted ones: `data/cancer/claims_current.jsonl` (every claim, with the accepted wording where there is one and the book's own sentence otherwise) and `changes/book_patch.jsonl` (the accepted edits, for whoever maintains the book text). It never touches the book's source files, `canonical` or `claim_origin`, and it never applies a proposal nobody has decided.
 
-Step 7 also attaches each change to its claim as `revisions`, with its status. A rewording is separate from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead. Wording a reviewer writes themselves is not machine-checked against the quotes. Proposals exist so far for all 13 flagged conflicts and dated claims (9 conflicts+dated added on 2026-11-03 with the first 4); none is decided. The pipeline always proposes a rewording; the 726 partly supported claims are next.
+Step 7 also attaches each change to its claim as `revisions`, with its status. A rewording is separate from a review decision (`review/decisions.jsonl`): the decision says how the evidence relates to the claim as written; the change says what we would write instead. Wording a reviewer writes themselves is not machine-checked against the quotes. **736 rewordings are proposed:** all 13 flagged conflicts and dated claims, and 723 of the 726 partly supported claims (`12_ingest_proposals.py`; the model judged 3 as needing no change, logged in `changes/no_change.jsonl`). None is decided. Proposer inputs and outputs are kept in `changes/proposer_runs/`.
 
 ### The review dashboard
 
-`review_app.py` is a small Streamlit app that runs on your own machine: no account, no hosting, nothing leaves the computer.
+`review_app.py` is a small Streamlit app that runs on your own machine: no account, no hosting, nothing leaves the computer unless you press the send button.
+
+**Quick start for a reviewer**
 
 ```bash
-python3 -m venv .venv && .venv/bin/pip install streamlit     # once
-.venv/bin/streamlit run review_app.py
+git clone https://github.com/Medhavy/medhavy-factchecker.git
+cd medhavy-factchecker
+python3 start.py
 ```
 
-Enter your name, then work through the changes in priority order. Each screen shows the book's sentence, the proposed sentence with the changed words marked, the reason, and the database quote with its link. Choose Accept, Rewrite it myself (the box starts with the proposal) or Reject, add a note, and Save and next. Every save re-runs the validator. "Apply accepted changes" runs step 11. The app has been tried end to end with a throwaway reviewer (accept, reject, rewrite); those test answers were removed.
+The first run sets itself up (a private Python environment in `.venv`, then Streamlit; about a minute). The dashboard opens in your browser at http://localhost:8501. You need to be a collaborator on the repo to clone and push it.
+
+Enter your name, then work through the changes in priority order. Each screen shows the book's sentence, the proposed sentence with the changed words marked, the reason, the database quote with its link, and a warning if a second reader found the sentence says more than the quotes do. Choose Accept, Rewrite it myself (the box starts with the proposal) or Reject, add a note, and Save and next. Your answers are saved on your computer in `changes/decisions/<your-name>.jsonl` as you go.
+
+- **Send my answers to GitHub** commits only your own decisions file and pushes it. Each reviewer has their own file, so reviewers never conflict.
+- **Get latest from GitHub** pulls new proposals and other reviewers' answers.
+- **Apply accepted changes** (for the maintainer) runs step 11 once the reviewing is done.
+
+If the folder is not a git clone, the app still works and saves answers on that computer only.
+
+**Second reader.** Proposals were written by a model that was told to use only the quoted passages. A second model then saw only each proposed sentence and its quotes and said whether the sentence states anything the quotes do not (`changes/entailment.jsonl`, step 13). It is strict: naming a gene or setting that only the unreviewed evidence notes mention counts. On the first run it flagged 241 of 736 proposals; many are abbreviation expansions, but some are real (a cancer type taken from a note rather than the quote). Flagged proposals show a warning; they are still reviewable.
 
 ## The triage in one paragraph
 
@@ -173,7 +186,10 @@ pipeline/
   05_build_evidence.py       step 5: keep only quoted passages that are exact substrings of the record; write evidence rows
   05b_strict_recheck.py      step 5b: apply the strict re-read (supports -> partial only); keeps stance_original
   10_check_changes.py        validates proposed rewordings, applies decisions, writes the priority-ordered review sheet changes/CHANGES.md
-  review_app.py (repo root)  the Streamlit review dashboard
+  review_app.py, start.py    the Streamlit review dashboard (repo root); `python3 start.py` sets it up and opens it
+  12_ingest_proposals.py     turns a proposer run into proposed changes (quotes taken from stored evidence, never invented)
+  13_ingest_entailment.py    records the blind second reading of each proposal
+  sync_git.py                send my answers / get latest, used by the dashboard
   11_implement_changes.py    applies accepted rewordings: claims_current.jsonl + changes/book_patch.jsonl
   09_build_report.py         writes REPORT.md, the plain-words summary, from facts.json
   legacy_migrate_facts.py    one-off: June 2026 medhavy-facts schema -> this schema

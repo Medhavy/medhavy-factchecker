@@ -102,6 +102,7 @@ def same(a, b):
 
 
 order = sorted(by_id, key=lambda c: priority(by_id[c])[0])
+ent = {r["change_id"]: r for r in jl(REPO / "changes/entailment.jsonl")}
 resolved = []
 for cid in order:
     r = by_id[cid]
@@ -109,7 +110,7 @@ for cid in order:
     out = dict(r)
     ds = list(reviewers.get(cid, {}).values())
     out.update(priority=tier, priority_reason=tier_why, status="proposed", final=None, decided_by=None, decided_date=None,
-               review_note=None, reviewers=sorted(reviewers.get(cid, {})), decision_source=None)
+               review_note=None, quote_check=(ent.get(cid) or {}).get("verdict"), quote_check_extra=(ent.get(cid) or {}).get("extra"), reviewers=sorted(reviewers.get(cid, {})), decision_source=None)
     d = None
     if cid in final_call:
         d, out["decision_source"] = final_call[cid], "adjudicator"
@@ -150,6 +151,8 @@ for i, r in enumerate(resolved, 1):
     L.append(f"- **Why:** {r['why']}")
     for e in r["evidence"]:
         L.append(f"- **Record:** [{e['record_id']}]({e['url']}) “{e['quote']}”")
+    if r.get("quote_check") == "over_reach":
+        L.append(f"- **Second reader's warning:** the sentence says something the quotes do not: {r['quote_check_extra']}")
     L.append(f"- **Proposed by:** {r['proposed_by']} on {r['proposed_date']}")
     if r["decided_by"]:
         L.append(f"- **Decision:** `{r['status']}` by {r['decided_by']} on {r['decided_date']}" + (f" — {r['review_note']}" if r["review_note"] else ""))

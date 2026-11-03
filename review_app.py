@@ -1,7 +1,6 @@
 """review_app.py — the review dashboard for proposed wording changes. Runs on your own machine; no account, no hosting.
 
-    python3 -m venv .venv && .venv/bin/pip install streamlit      (once)
-    .venv/bin/streamlit run review_app.py
+    python3 start.py          (sets itself up the first time)
 
 It shows each proposed rewording in priority order. The reviewer accepts it, rewrites it, or rejects it. Answers are saved to
 changes/decisions/<reviewer>.jsonl and the pipeline (pipeline/10_check_changes.py) is re-run after every save. When a
@@ -15,6 +14,7 @@ import streamlit as st
 REPO = Path(__file__).resolve().parent
 sys.path.insert(0, str(REPO / "pipeline"))
 from changes_vocab import KINDS  # noqa: E402
+import sync_git  # noqa: E402
 
 st.set_page_config(page_title="Wording review", layout="wide")
 
@@ -55,6 +55,17 @@ slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
 mine_path = REPO / "changes/decisions" / f"{slug}.jsonl"
 mine = {r["change_id"]: r for r in jl(mine_path)}
 
+st.sidebar.divider()
+if sync_git.is_repo(REPO):
+    if st.sidebar.button("Get latest from GitHub"):
+        ok, msg = sync_git.pull(REPO)
+        (st.sidebar.success if ok else st.sidebar.error)(msg)
+    if st.sidebar.button("Send my answers to GitHub", type="primary"):
+        ok, msg = sync_git.push_mine(REPO, slug, name)
+        (st.sidebar.success if ok else st.sidebar.error)(msg)
+else:
+    st.sidebar.caption("Not a git clone with a remote: answers are saved on this computer only.")
+
 ok, msg = run("10_check_changes.py")      # always start from fresh, validated state
 if not ok:
     st.error("The change files do not validate:\n\n" + msg)
@@ -89,6 +100,11 @@ else:
     st.subheader("What is proposed")
     st.markdown(diff_html(r["original"], r["proposed"]), unsafe_allow_html=True)
     st.markdown(f"**Why.** {r['why']}")
+    if r.get("quote_check") == "over_reach":
+        st.warning("A second reader, who saw only this sentence and its quotes, found that the sentence says something the quotes "
+                   f"do not: {r['quote_check_extra'].rstrip('. ')}. Check the record, or rewrite it yourself.")
+    elif r.get("quote_check") == "ok":
+        st.caption("A second reader, who saw only this sentence and its quotes, found nothing in it beyond the quotes.")
     st.markdown("**The database record(s) behind it**")
     for e in r["evidence"]:
         st.markdown(f"> “{e['quote']}”  \n> [{e['record_id']}]({e['url']})")
