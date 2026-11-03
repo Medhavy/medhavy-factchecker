@@ -18,14 +18,19 @@ It is not a verdict on the claim and it is unreviewed; the record, url and verba
 facts.json is NOT modified here (the pilot is kept apart until the shape is agreed).
 
 Also writes data/cancer/pilot/attempts.jsonl (one row per retrieval attempt, no third-party text).
-Usage:  python3 pipeline/05_build_evidence.py PASSAGES.jsonl [PASSAGES2.jsonl ...]
+Usage:  python3 pipeline/05_build_evidence.py [--dir full] PASSAGES.jsonl [PASSAGES2.jsonl ...]
         If a claim appears in more than one file, the LAST file wins (use this to re-run a few claims).
 """
 import json, re, sys, collections
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-PILOT = REPO / "data/cancer/pilot"
+import argparse
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--dir", default="pilot", help="batch folder under data/cancer/ (default: pilot)")
+_ap.add_argument("passages", nargs="+")
+_a = _ap.parse_args()
+PILOT = REPO / "data/cancer" / _a.dir
 STANCES = {"supports", "refutes", "partial", "related"}
 NAMES = {"pubmed": "PubMed", "clinicaltrials": "ClinicalTrials.gov", "fda": "openFDA"}
 
@@ -46,7 +51,7 @@ for l in (PILOT / "cache/retrieved.jsonl").read_text(encoding="utf-8").splitline
         r = json.loads(l); ret[r["fact_id"]] = r
 
 sel = {}
-for p in sys.argv[1:]:
+for p in _a.passages:
     for l in Path(p).read_text(encoding="utf-8").splitlines():
         if l.strip():
             r = json.loads(l); sel[r["fact_id"]] = r      # a later file overrides an earlier one (re-runs)
@@ -82,9 +87,9 @@ with open(PILOT / "attempts.jsonl", "w", encoding="utf-8") as f:
         f.write(json.dumps({"fact_id": fid, "database": r["database"], "retrieved": r["retrieved"],
                             "request": r.get("request"), "effective_query": r.get("effective_query"),
                             "relaxed": r.get("relaxed", 0), "total_hits": r.get("total_hits"),
-                            "records_returned": len(r["records"]), "error": r.get("error")}, ensure_ascii=False) + "\n")
+                            "records_returned": len(r["records"]), "error": r.get("error"), "skipped": r.get("skipped")}, ensure_ascii=False) + "\n")
 
-out = PILOT / "evidence.pilot.jsonl"
+out = PILOT / ("evidence.pilot.jsonl" if _a.dir == "pilot" else "evidence.jsonl")
 out.write_text("".join(json.dumps(x, ensure_ascii=False) + "\n" for x in rows), encoding="utf-8")
 print(f"{len(rows)} evidence records for {stats['claims with evidence']} of {len(sel)} claims -> {out}")
 for k, v in stats.items(): print(f"  {k}: {v}")

@@ -13,9 +13,11 @@ relaxations is recorded (`relaxed`) so a loosened query is never mistaken for th
 
 Usage:
   python3 pipeline/04_retrieve.py --pilot 60          # pick a seeded, stratified sample and retrieve it
-  python3 pipeline/04_retrieve.py --ids FILE.json     # retrieve the fact_ids listed in a JSON array
-Writes data/cancer/pilot/pilot_ids.json (when --pilot) and data/cancer/pilot/cache/retrieved.jsonl
-(the cache holds third-party record text, so it is git-ignored and can be regenerated).
+  python3 pipeline/04_retrieve.py --ids FILE.json --dir full [--resume]
+                                                      # retrieve the fact_ids in a JSON array into data/cancer/full/
+Writes <dir>/pilot_ids.json (when --pilot) and <dir>/cache/retrieved.jsonl (default dir: pilot).
+The cache holds third-party record text, so it is git-ignored and can be regenerated.
+--resume keeps the rows already in the cache and retrieves only the claims not yet in it.
 Needs network. ~2.5 requests/s (NCBI allows 3/s without a key).
 """
 import argparse, datetime, json, random, re, sys, time, urllib.error, urllib.parse, urllib.request
@@ -23,7 +25,6 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
-OUT_DIR = REPO / "data/cancer/pilot"
 TODAY = datetime.date.today().isoformat()
 UA = {"User-Agent": "medhavy-factchecker/0.1 (research; contact via github.com/Medhavy)"}
 EUT = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
@@ -211,21 +212,28 @@ def pilot_ids(rows, n, seed=20261102):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--pilot", type=int); ap.add_argument("--ids")
+    ap.add_argument("--dir", default="pilot"); ap.add_argument("--resume", action="store_true")
     a = ap.parse_args()
     rows = [json.loads(l) for l in (REPO / "data/cancer/queries.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     by_id = {r["fact_id"]: r for r in rows}
+    out_dir = REPO / "data/cancer" / a.dir
     if a.pilot:
         ids = pilot_ids(rows, a.pilot)
-        OUT_DIR.mkdir(parents=True, exist_ok=True)
-        (OUT_DIR / "pilot_ids.json").write_text(json.dumps(ids, indent=1), encoding="utf-8")
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "pilot_ids.json").write_text(json.dumps(ids, indent=1), encoding="utf-8")
     elif a.ids:
         ids = json.loads(Path(a.ids).read_text(encoding="utf-8"))
     else:
         sys.exit("give --pilot N or --ids FILE")
-    cache = OUT_DIR / "cache"; cache.mkdir(parents=True, exist_ok=True)
+    cache = out_dir / "cache"; cache.mkdir(parents=True, exist_ok=True)
+    path = cache / "retrieved.jsonl"
+    done_ids = set()
+    if a.resume and path.exists():
+        done_ids = {json.loads(l)["fact_id"] for l in path.read_text(encoding="utf-8").splitlines() if l.strip()}
     n_err = 0
-    with open(cache / "retrieved.jsonl", "w", encoding="utf-8") as out:
+    with open(path, "a" if a.resume else "w", encoding="utf-8") as out:
         for i, fid in enumerate(ids, 1):
+            if fid in done_ids: continue
             r = by_id[fid]; db = r["database_final"]; q = dict(r["query"])
             if db == "gene-protein-db": q["database"] = q.get("database", "ncbi-gene")
             row = {"fact_id": fid, "database": db, "retrieved": TODAY}
@@ -235,7 +243,7 @@ def main():
                 row.update({"error": f"{type(e).__name__}: {e}"[:200], "records": []}); n_err += 1
             out.write(json.dumps(row, ensure_ascii=False) + "\n"); out.flush()
             print(f"{i:>3}/{len(ids)} {db:<16} records={len(row['records'])} relaxed={row.get('relaxed', '-')}", flush=True)
-    print(f"done: {len(ids)} claims, {n_err} errors -> {cache / 'retrieved.jsonl'}")
+    print(f"done: {len(ids)} claims ({len(done_ids)} already cached), {n_err} errors -> {path}")
 
 
 if __name__ == "__main__":

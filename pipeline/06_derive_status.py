@@ -77,6 +77,8 @@ for f in facts:
         done("not_queryable", q["unqueryable_reason"]); continue
     if not a:
         done("no_open_api" if q["database_final"] in NO_API else "not_yet_checked", q["database_final"]); continue
+    if a.get("skipped"):
+        done("no_open_api", a["skipped"]); continue
     if a.get("error"):
         done("retrieval_failed", a["error"][:80]); continue
     if not e:

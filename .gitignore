@@ -1,2 +1,3 @@
 data/cancer/pilot/cache/
 __pycache__/
+data/cancer/*/cache/

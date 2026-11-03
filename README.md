@@ -6,16 +6,16 @@ This started as a copy of `Medhavy/medhavy-facts` and is being reworked for a pa
 
 ## Where it stands
 
-Steps 1 to 3 are done for one book (medhavi-cancer). Steps 4 and 5 have run on a 60-claim pilot only. Step 6 (status) is built and runs on whatever evidence exists.
+All six steps have run for one book (medhavi-cancer), on the 1,170 queryable claims whose database has an open API (PubMed, ClinicalTrials.gov, openFDA, NCBI Gene, UniProt). 229 queryable claims (SEER/GLOBOCAN, guideline bodies, Ensembl) have no open API and are not checked. Nothing is human-reviewed.
 
 | Step | What | State |
 |---|---|---|
 | 1. Extract | Pull candidate claims (verbatim sentences) out of the book | done: 3,165 claims in `data/cancer/facts.json` |
 | 2. Triage | Decide which claims are real assertions and which database could check each | done: `triage/triage.jsonl` (one model-labeler pass, a first filter) |
 | 3. Map and query | Rewrite each assertion as a query for its database | done: `data/cancer/queries.jsonl`, 1,399 queries (model-written, smoke-tested on a sample) |
-| 4. Retrieve | Look it up; keep the record | pilot: 60 claims retrieved (`pipeline/04_retrieve.py`); SEER/GLOBOCAN and guideline bodies have no open API and are not in it |
-| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | pilot: `data/cancer/pilot/evidence.pilot.jsonl`, 77 records; NOT merged into `facts.json` yet |
-| 6. Derive status | Status computed from the evidence records | done: `data/cancer/status.jsonl`, all 3,165 claims (only the 60 pilot claims have evidence so far) |
+| 4. Retrieve | Look it up; keep the record | done for 1,172 claims: a 60-claim pilot, then the other 1,112 (`pipeline/04_retrieve.py`); SEER/GLOBOCAN, guideline bodies and Ensembl have no open API and are skipped |
+| 5. Store evidence | Database name as `source`, `url`, exact `verbatim`, the query in its own field | done: `data/cancer/pilot/evidence.pilot.jsonl` (77) and `data/cancer/full/evidence.jsonl` (1,386 records); NOT merged into `facts.json` yet |
+| 6. Derive status | Status computed from the evidence records | done: `data/cancer/status.jsonl`, all 3,165 claims |
 
 Nothing here is verified. Every claim has `evidence: []` and `status: "no_evidence"`.
 
@@ -66,6 +66,31 @@ I re-ran the 12 pilot claims these rules touch: 6 passages across 5 claims chang
 
 Evidence rows live in `data/cancer/pilot/evidence.pilot.jsonl`; `attempts.jsonl` records every retrieval attempt without third-party text. The raw record text is cached in `data/cancer/pilot/cache/` and is git-ignored (regenerate with `04_retrieve.py`).
 
+## Full run: steps 4 and 5 on the other 1,112 claims
+
+Same method as the pilot, with the two fixes in place. `04_retrieve.py` fetched the top 5 records for each query (0 errors), and 36 model passes picked quoted passages under `notes/passage-spec.md`. `05_build_evidence.py` kept a passage only if it is an exact substring of the record field it cites. All 1,386 offered passages passed; none were dropped.
+
+Together with the pilot (1,172 claims attempted; 1,170 with an open API):
+
+| Database | Claims | Records returned | Supported | Partial | Related only | Conflicting / dated | None found |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| PubMed | 950 | 945 | 289 | 419 | 83 | 10 | 149 |
+| Gene / protein | 146 | 121 | 22 | 58 | 16 | 1 | 49 |
+| ClinicalTrials.gov | 20 | 18 | 5 | 8 | 0 | 1 | 6 |
+| openFDA | 54 | 47 | 23 | 19 | 4 | 1 | 7 |
+| **All** | **1,170** | **1,131** | **339 (29%)** | **504 (43%)** | **103 (9%)** | **13 (1%)** | **211 (18%)** |
+
+**What it shows**
+- **Most claims are only partly confirmed.** Under a third reach `supported`. Textbook sentences bundle several claims, and a record states one piece of one.
+- **Genes and proteins are the weak spot.** 22 of 146 supported, 49 with nothing. Short summaries rarely state the relations the book claims.
+- **FDA and trials give the cleanest hits.** openFDA: 23 of 54 supported.
+- **"No evidence found" is not "no evidence exists".** It means none of the top-5 records returned bears on the claim. A claim can be well supported in a paper that ranked sixth.
+- **"Supported" can be a lucky top-5.** It means a passage that a model read as stating the claim, in a record the database ranked highly. It is not a systematic review.
+- **The review queue is 30 claims:** 12 `conflicting_evidence`, 1 `dated_evidence`, and 18 plural claims where one record shows one instance. I read all of the conflicts. Each is one study or record pointing the other way, usually in a narrower setting (one cell line, one glioma series, one New York study), with a few opposite-direction findings (Hedgehog inhibition inducing autophagy, gamma-secretase inhibition reducing oxaliplatin-induced apoptosis). So `conflicting_evidence` means "a person should look", not "the book is wrong"; several should have been `partial`.
+- **Audit.** I read 8 random `supported` rows and 6 that a crude number check flagged. All held up (the flags were gene names like `p53`, or figures that matched, like 20,000 deaths against "18,200 to 21,300"). The sample is small and the stances are one model pass.
+
+Evidence for these claims is in `data/cancer/full/evidence.jsonl`, with `attempts.jsonl` (one row per retrieval, no third-party text) and `ids.json`. The raw record text (9 MB) is cached in `data/cancer/full/cache/` and is git-ignored.
+
 ## Step 6: status for every claim
 
 `pipeline/06_derive_status.py` writes `data/cancer/status.jsonl`, one row per claim, from the triage, the queries and the evidence. It never says "true". Every row has `human_reviewed: false`.
@@ -75,14 +100,13 @@ Evidence rows live in `data/cancer/pilot/evidence.pilot.jsonl`; `attempts.jsonl`
 | `not_an_assertion` | 885 | framing, evaluation or vagueness; no record could confirm or refute it |
 | `no_record_type` | 799 | a real claim, but no database record type fits |
 | `not_queryable` | 82 | a database fits but no stand-alone query could be written |
-| `no_open_api` | 227 | queryable, but SEER/GLOBOCAN or a guideline body has no open API |
-| `not_yet_checked` | 1,112 | queryable with an open API, not retrieved yet |
-| `no_evidence_found` | 14 | retrieved; nothing returned bears on the claim |
-| `related_only` | 5 | same topic, no passage states the claim's relation or value |
-| `partially_supported` | 29 | a passage supports part of it, a different number or scope, or one record for a plural claim |
-| `supported` | 11 | a passage states the claim's relation or value |
-| `conflicting_evidence` | 1 | a passage states a conflicting value or relation (needs a human) |
-| `dated_evidence` | 0 | a record differs only through today's state of a time-bound claim (needs a human) |
+| `no_open_api` | 229 | queryable, but SEER/GLOBOCAN, a guideline body or Ensembl has no open API |
+| `no_evidence_found` | 211 | retrieved; nothing returned bears on the claim |
+| `related_only` | 103 | same topic, no passage states the claim's relation or value |
+| `partially_supported` | 504 | a passage supports part of it, a different number or scope, or one record for a plural claim |
+| `supported` | 339 | a passage states the claim's relation or value |
+| `conflicting_evidence` | 12 | a passage states a conflicting value or relation (needs a human) |
+| `dated_evidence` | 1 | a record differs only through today's state of a time-bound claim (needs a human) |
 
 `supported` means a retrieved record contains a passage a model read as stating the claim. It is not a verification and it is not human-reviewed.
 
@@ -109,6 +133,7 @@ data/cancer/
   facts.json                 3,165 candidate claims
   queries.jsonl              step 3: one database query per strict assertion (1,481 rows)
   pilot/                     steps 4-5 on 60 claims: pilot_ids.json, attempts.jsonl, evidence.pilot.jsonl (cache/ is git-ignored)
+  full/                      steps 4-5 on the other 1,112: ids.json, attempts.jsonl, evidence.jsonl (cache/ is git-ignored)
   status.jsonl               step 6: the derived status of all 3,165 claims (regenerable)
   terms.json  graph.json     glossary (10,055 terms) and concept graph (24,347 edges)
 triage/
